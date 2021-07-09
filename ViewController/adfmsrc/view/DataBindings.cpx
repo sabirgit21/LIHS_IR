@@ -270,6 +270,10 @@
     <page path="/WEB-INF/Fragments/Modules/Donation/Donation.jsff" usageId="view_DonationPageDef1"/>
     <page path="/WEB-INF/Task_Flows/Modules/MGT_Reports/Old_Records_TaskFlow.xml#Old_Records_TaskFlow@ExecuteWithParams"
           usageId="view_Old_Records_TaskFlow_Old_Records_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Production/Production_Approval_TaskFlow.xml#Production_Approval_TaskFlow@ExecuteWithParams"
+          usageId="view_Production_Approval_TaskFlow_Production_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Production/Production_Approval.jsff"
+          usageId="view_Production_ApprovalPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -518,6 +522,9 @@
     <page id="view_DonationPageDef1" path="Fragments.Modules.Donation.DonationPageDef"/>
     <page id="view_Old_Records_TaskFlow_Old_Records_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.MGT_Reports.Old_Records_TaskFlow_Old_Records_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Production_Approval_TaskFlow_Production_Approval_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Production.Production_Approval_TaskFlow_Production_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Production_ApprovalPageDef" path="Fragments.Modules.Production.Production_ApprovalPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

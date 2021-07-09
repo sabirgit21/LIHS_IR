@@ -12,12 +12,13 @@
        TblPorMaster.VTP, 
        TblPorMaster.PROJECT_ID, 
        TblPorMaster.DEPARTMENT_ID, 
-       TblPorMaster.PROJECT_D_ID"
+       TblPorMaster.PROJECT_D_ID, 
+       TblPorMaster.AST"
   FromList="TBL_POR_MASTER TblPorMaster"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  Where="ID in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)    
+  Where="ID in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)       
 and TblPorMaster.PROJECT_ID = :getProID">
   <Properties>
     <SchemaBasedProperties>
@@ -87,6 +88,12 @@ and TblPorMaster.PROJECT_ID = :getProID">
     EntityAttrName="ProjectDId"
     EntityUsage="TblPorMaster"
     AliasName="PROJECT_D_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblPorMaster"
+    AliasName="AST"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

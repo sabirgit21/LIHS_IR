@@ -16,9 +16,11 @@
        TblPorMaster.DEPARTMENT_ID, 
        TblPorMaster.PROJECT_D_ID, 
        TblPorMaster.PROJECT_ID, 
-       TblPorMaster.MENU_TYPE"
+       TblPorMaster.MENU_TYPE, 
+       TblPorMaster.AST"
   FromList="TBL_POR_MASTER TblPorMaster"
-  Where="ID not in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)   
+  Where="AST='Y'    
+AND ID not in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)       
 and TblPorMaster.PROJECT_ID = :getProID">
   <Properties>
     <SchemaBasedProperties>
@@ -86,6 +88,12 @@ and TblPorMaster.PROJECT_ID = :getProID">
     EntityAttrName="MenuType"
     EntityUsage="TblPorMaster"
     AliasName="MENU_TYPE"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblPorMaster"
+    AliasName="AST"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

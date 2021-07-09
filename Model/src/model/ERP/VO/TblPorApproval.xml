@@ -3,48 +3,56 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblPorMasterView"
+  Name="TblPorApproval"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectList="TblPorMaster.ID, 
-       TblPorMaster.VNO, 
-       TblPorMaster.VTP, 
+  SelectList="TblPorMaster.AST, 
+       TblPorMaster.CREATED_BY, 
+       TblPorMaster.CREATED_DATE, 
        TblPorMaster.DATED, 
        TblPorMaster.DEPARTMENT_ID, 
-       TblPorMaster.PROJECT_ID, 
-       TblPorMaster.NARRATION, 
        TblPorMaster.FEED_ST, 
-       TblPorMaster.AST, 
-       TblPorMaster.CREATED_DATE, 
-       TblPorMaster.CREATED_BY, 
-       TblPorMaster.UPDATED_DATE, 
-       TblPorMaster.UPDATED_BY, 
+       TblPorMaster.ID, 
+       TblPorMaster.MENU_TYPE, 
+       TblPorMaster.NARRATION, 
        TblPorMaster.PROJECT_D_ID, 
-       TblPorMaster.MENU_TYPE"
+       TblPorMaster.PROJECT_ID, 
+       TblPorMaster.UPDATED_BY, 
+       TblPorMaster.UPDATED_DATE, 
+       TblPorMaster.VNO, 
+       TblPorMaster.VTP"
   FromList="TBL_POR_MASTER TblPorMaster"
-  Where="TblPorMaster.PROJECT_ID = nvl(:getProId,TblPorMaster.PROJECT_ID)">
+  Where="(ast is null or Ast='N') 
+AND TblPorMaster.PROJECT_ID = nvl(:getProId,TblPorMaster.PROJECT_ID)">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ERP.VO.TblPorApproval_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <Variable
     Name="getProId"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      CodeSourceName="TblPorMasterView"/>
+      trustMode="trusted"
+      CodeSourceName="TblPorApproval"/>
   </Variable>
   <ViewAccessor
-    Name="Voucher_Type1"
-    ViewObjectName="model.LOV.Voucher_Type"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Item_L3_LOV1"
-    ViewObjectName="model.LOV.Item_L3_LOV"
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="Department_Name_LOV1"
     ViewObjectName="model.LOV.Department_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Menu_Type_LOV1"
+    ViewObjectName="model.LOV.Menu_Type_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="Project_Name_LOV1"
@@ -62,22 +70,14 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ViewAccessor
-    Name="Menu_Type_LOV1"
-    ViewObjectName="model.LOV.Menu_Type_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="Active_LOV1"
-    ViewObjectName="model.LOV.Active_LOV"
-    RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_Vtp"
-    ListVOName="Voucher_Type1"
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="Vtp"/>
+      <Item Value="Ast"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -103,6 +103,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MenuType"
+    ListVOName="Menu_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MenuType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -142,65 +160,16 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_MenuType"
-    ListVOName="Menu_Type_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="MenuType"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DbAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Ast"
-    ListVOName="Active_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Ast"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DBAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="TblPorMaster"
     Entity="model.ERP.EO.TblPorMaster"/>
   <ViewAttribute
-    Name="Id"
-    IsNotNull="true"
+    Name="Ast"
     PrecisionRule="true"
-    EntityAttrName="Id"
+    EntityAttrName="Ast"
     EntityUsage="TblPorMaster"
-    AliasName="ID"/>
-  <ViewAttribute
-    Name="Vno"
-    PrecisionRule="true"
-    EntityAttrName="Vno"
-    EntityUsage="TblPorMaster"
-    AliasName="VNO"/>
-  <ViewAttribute
-    Name="Vtp"
-    PrecisionRule="true"
-    EntityAttrName="Vtp"
-    EntityUsage="TblPorMaster"
-    AliasName="VTP"
-    LOVName="LOV_Vtp">
+    AliasName="AST"
+    LOVName="LOV_Ast">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -209,20 +178,25 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblPorMaster"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblPorMaster"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
     Name="Dated"
+    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblPorMaster"
-    AliasName="DATED">
-    <Properties>
-      <SchemaBasedProperties>
-        <FMT_FORMAT
-          ResId="model.ERP.VO.TblPorMasterView.Dated_FMT_FORMAT"/>
-        <FMT_FORMATTER
-          ResId="model.ERP.VO.TblPorMasterView.Dated_FMT_FORMATTER"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="DATED"/>
   <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
@@ -230,6 +204,52 @@
     EntityUsage="TblPorMaster"
     AliasName="DEPARTMENT_ID"
     LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FeedSt"
+    PrecisionRule="true"
+    EntityAttrName="FeedSt"
+    EntityUsage="TblPorMaster"
+    AliasName="FEED_ST"/>
+  <ViewAttribute
+    Name="Id"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPorMaster"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="MenuType"
+    PrecisionRule="true"
+    EntityAttrName="MenuType"
+    EntityUsage="TblPorMaster"
+    AliasName="MENU_TYPE"
+    LOVName="LOV_MenuType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="TblPorMaster"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="ProjectDId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectDId"
+    EntityUsage="TblPorMaster"
+    AliasName="PROJECT_D_ID"
+    LOVName="LOV_ProjectDId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -252,100 +272,30 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Narration"
-    PrecisionRule="true"
-    EntityAttrName="Narration"
-    EntityUsage="TblPorMaster"
-    AliasName="NARRATION"/>
-  <ViewAttribute
-    Name="FeedSt"
-    PrecisionRule="true"
-    EntityAttrName="FeedSt"
-    EntityUsage="TblPorMaster"
-    AliasName="FEED_ST"/>
-  <ViewAttribute
-    Name="Ast"
-    PrecisionRule="true"
-    EntityAttrName="Ast"
-    EntityUsage="TblPorMaster"
-    AliasName="AST"
-    LOVName="LOV_Ast">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="CreatedDate"
-    PrecisionRule="true"
-    EntityAttrName="CreatedDate"
-    EntityUsage="TblPorMaster"
-    AliasName="CREATED_DATE"
-    IsUpdateable="false"/>
-  <ViewAttribute
-    Name="CreatedBy"
-    PrecisionRule="true"
-    EntityAttrName="CreatedBy"
-    EntityUsage="TblPorMaster"
-    AliasName="CREATED_BY"/>
-  <ViewAttribute
-    Name="UpdatedDate"
-    PrecisionRule="true"
-    EntityAttrName="UpdatedDate"
-    EntityUsage="TblPorMaster"
-    AliasName="UPDATED_DATE"
-    IsUpdateable="false"/>
-  <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblPorMaster"
     AliasName="UPDATED_BY"/>
   <ViewAttribute
-    Name="ProjectDId"
+    Name="UpdatedDate"
+    IsUpdateable="false"
     PrecisionRule="true"
-    EntityAttrName="ProjectDId"
+    EntityAttrName="UpdatedDate"
     EntityUsage="TblPorMaster"
-    AliasName="PROJECT_D_ID"
-    LOVName="LOV_ProjectDId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="UPDATED_DATE"/>
   <ViewAttribute
-    Name="MenuType"
+    Name="Vno"
     PrecisionRule="true"
-    EntityAttrName="MenuType"
+    EntityAttrName="Vno"
     EntityUsage="TblPorMaster"
-    AliasName="MENU_TYPE"
-    LOVName="LOV_MenuType">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewLinkAccessor
-    Name="TblPorDetailView"
-    ViewLink="model.ERP.VO.FkPorDetailMasterLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblProFgMasterView"
-    ViewLink="model.ERP.VO.FkProFgMasterPorLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblProIssMasterView"
-    ViewLink="model.ERP.VO.FkProIssMasterPorLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TblPorMaster"
+    AliasName="VTP"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
