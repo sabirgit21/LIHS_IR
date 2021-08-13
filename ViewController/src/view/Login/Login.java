@@ -100,7 +100,7 @@ public class Login {
             Statement stmt = conn.createStatement();
             ResultSet rset =
                 stmt.executeQuery("SELECT * FROM tbl_user_master where user_master_name = '" + username +
-                                  "' and user_master_pwd = '" + password + "'");
+                                  "' and user_master_pwd = '" + password + "' and ast='Y'");
 
             if (rset.next()) {
                 //                conn.close();
