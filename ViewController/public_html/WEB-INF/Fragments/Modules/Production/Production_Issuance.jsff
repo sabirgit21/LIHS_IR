@@ -95,7 +95,7 @@
                             <af:selectOneChoice value="#{bindings.FrDeptId.inputValue}"
                                                 label="From Department" autoSubmit="true"
                                                 required="#{bindings.FrDeptId.hints.mandatory}"
-                                                shortDesc="#{bindings.FrDeptId.hints.tooltip}" id="soc10">
+                                                shortDesc="#{bindings.FrDeptId.hints.tooltip}" id="soc10" readOnly="true">
                               <f:selectItems value="#{bindings.FrDeptId.items}" id="si10"/>
                               <f:validator binding="#{bindings.FrDeptId.validator}"/>
                             </af:selectOneChoice>

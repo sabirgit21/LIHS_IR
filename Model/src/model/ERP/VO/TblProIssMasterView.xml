@@ -315,7 +315,8 @@
     EntityAttrName="FrDeptId"
     EntityUsage="TblProIssMaster"
     AliasName="FR_DEPT_ID"
-    LOVName="LOV_FrDeptId">
+    LOVName="LOV_FrDeptId"
+    DefaultValue="2">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

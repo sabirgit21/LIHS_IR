@@ -18,17 +18,28 @@
         ResId="model.LOV.Item_Level4_Dishes_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT  
-        TBL_ITEM_L3.ITEM_L2_ID, 
-       TBL_ITEM_L4.ITEM_L3_ID , 
-       TBL_ITEM_L4.ITEM_L4_ID,  
-       TBL_ITEM_L4.NAME,  
-       TBL_ITEM_L4.UOM_ID,  
-       TBL_ITEM_L4.AST 
-FROM  TBL_ITEM_L4, TBL_ITEM_L3,TBL_ITEM_L2 
-Where  TBL_ITEM_L4.ITEM_L3_ID= TBL_ITEM_L3.ITEM_L3_ID 
-AND TBL_ITEM_L3.ITEM_L2_ID=TBL_ITEM_L2.ITEM_L2_ID 
-AND TBL_ITEM_L3.ITEM_L2_ID=12]]></SQLQuery>
+  <SQLQuery><![CDATA[Select   TBL_ITEM_L2.ITEM_L1_ID, 
+        TBL_ITEM_L3.ITEM_L2_ID,  
+       TBL_ITEM_L4.ITEM_L3_ID ,  
+       TBL_ITEM_L4.ITEM_L4_ID,   
+       TBL_ITEM_L4.NAME,   
+       TBL_ITEM_L4.UOM_ID,   
+       TBL_ITEM_L4.AST  
+FROM  TBL_ITEM_L4, TBL_ITEM_L3,TBL_ITEM_L2 ,TBL_ITEM_L1 
+Where  TBL_ITEM_L4.ITEM_L3_ID= TBL_ITEM_L3.ITEM_L3_ID  
+AND TBL_ITEM_L3.ITEM_L2_ID=TBL_ITEM_L2.ITEM_L2_ID  
+AND TBL_ITEM_L2.ITEM_L1_ID=TBL_ITEM_L1.ITEM_L1_ID  
+AND TBL_ITEM_L2.ITEM_L1_ID=3]]></SQLQuery>
+  <ViewAttribute
+    Name="ItemL1Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L1_ID"
+    Expression="ITEM_L1_ID"
+    SQLType="NUMERIC"/>
   <ViewAttribute
     Name="ItemL2Id"
     IsUpdateable="false"
@@ -94,7 +105,7 @@ AND TBL_ITEM_L3.ITEM_L2_ID=12]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="AST"
     Expression="AST"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
