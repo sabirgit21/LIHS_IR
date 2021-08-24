@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Item_Level4_Dishes_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Item_Level4_Dishes_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT  
+        TBL_ITEM_L3.ITEM_L2_ID, 
+       TBL_ITEM_L4.ITEM_L3_ID , 
+       TBL_ITEM_L4.ITEM_L4_ID,  
+       TBL_ITEM_L4.NAME,  
+       TBL_ITEM_L4.UOM_ID,  
+       TBL_ITEM_L4.AST 
+FROM  TBL_ITEM_L4, TBL_ITEM_L3,TBL_ITEM_L2 
+Where  TBL_ITEM_L4.ITEM_L3_ID= TBL_ITEM_L3.ITEM_L3_ID 
+AND TBL_ITEM_L3.ITEM_L2_ID=TBL_ITEM_L2.ITEM_L2_ID 
+AND TBL_ITEM_L3.ITEM_L2_ID=12]]></SQLQuery>
+  <ViewAttribute
+    Name="ItemL2Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L2_ID"
+    Expression="ITEM_L2_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ItemL3Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L3_ID"
+    Expression="ITEM_L3_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L4_ID"
+    Expression="ITEM_L4_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UomId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="UOM_ID"
+    Expression="UOM_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ItemL4Id"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -182,7 +182,8 @@
                               </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="Leave Type" id="c1">
-                              <af:selectOneChoice value="#{row.bindings.LeaveMId.inputValue}"
+                              <af:selectOneChoice unselectedLabel="--Select--" 
+                                                    value="#{row.bindings.LeaveMId.inputValue}"
                                                   label="#{row.bindings.LeaveMId.label}"
                                                   required="#{bindings.TblAttDView2.hints.LeaveMId.mandatory}"
                                                   shortDesc="#{bindings.TblAttDView2.hints.LeaveMId.tooltip}" id="soc3">
@@ -192,7 +193,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblAttDView2.hints.Description.name}" filterable="true"
                                        sortable="true" headerText="Description"
-                                       id="c11">
+                                       id="c11" width="100">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Description}"
        id="it16" placeholder="Search ">

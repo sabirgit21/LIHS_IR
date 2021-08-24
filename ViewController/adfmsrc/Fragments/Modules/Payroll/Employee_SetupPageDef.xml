@@ -47,6 +47,7 @@
           <Item Value="Name"/>
           <Item Value="FatName"/>
           <Item Value="Cnic"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -168,5 +169,19 @@
             Action="createInsertRow"/>
     <action IterBinding="TblEmpAllView2Iterator" id="Execute4" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblEmpAllView2Iterator" id="Delete4" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="TblEmpView1Iterator" StaticList="false" Uses="LOV_LeavingType" id="LeavingType"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="LeavingDate">
+      <AttrNames>
+        <Item Value="LeavingDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblEmpView1Iterator" id="LeavingReason">
+      <AttrNames>
+        <Item Value="LeavingReason"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblEmpView1Iterator" StaticList="false" Uses="LOV_EmpTermination" id="EmpTermination"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

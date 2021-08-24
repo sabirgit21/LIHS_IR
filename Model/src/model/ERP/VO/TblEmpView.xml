@@ -33,7 +33,12 @@
        TblEmp.CREATED_DATE, 
        TblEmp.CREATED_BY, 
        TblEmp.UPDATED_DATE, 
-       TblEmp.UPDATED_BY"
+       TblEmp.UPDATED_BY, 
+       TblEmp.LEAVING_DATE, 
+       TblEmp.LEAVING_REASON, 
+       TblEmp.LEAVING_TYPE, 
+       TblEmp.AST, 
+       TblEmp.EMP_TERMINATION"
   FromList="TBL_EMP TblEmp"
   Where="TblEmp.PROJECT_ID = nvl(:getProId,TblEmp.PROJECT_ID)">
   <Variable
@@ -67,6 +72,18 @@
   <ViewAccessor
     Name="Gender_Name_LOV1"
     ViewObjectName="model.LOV.Gender_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Employee_Leaving_Type_LOV1"
+    ViewObjectName="model.LOV.Employee_Leaving_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Employee_Termination_LOV1"
+    ViewObjectName="model.LOV.Employee_Termination_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -170,6 +187,60 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LeavingType"
+    ListVOName="Employee_Leaving_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LeavingType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmpTermination"
+    ListVOName="Employee_Termination_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmpTermination"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAtt"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
@@ -380,6 +451,60 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblEmp"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="LeavingDate"
+    PrecisionRule="true"
+    EntityAttrName="LeavingDate"
+    EntityUsage="TblEmp"
+    AliasName="LEAVING_DATE"/>
+  <ViewAttribute
+    Name="LeavingReason"
+    PrecisionRule="true"
+    EntityAttrName="LeavingReason"
+    EntityUsage="TblEmp"
+    AliasName="LEAVING_REASON"/>
+  <ViewAttribute
+    Name="LeavingType"
+    PrecisionRule="true"
+    EntityAttrName="LeavingType"
+    EntityUsage="TblEmp"
+    AliasName="LEAVING_TYPE"
+    LOVName="LOV_LeavingType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblEmp"
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmpTermination"
+    PrecisionRule="true"
+    EntityAttrName="EmpTermination"
+    EntityUsage="TblEmp"
+    AliasName="EMP_TERMINATION"
+    LOVName="LOV_EmpTermination">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblAdvLoanView"
     ViewLink="model.ERP.VO.FkAdvLoanEmpLink"

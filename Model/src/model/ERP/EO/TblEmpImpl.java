@@ -49,6 +49,11 @@ public class TblEmpImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        Ast,
+        LeavingDate,
+        LeavingReason,
+        LeavingType,
+        EmpTermination,
         TblAdvLoan,
         TblDesignation,
         TblEmpExp,
@@ -105,6 +110,11 @@ public class TblEmpImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int AST = AttributesEnum.Ast.index();
+    public static final int LEAVINGDATE = AttributesEnum.LeavingDate.index();
+    public static final int LEAVINGREASON = AttributesEnum.LeavingReason.index();
+    public static final int LEAVINGTYPE = AttributesEnum.LeavingType.index();
+    public static final int EMPTERMINATION = AttributesEnum.EmpTermination.index();
     public static final int TBLADVLOAN = AttributesEnum.TblAdvLoan.index();
     public static final int TBLDESIGNATION = AttributesEnum.TblDesignation.index();
     public static final int TBLEMPEXP = AttributesEnum.TblEmpExp.index();
@@ -509,6 +519,86 @@ public class TblEmpImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for Ast, using the alias name Ast.
+     * @return the value of Ast
+     */
+    public String getAst() {
+        return (String) getAttributeInternal(AST);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Ast.
+     * @param value value to set the Ast
+     */
+    public void setAst(String value) {
+        setAttributeInternal(AST, value);
+    }
+
+    /**
+     * Gets the attribute value for LeavingDate, using the alias name LeavingDate.
+     * @return the value of LeavingDate
+     */
+    public Timestamp getLeavingDate() {
+        return (Timestamp) getAttributeInternal(LEAVINGDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LeavingDate.
+     * @param value value to set the LeavingDate
+     */
+    public void setLeavingDate(Timestamp value) {
+        setAttributeInternal(LEAVINGDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for LeavingReason, using the alias name LeavingReason.
+     * @return the value of LeavingReason
+     */
+    public String getLeavingReason() {
+        return (String) getAttributeInternal(LEAVINGREASON);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LeavingReason.
+     * @param value value to set the LeavingReason
+     */
+    public void setLeavingReason(String value) {
+        setAttributeInternal(LEAVINGREASON, value);
+    }
+
+    /**
+     * Gets the attribute value for LeavingType, using the alias name LeavingType.
+     * @return the value of LeavingType
+     */
+    public String getLeavingType() {
+        return (String) getAttributeInternal(LEAVINGTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LeavingType.
+     * @param value value to set the LeavingType
+     */
+    public void setLeavingType(String value) {
+        setAttributeInternal(LEAVINGTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for EmpTermination, using the alias name EmpTermination.
+     * @return the value of EmpTermination
+     */
+    public String getEmpTermination() {
+        return (String) getAttributeInternal(EMPTERMINATION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EmpTermination.
+     * @param value value to set the EmpTermination
+     */
+    public void setEmpTermination(String value) {
+        setAttributeInternal(EMPTERMINATION, value);
     }
 
     /**
