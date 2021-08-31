@@ -37,7 +37,8 @@ public class TblPromotionImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        FrSalary;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -77,6 +78,7 @@ public class TblPromotionImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int FRSALARY = AttributesEnum.FrSalary.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -316,6 +318,22 @@ public class TblPromotionImpl extends EntityImpl {
         setAttributeInternal(UPDATEDBY, value);
     }
 
+
+    /**
+     * Gets the attribute value for FrSalary, using the alias name FrSalary.
+     * @return the value of FrSalary
+     */
+    public BigDecimal getFrSalary() {
+        return (BigDecimal) getAttributeInternal(FRSALARY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FrSalary.
+     * @param value value to set the FrSalary
+     */
+    public void setFrSalary(BigDecimal value) {
+        setAttributeInternal(FRSALARY, value);
+    }
 
     /**
      * @param id key constituent

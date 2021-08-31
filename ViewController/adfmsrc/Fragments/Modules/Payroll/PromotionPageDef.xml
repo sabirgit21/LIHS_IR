@@ -87,5 +87,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="TblPromotionView1Iterator" id="FrSalary">
+      <AttrNames>
+        <Item Value="FrSalary"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

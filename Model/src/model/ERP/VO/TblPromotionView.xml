@@ -93,12 +93,17 @@
       <Item Value="EmpId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="FrSalary"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="Salary"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
       <Item Value="FatName"/>
+      <Item Value="Salary"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -251,6 +256,12 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="FrSalary"
+    PrecisionRule="true"
+    EntityAttrName="FrSalary"
+    EntityUsage="TblPromotion"
+    AliasName="FR_SALARY"/>
+  <ViewAttribute
     Name="ToSalary"
     PrecisionRule="true"
     EntityAttrName="ToSalary"
@@ -261,7 +272,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblPromotion"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -273,7 +285,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblPromotion"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

@@ -152,6 +152,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PROMOTION"/>
+  <Attribute
+    Name="FrSalary"
+    ColumnName="FR_SALARY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PROMOTION"/>
   <Key
     Name="PkPromotionId"
     PrimaryKey="true">

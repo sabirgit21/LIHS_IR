@@ -12,7 +12,8 @@
   SelectList="TblEmp.ID, 
        TblEmp.NAME, 
        TblEmp.FAT_NAME, 
-       TblEmp.PROJECT_ID"
+       TblEmp.PROJECT_ID, 
+       TblEmp.SALARY"
   FromList="TBL_EMP TblEmp"
   Where="TblEmp.PROJECT_ID = nvl(:getProID,TblEmp.PROJECT_ID)">
   <Properties>
@@ -52,6 +53,12 @@
     EntityAttrName="ProjectId"
     EntityUsage="TblEmp"
     AliasName="PROJECT_ID"/>
+  <ViewAttribute
+    Name="Salary"
+    PrecisionRule="true"
+    EntityAttrName="Salary"
+    EntityUsage="TblEmp"
+    AliasName="SALARY"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
