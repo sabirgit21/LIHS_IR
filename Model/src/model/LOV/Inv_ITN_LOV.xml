@@ -6,13 +6,13 @@
   Name="Inv_ITN_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblItnM.ID, 
+       TblItnM.VNO"
+  FromList="TBL_ITN_M TblItnM"
+  Where="ID not in (Select ITN_NO from TBL_ITN_M where ITN_NO is not Null)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

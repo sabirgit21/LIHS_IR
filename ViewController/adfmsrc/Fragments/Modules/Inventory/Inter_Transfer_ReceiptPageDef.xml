@@ -99,5 +99,10 @@
     </tree>
     <list IterBinding="Tbl_ITN_R_M1Iterator" StaticList="false" Uses="LOV_ItnNo" id="ItnNo" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="Tbl_ITN_R_M1Iterator" id="ItnNo1">
+      <AttrNames>
+        <Item Value="ItnNo1"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

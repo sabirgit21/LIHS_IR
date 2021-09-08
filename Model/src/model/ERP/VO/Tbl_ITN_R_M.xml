@@ -22,9 +22,10 @@
        TblItnM.UPDATED_DATE, 
        TblItnM.VNO, 
        TblItnM.VTP, 
-       TblItnM.ITN_NO"
+       TblItnM.ITN_NO, 
+       TblItnM.ITN_NO AS ITN_NO1"
   FromList="TBL_ITN_M TblItnM"
-  Where="TblItnM.FROM_PROJECT_ID= nvl(:getProId,TblItnM.FROM_PROJECT_ID)  
+  Where="TblItnM.TO_PROJECT_ID= nvl(:getProId,TblItnM.TO_PROJECT_ID)   
 and TblItnM.ITN_NO is not null">
   <Properties>
     <SchemaBasedProperties>
@@ -302,6 +303,12 @@ and TblItnM.ITN_NO is not null">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ItnNo1"
+    PrecisionRule="true"
+    EntityAttrName="ItnNo"
+    EntityUsage="TblItnM"
+    AliasName="ITN_NO1"/>
   <ViewLinkAccessor
     Name="Tbl_ITN_R_D"
     ViewLink="model.ERP.VO.FkTblITNRFkLink"
