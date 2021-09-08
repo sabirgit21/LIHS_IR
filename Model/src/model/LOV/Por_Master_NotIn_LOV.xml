@@ -19,7 +19,7 @@
        TblPorMaster.MENU_TYPE, 
        TblPorMaster.AST"
   FromList="TBL_POR_MASTER TblPorMaster"
-  Where="AND ID not in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)        
+  Where="ID not in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)         
 and TblPorMaster.PROJECT_ID = :getProID">
   <Properties>
     <SchemaBasedProperties>
