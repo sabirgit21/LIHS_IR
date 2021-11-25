@@ -19,7 +19,9 @@
                             </af:inputDate>-->
                             <!--<af:spacer width="30" height="10" id="s11"/>-->
                             <af:inputDate label="To Date : " id="id1"
-                                          binding="#{backingBeanScope.BalanceSheetReportsBackBean.toDateParam}"/>
+                                          binding="#{backingBeanScope.BalanceSheetReportsBackBean.toDateParam}">
+                                          <f:convertDateTime pattern="dd/MM/yy"/>
+                                          </af:inputDate>
                             <!--<af:inputDate label="To Date"
                             binding="#{backingBeanScope.Grant_Approval_Report_BackBean.toDateParam}"
                                           columns="#{bindings.Dated.hints.displayWidth}"
