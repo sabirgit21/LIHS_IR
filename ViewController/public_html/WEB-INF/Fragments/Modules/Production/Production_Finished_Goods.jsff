@@ -259,7 +259,7 @@
                     </af:inputText>
                   </af:column>
                             <af:column headerText="Rate" id="c8">
-                              <af:inputText value="#{row.bindings.Rate.inputValue}"
+                              <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                             label="#{bindings.TblProFgDetailView2.hints.Rate.label}"
                                             required="#{bindings.TblProFgDetailView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblProFgDetailView2.hints.Rate.displayWidth}"
@@ -271,7 +271,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Amount" id="c14">
-                              <af:inputText value="#{row.bindings.Amount.inputValue}"
+                              <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                             label="#{bindings.TblProFgDetailView2.hints.Amount.label}"
                                             required="#{bindings.TblProFgDetailView2.hints.Amount.mandatory}"
                                             columns="#{bindings.TblProFgDetailView2.hints.Amount.displayWidth}"

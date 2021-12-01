@@ -274,6 +274,9 @@
           usageId="view_Production_Approval_TaskFlow_Production_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Production/Production_Approval.jsff"
           usageId="view_Production_ApprovalPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Inventory/Adjustment_TaskFlow.xml#Adjustment_TaskFlow@ExecuteWithParams"
+          usageId="view_Adjustment_TaskFlow_Adjustment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Inventory/Adjustment.jsff" usageId="view_AdjustmentPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -525,6 +528,9 @@
     <page id="view_Production_Approval_TaskFlow_Production_Approval_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Production.Production_Approval_TaskFlow_Production_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Production_ApprovalPageDef" path="Fragments.Modules.Production.Production_ApprovalPageDef"/>
+    <page id="view_Adjustment_TaskFlow_Adjustment_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Inventory.Adjustment_TaskFlow_Adjustment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_AdjustmentPageDef" path="Fragments.Modules.Inventory.AdjustmentPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
