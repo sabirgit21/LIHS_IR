@@ -10,15 +10,30 @@
   CustomQuery="false"
   PageIterMode="Full"
   SelectList="TblItnM.ID, 
-       TblItnM.VNO"
+       TblItnM.VNO, 
+       TblItnM.DATED, 
+       TblItnM.FROM_DEPARTMENT_ID, 
+       TblItnM.FROM_PROJECT_ID, 
+       TblItnM.TO_DEPARTMENT_ID, 
+       TblItnM.TO_PROJECT_ID"
   FromList="TBL_ITN_M TblItnM"
-  Where="ID not in (Select ITN_NO from TBL_ITN_M where ITN_NO is not Null)">
+  Where="ID not in (Select ITN_NO from TBL_ITN_M where ITN_NO is not Null)    
+AND TblItnM.TO_PROJECT_ID = nvl(:get_Proj_ID,TblItnM.TO_PROJECT_ID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.LOV.Inv_ITN_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="get_Proj_ID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Inv_ITN_LOV"/>
+  </Variable>
   <EntityUsage
     Name="TblItnM"
     Entity="model.ERP.EO.TblItnM"/>
@@ -34,6 +49,46 @@
     EntityAttrName="Vno"
     EntityUsage="TblItnM"
     AliasName="VNO"/>
+  <ViewAttribute
+    Name="Dated"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblItnM"
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.LOV.Inv_ITN_LOV.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.LOV.Inv_ITN_LOV.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FromDepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="FromDepartmentId"
+    EntityUsage="TblItnM"
+    AliasName="FROM_DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="FromProjectId"
+    PrecisionRule="true"
+    EntityAttrName="FromProjectId"
+    EntityUsage="TblItnM"
+    AliasName="FROM_PROJECT_ID"/>
+  <ViewAttribute
+    Name="ToDepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="ToDepartmentId"
+    EntityUsage="TblItnM"
+    AliasName="TO_DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="ToProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ToProjectId"
+    EntityUsage="TblItnM"
+    AliasName="TO_PROJECT_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

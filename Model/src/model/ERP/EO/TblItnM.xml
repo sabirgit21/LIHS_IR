@@ -86,6 +86,7 @@
     TableName="TBL_ITN_M">
     <TransientExpression
       Name="ExpressionScript"
+      trustMode="trusted"
       CodeSourceName="TblItnMRow"/>
   </Attribute>
   <Attribute

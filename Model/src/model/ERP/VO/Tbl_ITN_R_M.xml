@@ -25,22 +25,13 @@
        TblItnM.ITN_NO, 
        TblItnM.ITN_NO AS ITN_NO1"
   FromList="TBL_ITN_M TblItnM"
-  Where="TblItnM.TO_PROJECT_ID= nvl(:getProId,TblItnM.TO_PROJECT_ID)   
-and TblItnM.ITN_NO is not null">
+  Where="TblItnM.ITN_NO is not null">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.ERP.VO.Tbl_ITN_R_M_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <Variable
-    Name="getProId"
-    Kind="where"
-    Type="java.math.BigDecimal">
-    <TransientExpression
-      Name="VariableScript"
-      CodeSourceName="Tbl_ITN_R_M"/>
-  </Variable>
   <ViewAccessor
     Name="Department_Name_LOV1"
     ViewObjectName="model.LOV.Department_Name_LOV"
@@ -157,11 +148,22 @@ and TblItnM.ITN_NO is not null">
       <Item Value="ItnNo"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="FromDepartmentId"/>
+      <Item Value="FromProjectId"/>
+      <Item Value="ToDepartmentId"/>
+      <Item Value="ToProjectId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
+      <Item Value="FromDepartmentId"/>
+      <Item Value="FromProjectId"/>
+      <Item Value="ToDepartmentId"/>
+      <Item Value="ToProjectId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
