@@ -123,5 +123,20 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPbpMView1Iterator" StaticList="false" Uses="LOV_CoaWht" id="CoaWht" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPbpDView2Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPbpDView2Iterator" id="TotalTaxAmount">
+      <AttrNames>
+        <Item Value="TotalTaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPbpDView2Iterator" id="TotalNetAmount">
+      <AttrNames>
+        <Item Value="TotalNetAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

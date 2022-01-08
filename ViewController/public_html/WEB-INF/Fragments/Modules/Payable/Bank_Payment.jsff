@@ -266,6 +266,10 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPbpDView2.hints.Amount.format}"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalAmount.inputValue}" id="ot1"   />
+                                
+                              </f:facet>
                             </af:column>
                             <af:column headerText="Tax Amount" id="c1" sortable="true" filterable="true">
                              <f:facet name="filter">
@@ -283,6 +287,10 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPbpDView2.hints.TaxAmount.format}"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalTaxAmount.inputValue}" id="ot2"   />
+                                
+                              </f:facet>
                             </af:column>
                             <af:column headerText="Net Amount" id="c12" sortable="true" filterable="true">
                              <f:facet name="filter">
@@ -300,6 +308,10 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPbpDView2.hints.NetAmount.format}"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalNetAmount.inputValue}" id="ot3"   />
+                                
+                              </f:facet>
                             </af:column>
                           </af:table>
                          

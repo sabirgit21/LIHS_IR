@@ -6,13 +6,28 @@
   Name="TblPcpDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblPcpD.ID, 
+       TblPcpD.PCP_M_ID, 
+       TblPcpD.PO_M_ID, 
+       TblPcpD.DESCRIPTION, 
+       TblPcpD.AMOUNT, 
+       TblPcpD.DR, 
+       TblPcpD.CR, 
+       TblPcpD.CREATED_DATE, 
+       TblPcpD.CREATED_BY, 
+       TblPcpD.UPDATED_DATE, 
+       TblPcpD.UPDATED_BY, 
+       TblPcpM.PBL_SUPP_ID, 
+       TblPcpM.ID AS ID1, 
+       TblPcpD.BANK_CASH_ID, 
+       TblPcpD.TAX_AMOUNT, 
+       TblPcpD.NET_AMOUNT, 
+       Sum(TblPcpD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
+  FromList="TBL_PCP_D TblPcpD, TBL_PCP_M TblPcpM"
+  Where="TblPcpD.PCP_M_ID = TblPcpM.ID(+)">
   <ViewAccessor
     Name="Bank_Cash_Cash_LOV1"
     ViewObjectName="model.LOV.Bank_Cash_Cash_LOV"
@@ -177,6 +192,16 @@
     EntityAttrName="NetAmount"
     EntityUsage="TblPcpD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblPcpD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

@@ -24,7 +24,10 @@
        TblPbpM.ID AS ID1, 
        TblPbpD.BANK_CASH_ID, 
        TblPbpD.TAX_AMOUNT, 
-       TblPbpD.NET_AMOUNT"
+       TblPbpD.NET_AMOUNT, 
+       Sum(TblPbpD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
+       Sum(TblPbpD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
+       Sum(TblPbpD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_PBP_D TblPbpD, TBL_PBP_M TblPbpM"
   Where="TblPbpD.PBP_M_ID = TblPbpM.ID(+)">
   <ViewAccessor
@@ -191,6 +194,37 @@
     EntityAttrName="NetAmount"
     EntityUsage="TblPbpD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblPbpD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="TotalTaxAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalTaxAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblPbpD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalNetAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalNetAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblPbpD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
   </AttrArray>

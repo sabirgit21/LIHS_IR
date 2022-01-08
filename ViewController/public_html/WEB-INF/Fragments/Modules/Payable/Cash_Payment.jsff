@@ -242,6 +242,10 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPcpDView2.hints.Amount.format}"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalAmount.inputValue}" id="ot1"   />
+                                
+                              </f:facet>
                             </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s2"/>
