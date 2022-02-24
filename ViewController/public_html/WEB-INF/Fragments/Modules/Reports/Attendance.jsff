@@ -73,6 +73,7 @@
                                 <af:selectItem label="Employee Wise Attendance" value="EmpAtt" id="si6"/>
                                 <af:selectItem label="Payroll Attendance" value="PayAtt" id="si8"/>
                                 <af:selectItem label="Employee Attendance Summary" value="EmpAttSum" id="si7"/>
+                                 <af:selectItem label="Attendance Detail" value="AttDetail" id="si10"/>
                               
                                 
                             </af:selectOneChoice>

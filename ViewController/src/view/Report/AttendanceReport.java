@@ -93,6 +93,11 @@ public class AttendanceReport {
                     case "EmpAttSum":
                         reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Employees_Attendance_Summary_Report&");
                         break;
+                
+                    case "AttDetail":
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Att_Detail&");
+                        break;
+
 
                 default:
                     showMessage("Please Select Report Type");
