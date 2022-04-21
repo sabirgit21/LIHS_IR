@@ -18,6 +18,14 @@
               id="TblFgTrnDetailDView2Iterator"/>
     <searchRegion Binds="TblFgTrnDetailDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnDetailDView2Query"/>
+    <iterator Binds="TblFgTrnDetailPView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFgTrnDetailPView2Iterator"/>
+    <searchRegion Binds="TblFgTrnDetailPView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnDetailPView2Query"/>
+    <iterator Binds="TblFgTrnDetailDPView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="TblFgTrnDetailDPView2Iterator"/>
+    <searchRegion Binds="TblFgTrnDetailDPView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnDetailDPView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -122,5 +130,39 @@
             Action="removeCurrentRow"/>
     <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProFgMasterIdStatic"
           id="ProFgMasterIdStatic" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblFgTrnDetailPView2Iterator" id="TblFgTrnDetailPView2">
+      <nodeDefinition DefName="model.ERP.VO.TblFgTrnDetailPView" Name="TblFgTrnDetailPView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="UomId"/>
+          <Item Value="Description"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFgTrnDetailPView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFgTrnDetailPView2Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFgTrnDetailPView2Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblFgTrnDetailDPView2Iterator" id="TblFgTrnDetailDPView2">
+      <nodeDefinition DefName="model.ERP.VO.TblFgTrnDetailDPView" Name="TblFgTrnDetailDPView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ProjectDDId"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblFgTrnDetailDPView2Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblFgTrnDetailDPView2Iterator" id="Execute4" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblFgTrnDetailDPView2Iterator" id="Delete4" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

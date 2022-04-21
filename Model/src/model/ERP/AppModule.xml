@@ -655,6 +655,18 @@
   <ViewUsage
     Name="TblAdjDView2"
     ViewObjectName="model.ERP.VO.TblAdjDView"/>
+  <ViewUsage
+    Name="TblFgTrnDetailDPView1"
+    ViewObjectName="model.ERP.VO.TblFgTrnDetailDPView"/>
+  <ViewUsage
+    Name="TblFgTrnDetailPView1"
+    ViewObjectName="model.ERP.VO.TblFgTrnDetailPView"/>
+  <ViewUsage
+    Name="TblFgTrnDetailPView2"
+    ViewObjectName="model.ERP.VO.TblFgTrnDetailPView"/>
+  <ViewUsage
+    Name="TblFgTrnDetailDPView2"
+    ViewObjectName="model.ERP.VO.TblFgTrnDetailDPView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1212,5 +1224,17 @@
     ViewLinkObjectName="model.ERP.VO.FkAdjDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblAdjMView1"
     DstViewUsageName="model.ERP.AppModule.TblAdjDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFgTrnMasterDetailPLink1"
+    ViewLinkObjectName="model.ERP.VO.FkFgTrnMasterDetailPLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFgTrnMasterView1"
+    DstViewUsageName="model.ERP.AppModule.TblFgTrnDetailPView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkFgTrnDetailPDetailDPLink1"
+    ViewLinkObjectName="model.ERP.VO.FkFgTrnDetailPDetailDPLink"
+    SrcViewUsageName="model.ERP.AppModule.TblFgTrnDetailPView2"
+    DstViewUsageName="model.ERP.AppModule.TblFgTrnDetailDPView2"
     Reversed="false"/>
 </AppModule>

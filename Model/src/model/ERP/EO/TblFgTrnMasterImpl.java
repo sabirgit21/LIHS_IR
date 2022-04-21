@@ -39,7 +39,8 @@ public class TblFgTrnMasterImpl extends EntityImpl {
         ProjectDId,
         ProjectId,
         TblFgTrnDetail,
-        TblProFgMaster;
+        TblProFgMaster,
+        TblFgTrnDetailP;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -80,6 +81,7 @@ public class TblFgTrnMasterImpl extends EntityImpl {
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int TBLFGTRNDETAIL = AttributesEnum.TblFgTrnDetail.index();
     public static final int TBLPROFGMASTER = AttributesEnum.TblProFgMaster.index();
+    public static final int TBLFGTRNDETAILP = AttributesEnum.TblFgTrnDetailP.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -322,6 +324,14 @@ public class TblFgTrnMasterImpl extends EntityImpl {
      */
     public void setTblProFgMaster(TblProFgMasterImpl value) {
         setAttributeInternal(TBLPROFGMASTER, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblFgTrnDetailP() {
+        return (RowIterator) getAttributeInternal(TBLFGTRNDETAILP);
     }
 
 

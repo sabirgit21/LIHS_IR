@@ -282,7 +282,7 @@
                                             required="#{bindings.TblPbpDView2.hints.TaxAmount.mandatory}"
                                             columns="#{bindings.TblPbpDView2.hints.TaxAmount.displayWidth}"
                                             maximumLength="#{bindings.TblPbpDView2.hints.TaxAmount.precision}"
-                                            shortDesc="#{bindings.TblPbpDView2.hints.TaxAmount.tooltip}" id="it5" readOnly="true">
+                                            shortDesc="#{bindings.TblPbpDView2.hints.TaxAmount.tooltip}" id="it5" >
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPbpDView2.hints.TaxAmount.format}"/>

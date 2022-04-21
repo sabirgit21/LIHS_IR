@@ -154,6 +154,13 @@
     AssociationOtherEnd="model.ERP.EO.FkFgTrnMasterPorAssoc.TblFgTrnMaster"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFgTrnDetailP"
+    Association="model.ERP.EO.FkFgTrnMasterDetailPAssoc"
+    AssociationEnd="model.ERP.EO.FkFgTrnMasterDetailPAssoc.TblFgTrnDetailP"
+    AssociationOtherEnd="model.ERP.EO.FkFgTrnMasterDetailPAssoc.TblFgTrnMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkFgTrnMasterId"
     PrimaryKey="true">

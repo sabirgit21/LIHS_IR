@@ -352,6 +352,11 @@
     ViewLink="model.ERP.VO.FkFgTrnDetailMasterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblFgTrnDetailPView"
+    ViewLink="model.ERP.VO.FkFgTrnMasterDetailPLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
