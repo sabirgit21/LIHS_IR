@@ -21,6 +21,10 @@
     Name="Item_Level4_Dishes_LOV1"
     ViewObjectName="model.LOV.Item_Level4_Dishes_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Item_Type_LOV1"
+    ViewObjectName="model.LOV.Item_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_UomId"
     ListVOName="Unit_of_Measurements_LOV1"
@@ -54,6 +58,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemType"
+    ListVOName="Item_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -130,6 +152,20 @@
     EntityUsage="TblKitchenMenuDD"
     AliasName="UOM_ID"
     LOVName="LOV_UomId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemType"
+    PrecisionRule="true"
+    EntityAttrName="ItemType"
+    EntityUsage="TblKitchenMenuDD"
+    AliasName="ITEM_TYPE"
+    LOVName="LOV_ItemType">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

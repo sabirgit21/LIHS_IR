@@ -82,6 +82,7 @@
           <Item Value="ItemL4Id"/>
           <Item Value="TotalPerson"/>
           <Item Value="UomId"/>
+          <Item Value="ItemType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -99,6 +100,7 @@
           <Item Value="TotalPerson"/>
           <Item Value="Dated"/>
           <Item Value="UomId"/>
+          <Item Value="ItemType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -110,6 +112,7 @@
           <Item Value="UomId"/>
           <Item Value="TotalPerson"/>
           <Item Value="Dated"/>
+          <Item Value="ItemType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

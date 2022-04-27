@@ -195,7 +195,7 @@
                                                                           columns="#{bindings.TblKitchenMenuDView2.hints.Id.displayWidth}"
                                                                           maximumLength="#{bindings.TblKitchenMenuDView2.hints.Id.precision}"
                                                                           shortDesc="#{bindings.TblKitchenMenuDView2.hints.Id.tooltip}"
-                                                                          id="it4" readOnly="true">
+                                                                          id="it2" readOnly="true">
                                                                 <f:validator binding="#{row.bindings.Id.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.TblKitchenMenuDView2.hints.Id.format}"/>
@@ -455,6 +455,24 @@
                                                                 <f:validator binding="#{row.bindings.UomId.validator}"/>
                                                             </af:selectOneChoice>
                                                         </af:column>
+                                                        <af:column headerText="Item Type"
+                                                                   id="c17" sortable="true" filterable="true"
+                                                                   width="150">
+                                                                     <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.ItemType}"
+                                                                              id="it8"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.ItemType.inputValue}"
+                                                                                label="#{row.bindings.ItemType.label}"
+                                                                                required="#{bindings.TblKitchenMenuDDView2.hints.ItemType.mandatory}"
+                                                                                shortDesc="#{bindings.TblKitchenMenuDDView2.hints.ItemType.tooltip}"
+                                                                                id="soc3">
+                                                                <f:selectItems value="#{row.bindings.ItemType.items}"
+                                                                               id="si3"/>
+                                                                <f:validator binding="#{row.bindings.ItemType.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
                                                         <af:column sortProperty="#{bindings.TblKitchenMenuDDView2.hints.TotalPerson.name}"
                                                                    filterable="true" sortable="true"
                                                                    headerText="Total Person"
@@ -563,6 +581,24 @@
                                                                 <f:selectItems value="#{row.bindings.UomId.items}"
                                                                                id="si7"/>
                                                                 <f:validator binding="#{row.bindings.UomId.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column headerText="Item Type"
+                                                                   id="c23" sortable="true" filterable="true"
+                                                                   width="150">
+                                                                    <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.ItemType}"
+                                                                              id="it25"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.ItemType.inputValue}"
+                                                                                label="#{row.bindings.ItemType.label}"
+                                                                                required="#{bindings.TblKitchenMenuDLunchView2.hints.ItemType.mandatory}"
+                                                                                shortDesc="#{bindings.TblKitchenMenuDLunchView2.hints.ItemType.tooltip}"
+                                                                                id="soc10">
+                                                                <f:selectItems value="#{row.bindings.ItemType.items}"
+                                                                               id="si10"/>
+                                                                <f:validator binding="#{row.bindings.ItemType.validator}"/>
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.TblKitchenMenuDLunchView2.hints.TotalPerson.name}"
@@ -693,6 +729,24 @@
                                                                 <f:selectItems value="#{row.bindings.UomId.items}"
                                                                                id="si9"/>
                                                                 <f:validator binding="#{row.bindings.UomId.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column headerText="Item Type"
+                                                                   id="c24" sortable="true" filterable="true"
+                                                                   width="150">
+                                                                    <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.ItemType}"
+                                                                              id="it26"
+                                                                              placeholder="Search "></af:inputText>
+                                                            </f:facet>
+                                                            <af:selectOneChoice value="#{row.bindings.ItemType.inputValue}"
+                                                                                label="#{row.bindings.ItemType.label}"
+                                                                                required="#{bindings.TblKitchenMenuDDinnerView3.hints.ItemType.mandatory}"
+                                                                                shortDesc="#{bindings.TblKitchenMenuDDinnerView3.hints.ItemType.tooltip}"
+                                                                                id="soc11">
+                                                                <f:selectItems value="#{row.bindings.ItemType.items}"
+                                                                               id="si11"/>
+                                                                <f:validator binding="#{row.bindings.ItemType.validator}"/>
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.TblKitchenMenuDDinnerView3.hints.TotalPerson.name}"
