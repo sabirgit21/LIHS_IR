@@ -126,5 +126,20 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPoMView1Iterator" StaticList="false" Uses="LOV_staticDoMId1" id="staticDoMId1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPoDView2Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPoDView2Iterator" id="TotalTaxAmount">
+      <AttrNames>
+        <Item Value="TotalTaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPoDView2Iterator" id="TotalNetAmount">
+      <AttrNames>
+        <Item Value="TotalNetAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

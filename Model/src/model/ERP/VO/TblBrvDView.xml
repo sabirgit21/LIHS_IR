@@ -89,7 +89,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblBrvD"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -101,11 +102,32 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblBrvD"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblBrvD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="TotalDr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalDr"
+    SQLType="NUMERIC"
+    Expression="Sum(TblBrvD.Dr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalCr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalCr"
+    SQLType="NUMERIC"
+    Expression="Sum(TblBrvD.Cr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
 </ViewObject>

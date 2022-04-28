@@ -85,5 +85,15 @@
     <action IterBinding="TblJvDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TblJvDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblJvDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblJvDView2Iterator" id="TotalDr">
+      <AttrNames>
+        <Item Value="TotalDr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblJvDView2Iterator" id="TotalCr">
+      <AttrNames>
+        <Item Value="TotalCr"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

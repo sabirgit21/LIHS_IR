@@ -135,7 +135,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblDonKindD"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -147,11 +148,23 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblDonKindD"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblDonKindD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblDonKindD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
 </ViewObject>

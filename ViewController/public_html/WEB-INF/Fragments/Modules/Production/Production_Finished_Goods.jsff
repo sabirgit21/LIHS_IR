@@ -258,7 +258,12 @@
                                         pattern="#{bindings.TblProFgDetailView2.hints.Qty.format}"/>
                     </af:inputText>
                   </af:column>
-                            <af:column headerText="Rate" id="c8">
+                            <af:column headerText="Rate" id="c8" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Rate}"
+       id="it12" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                               <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                             label="#{bindings.TblProFgDetailView2.hints.Rate.label}"
                                             required="#{bindings.TblProFgDetailView2.hints.Rate.mandatory}"
@@ -270,7 +275,12 @@
                                                   pattern="#{bindings.TblProFgDetailView2.hints.Rate.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Amount" id="c14">
+                            <af:column headerText="Amount" id="c14" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it23" placeholder="Search ">
+      </af:inputText>
+</f:facet>
                               <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                             label="#{bindings.TblProFgDetailView2.hints.Amount.label}"
                                             required="#{bindings.TblProFgDetailView2.hints.Amount.mandatory}"
@@ -281,6 +291,11 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblProFgDetailView2.hints.Amount.format}"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalAmount.inputValue}" id="ot1"    >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                           </af:table>
                   <af:spacer width="5" height="10" id="s3"/>

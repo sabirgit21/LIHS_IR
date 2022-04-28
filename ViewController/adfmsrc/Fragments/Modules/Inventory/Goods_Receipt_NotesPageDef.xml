@@ -115,5 +115,20 @@
     <action IterBinding="TblGrnDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <list IterBinding="TblGrnMView1Iterator" StaticList="false" Uses="LOV_StaticQcMId1" id="StaticQcMId1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGrnDView2Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGrnDView2Iterator" id="TotalTaxAmount">
+      <AttrNames>
+        <Item Value="TotalTaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblGrnDView2Iterator" id="TotalNetAmount">
+      <AttrNames>
+        <Item Value="TotalNetAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

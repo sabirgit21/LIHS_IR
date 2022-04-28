@@ -303,6 +303,11 @@
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblGinDView2.hints.Amount.format}"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalAmount.inputValue}" id="ot1"    >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                           </af:table>
                           <af:spacer width="5" height="10" id="s15"/>

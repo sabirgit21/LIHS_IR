@@ -28,7 +28,8 @@
        TblItnD.ITEM_L4_ID AS ITEM_L4ID2, 
        TblItnM.FROM_DEPARTMENT_ID, 
        TblItnM.ID AS ID2, 
-       TblItnM.FROM_PROJECT_ID"
+       TblItnM.FROM_PROJECT_ID, 
+       Sum(TblItnD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_ITN_D TblItnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_ITN_M TblItnM"
   Where="TblItnD.ITN_M_ID = TblItnM.ID(+)  
 AND TblItnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID              
@@ -305,6 +306,17 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="FromProjectId"
     EntityUsage="TblItnM"
     AliasName="FROM_PROJECT_ID"/>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblItnD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="ItemL4Id1"/>

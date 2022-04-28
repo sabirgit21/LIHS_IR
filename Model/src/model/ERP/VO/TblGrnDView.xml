@@ -27,7 +27,10 @@
        TblUom.ID AS ID1, 
        TblGrnD.TAX_PARC, 
        TblGrnD.TAX_AMOUNT, 
-       TblGrnD.NET_AMOUNT"
+       TblGrnD.NET_AMOUNT, 
+       Sum(TblGrnD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
+       Sum(TblGrnD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
+       Sum(TblGrnD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_GRN_D TblGrnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblGrnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID      
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -230,4 +233,36 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="NetAmount"
     EntityUsage="TblGrnD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblGrnD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="TotalTaxAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalTaxAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblGrnD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalNetAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalNetAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblGrnD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
 </ViewObject>

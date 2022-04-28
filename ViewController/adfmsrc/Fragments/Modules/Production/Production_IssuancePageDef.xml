@@ -131,5 +131,10 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblProIssMasterView1Iterator" StaticList="false" Uses="LOV_PorMasterIdstatic"
           id="PorMasterIdstatic" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblProIssDetailDView3Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -24,7 +24,8 @@
        TblItemL4.UOM_ID AS UOM_ID1, 
        TblItemL4.ITEM_L4_ID AS ITEM_L4ID1, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
+       TblUom.ID AS ID1, 
+       Sum(TblCashPurchD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_CASH_PURCH_D TblCashPurchD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblCashPurchD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID       
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -213,4 +214,15 @@ and TblItemL4.UOM_ID = TblUom.ID">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblCashPurchD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
 </ViewObject>

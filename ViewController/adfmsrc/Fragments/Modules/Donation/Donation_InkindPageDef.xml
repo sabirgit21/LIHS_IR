@@ -108,5 +108,10 @@
     <action IterBinding="TblDonKindDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <list IterBinding="TblProjectView1Iterator" StaticList="false" Uses="LOV_Category" id="Category"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblDonKindDView2Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

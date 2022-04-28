@@ -29,7 +29,8 @@
        TblGinM.FROM_PROJECT_ID, 
        TblGinM.ID AS ID2, 
        TblGinM.FROM_DEPARTMENT_ID, 
-       TblGinD.ITEM_L4_ID AS ITEM_L4ID2"
+       TblGinD.ITEM_L4_ID AS ITEM_L4ID2, 
+       Sum(TblGinD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_GIN_D TblGinD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom, TBL_GIN_M TblGinM"
   Where="TblGinD.GIN_M_ID = TblGinM.ID(+) 
 AND TblGinD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID            
@@ -313,6 +314,17 @@ and TblItemL4.UOM_ID = TblUom.ID">
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TotalAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblGinD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="ItemL4Id1"/>

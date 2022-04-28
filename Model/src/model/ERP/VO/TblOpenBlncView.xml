@@ -18,7 +18,9 @@
        TblOpenBlnc.CREATED_DATE, 
        TblOpenBlnc.CREATED_BY, 
        TblOpenBlnc.UPDATED_DATE, 
-       TblOpenBlnc.UPDATED_BY"
+       TblOpenBlnc.UPDATED_BY, 
+       Sum(TblOpenBlnc.Dr) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
+       Sum(TblOpenBlnc.Cr) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
   FromList="TBL_OPEN_BLNC TblOpenBlnc"
   Where="TblOpenBlnc.PROJECT_ID= nvl(:getProId,TblOpenBlnc.PROJECT_ID)">
   <Variable
@@ -27,7 +29,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblOpenBlncView"/>
   </Variable>
   <ViewAccessor
@@ -158,4 +159,24 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblOpenBlnc"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="TotalDr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalDr"
+    SQLType="NUMERIC"
+    Expression="Sum(TblOpenBlnc.Dr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalCr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalCr"
+    SQLType="NUMERIC"
+    Expression="Sum(TblOpenBlnc.Cr) OVER (PARTITION BY NULL ORDER BY NULL )"/>
 </ViewObject>

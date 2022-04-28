@@ -104,5 +104,10 @@
         <Item Value="ItnNo1"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="Tbl_ITN_R_D1Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

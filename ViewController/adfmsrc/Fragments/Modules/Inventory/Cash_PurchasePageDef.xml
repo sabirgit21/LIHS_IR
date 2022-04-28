@@ -99,5 +99,10 @@
     <action IterBinding="TblCashPurchDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblCashPurchDView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="TblCashPurchDView2Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
