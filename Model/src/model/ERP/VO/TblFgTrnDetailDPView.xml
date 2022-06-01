@@ -52,12 +52,6 @@
     EntityUsage="TblFgTrnDetailDP"
     AliasName="QTY"/>
   <ViewAttribute
-    Name="FgTrnDetailId"
-    PrecisionRule="true"
-    EntityAttrName="FgTrnDetailId"
-    EntityUsage="TblFgTrnDetailDP"
-    AliasName="FG_TRN_DETAIL_ID"/>
-  <ViewAttribute
     Name="ProjectDDId"
     PrecisionRule="true"
     EntityAttrName="ProjectDDId"
