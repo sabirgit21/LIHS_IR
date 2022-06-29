@@ -261,7 +261,7 @@
                                             required="#{bindings.TblPbpDView2.hints.Amount.mandatory}"
                                             columns="#{bindings.TblPbpDView2.hints.Amount.displayWidth}"
                                             maximumLength="#{bindings.TblPbpDView2.hints.Amount.precision}"
-                                            shortDesc="#{bindings.TblPbpDView2.hints.Amount.tooltip}" id="it17" readOnly="true">
+                                            shortDesc="#{bindings.TblPbpDView2.hints.Amount.tooltip}" id="it17" readOnly="false">
                                 <f:validator binding="#{row.bindings.Amount.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblPbpDView2.hints.Amount.format}"/>
