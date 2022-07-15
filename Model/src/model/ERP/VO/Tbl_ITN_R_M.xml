@@ -189,7 +189,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblItnM"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.Tbl_ITN_R_M.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.Tbl_ITN_R_M.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FromDepartmentId"
     PrecisionRule="true"

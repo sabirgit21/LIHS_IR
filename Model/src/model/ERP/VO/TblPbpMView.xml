@@ -311,13 +311,31 @@
     PrecisionRule="true"
     EntityAttrName="Todate"
     EntityUsage="TblPbpM"
-    AliasName="TODATE"/>
+    AliasName="TODATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPbpMView.Todate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPbpMView.Todate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Frdate"
     PrecisionRule="true"
     EntityAttrName="Frdate"
     EntityUsage="TblPbpM"
-    AliasName="FRDATE"/>
+    AliasName="FRDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPbpMView.Frdate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPbpMView.Frdate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CoaWht"
     PrecisionRule="true"
