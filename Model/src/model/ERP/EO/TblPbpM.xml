@@ -85,8 +85,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TBL_PBP_M"
-    IsNotNull="true"/>
+    TableName="TBL_PBP_M"/>
   <Attribute
     Name="Narration"
     Precision="300"
@@ -233,18 +232,6 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblPbpM.ChqNo"/>
-    </AttrArray>
-  </Key>
-  <Key
-    Name="TblPbpMClrDateCheck">
-    <DesignTime>
-      <Attr Name="_isNotNull" Value="true"/>
-      <Attr Name="_checkCondition" Value='"CLR_DATE" IS NOT NULL'/>
-      <Attr Name="_isCheck" Value="true"/>
-      <Attr Name="_DBObjectName" Value="TBL_PBP_MCLR_DATE_CHECK"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.ERP.EO.TblPbpM.ClrDate"/>
     </AttrArray>
   </Key>
   <Key
