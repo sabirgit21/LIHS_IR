@@ -528,7 +528,7 @@ public class VoucherPrint {
         Number sendPBPMID = (Number) actionEvent.getComponent().getAttributes().get("sendPBPMID");
         reportBean.setReportParameter("P_PBP_M_id", sendPBPMID.toString());
         
-        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Bank_Payment_Payable_Detail&");
+        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Supplier_Bank Payment&");
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
