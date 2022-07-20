@@ -49,6 +49,7 @@
                                                 contentStyle="width:300px;">
                                                 
                                 <af:selectItem label="Supplier ledger" value="supplierLedger" id="si9"/>
+                                <af:selectItem label="Supplier Payment Summary" value="supplierPaySumm" id="si1"/>
                                 
                                 
                                 

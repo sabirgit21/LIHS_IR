@@ -121,6 +121,25 @@ public class SuppGLReports {
             showMessage("Please Select Report Type");
             break;
 
+            case "supplierPaySumm":
+
+                //working for procedure call//
+                
+                if (getFromDate() != "" & getToDate() != "" & gotpblSuppid != null ) {
+                        
+                       
+                        BigDecimal P_AccID = gotpblSuppid;
+                        String P_Fdate = getFromDate();
+                        String P_Tdate = getToDate();
+                       
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Supplier_Bank Payment_Summ&");
+
+                    }
+                else{
+                    showMessage("Please Select From Date, Project, Item & Department");
+                }
+           
+
         }
 
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
