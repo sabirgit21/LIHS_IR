@@ -26,7 +26,9 @@
        TblPbpM.PROJECT_ID, 
        TblPbpM.TODATE, 
        TblPbpM.FRDATE, 
-       TblPbpM.COA_WHT"
+       TblPbpM.COA_WHT, 
+       TblPbpM.BC_GL_AC, 
+       TblPbpM.SUPP_GL_AC"
   FromList="TBL_PBP_M TblPbpM"
   Where="TblPbpM.PROJECT_ID = nvl(:getProID,TblPbpM.PROJECT_ID)">
   <Variable
@@ -354,6 +356,18 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="BcGlAc"
+    PrecisionRule="true"
+    EntityAttrName="BcGlAc"
+    EntityUsage="TblPbpM"
+    AliasName="BC_GL_AC"/>
+  <ViewAttribute
+    Name="SuppGlAc"
+    PrecisionRule="true"
+    EntityAttrName="SuppGlAc"
+    EntityUsage="TblPbpM"
+    AliasName="SUPP_GL_AC"/>
   <ViewLinkAccessor
     Name="TblPbpDView"
     ViewLink="model.ERP.VO.FkPbpDLink"

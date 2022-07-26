@@ -68,7 +68,21 @@
                     <f:validator binding="#{row.bindings.Type.validator}"/>
                   </af:inputText>
                 </af:column>-->
-                <af:column sortProperty="#{bindings.Bank_Setup1.hints.Name.name}" filterable="true" sortable="true"
+                  <af:column headerText="GL CA" id="c2" sortable="true"
+                             filterable="true" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GlL4Id}"
+       id="it2" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.GlL4Id.inputValue}" label="#{row.bindings.GlL4Id.label}"
+                                        required="#{bindings.Bank_Setup1.hints.GlL4Id.mandatory}"
+                                        shortDesc="#{bindings.Bank_Setup1.hints.GlL4Id.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.GlL4Id.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Bank_Setup1.hints.Name.name}" filterable="true" sortable="true"
                            headerText="Name" id="c3" width="200">
                             <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Name}"

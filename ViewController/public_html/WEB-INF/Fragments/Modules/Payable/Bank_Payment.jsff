@@ -83,6 +83,25 @@
                               <f:validator binding="#{bindings.Narration.validator}"/>
                             </af:inputText>
                             <af:spacer  id="s7"/>
+                            <af:inputText value="#{bindings.BcGlAc.inputValue}" label="BC GL AC"
+                                          required="#{bindings.BcGlAc.hints.mandatory}"
+                                          columns="#{bindings.BcGlAc.hints.displayWidth}"
+                                          maximumLength="#{bindings.BcGlAc.hints.precision}"
+                                          shortDesc="#{bindings.BcGlAc.hints.tooltip}" id="it25" readOnly="true">
+                              <f:validator binding="#{bindings.BcGlAc.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.BcGlAc.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s17"/>
+                            <af:inputText value="#{bindings.SuppGlAc.inputValue}"
+                                          label="Supp GL AC"
+                                          required="#{bindings.SuppGlAc.hints.mandatory}"
+                                          columns="#{bindings.SuppGlAc.hints.displayWidth}"
+                                          maximumLength="#{bindings.SuppGlAc.hints.precision}"
+                                          shortDesc="#{bindings.SuppGlAc.hints.tooltip}" id="it26" readOnly="true">
+                              <f:validator binding="#{bindings.SuppGlAc.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.SuppGlAc.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s13"/>
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project" readOnly="${sessionScope.sessPrID != ''}"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
@@ -118,7 +137,7 @@
                               <af:convertDateTime pattern="#{bindings.ClrDate.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s12"/>
-                            <af:spacer  id="s13"/>
+                            
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="17"

@@ -178,6 +178,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_BANK_CASH"/>
+  <Attribute
+    Name="GlL4Id"
+    ColumnName="GL_L4_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_BANK_CASH"/>
   <Key
     Name="PkBankCashId"
     PrimaryKey="true">

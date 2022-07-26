@@ -32,6 +32,7 @@
           <Item Value="Name"/>
           <Item Value="Desig"/>
           <Item Value="ContPerson"/>
+          <Item Value="GlL4Id"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

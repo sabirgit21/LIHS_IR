@@ -42,6 +42,8 @@ public class TblPbpMImpl extends EntityImpl {
         Todate,
         ProjectId,
         CoaWht,
+        BcGlAc,
+        SuppGlAc,
         TblPbpD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -85,6 +87,8 @@ public class TblPbpMImpl extends EntityImpl {
     public static final int TODATE = AttributesEnum.Todate.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int COAWHT = AttributesEnum.CoaWht.index();
+    public static final int BCGLAC = AttributesEnum.BcGlAc.index();
+    public static final int SUPPGLAC = AttributesEnum.SuppGlAc.index();
     public static final int TBLPBPD = AttributesEnum.TblPbpD.index();
 
     /**
@@ -371,6 +375,38 @@ public class TblPbpMImpl extends EntityImpl {
      */
     public void setCoaWht(BigDecimal value) {
         setAttributeInternal(COAWHT, value);
+    }
+
+    /**
+     * Gets the attribute value for BcGlAc, using the alias name BcGlAc.
+     * @return the value of BcGlAc
+     */
+    public BigDecimal getBcGlAc() {
+        return (BigDecimal) getAttributeInternal(BCGLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BcGlAc.
+     * @param value value to set the BcGlAc
+     */
+    public void setBcGlAc(BigDecimal value) {
+        setAttributeInternal(BCGLAC, value);
+    }
+
+    /**
+     * Gets the attribute value for SuppGlAc, using the alias name SuppGlAc.
+     * @return the value of SuppGlAc
+     */
+    public BigDecimal getSuppGlAc() {
+        return (BigDecimal) getAttributeInternal(SUPPGLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SuppGlAc.
+     * @param value value to set the SuppGlAc
+     */
+    public void setSuppGlAc(BigDecimal value) {
+        setAttributeInternal(SUPPGLAC, value);
     }
 
     /**
