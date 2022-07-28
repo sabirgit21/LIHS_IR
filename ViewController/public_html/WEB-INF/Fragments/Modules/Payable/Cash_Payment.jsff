@@ -91,6 +91,23 @@
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s71"/>
+                            <af:inputText value="#{bindings.ChqNo.inputValue}" label="Cheque No."
+                                          required="#{bindings.ChqNo.hints.mandatory}"
+                                          columns="#{bindings.ChqNo.hints.displayWidth}"
+                                          maximumLength="#{bindings.ChqNo.hints.precision}"
+                                          shortDesc="#{bindings.ChqNo.hints.tooltip}" id="it5">
+                              <f:validator binding="#{bindings.ChqNo.validator}"/>
+                            </af:inputText>
+                            <af:spacer  id="s14"/>
+                            <af:inputText value="#{bindings.ClrDate.inputValue}" label="Cheque Date"
+                                          required="#{bindings.ClrDate.hints.mandatory}"
+                                          columns="#{bindings.ClrDate.hints.displayWidth}"
+                                          maximumLength="#{bindings.ClrDate.hints.precision}"
+                                          shortDesc="#{bindings.ClrDate.hints.tooltip}" id="it13">
+                              <f:validator binding="#{bindings.ClrDate.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.ClrDate.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s15"/>
                             <af:inputDate value="#{bindings.Frdate.inputValue}" label="From Date"
                                           required="#{bindings.Frdate.hints.mandatory}"
                                           columns="#{bindings.Frdate.hints.displayWidth}"
@@ -107,8 +124,7 @@
                               <af:convertDateTime pattern="#{bindings.Todate.format}"/>
                             </af:inputDate>
                             <af:spacer  id="s13"/>
-                            <af:spacer  id="s14"/>
-                            <af:spacer  id="s15"/>
+                            
                             <af:spacer  id="s16"/>
                             <af:spacer  id="s17"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."

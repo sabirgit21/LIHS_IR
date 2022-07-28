@@ -23,7 +23,9 @@
        TblPcpM.TODATE, 
        TblPcpM.FRDATE, 
        TblPcpM.PROJECT_ID, 
-       TblPcpM.COA_WHT"
+       TblPcpM.COA_WHT, 
+       TblPcpM.CHQ_NO, 
+       TblPcpM.CLR_DATE"
   FromList="TBL_PCP_M TblPcpM"
   Where="TblPcpM.PROJECT_ID = nvl(:getProID,TblPcpM.PROJECT_ID)">
   <Variable
@@ -308,6 +310,27 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ChqNo"
+    PrecisionRule="true"
+    EntityAttrName="ChqNo"
+    EntityUsage="TblPcpM"
+    AliasName="CHQ_NO"/>
+  <ViewAttribute
+    Name="ClrDate"
+    PrecisionRule="true"
+    EntityAttrName="ClrDate"
+    EntityUsage="TblPcpM"
+    AliasName="CLR_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPcpMView.ClrDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPcpMView.ClrDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

@@ -109,5 +109,15 @@
         <Item Value="TotalAmount"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblPcpMView1Iterator" id="ChqNo">
+      <AttrNames>
+        <Item Value="ChqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPcpMView1Iterator" id="ClrDate">
+      <AttrNames>
+        <Item Value="ClrDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

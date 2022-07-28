@@ -39,6 +39,8 @@ public class TblPcpMImpl extends EntityImpl {
         ProjectId,
         Todate,
         CoaWht,
+        ChqNo,
+        ClrDate,
         TblPcpD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -79,6 +81,8 @@ public class TblPcpMImpl extends EntityImpl {
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int TODATE = AttributesEnum.Todate.index();
     public static final int COAWHT = AttributesEnum.CoaWht.index();
+    public static final int CHQNO = AttributesEnum.ChqNo.index();
+    public static final int CLRDATE = AttributesEnum.ClrDate.index();
     public static final int TBLPCPD = AttributesEnum.TblPcpD.index();
 
     /**
@@ -317,6 +321,38 @@ public class TblPcpMImpl extends EntityImpl {
      */
     public void setCoaWht(BigDecimal value) {
         setAttributeInternal(COAWHT, value);
+    }
+
+    /**
+     * Gets the attribute value for ChqNo, using the alias name ChqNo.
+     * @return the value of ChqNo
+     */
+    public String getChqNo() {
+        return (String) getAttributeInternal(CHQNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ChqNo.
+     * @param value value to set the ChqNo
+     */
+    public void setChqNo(String value) {
+        setAttributeInternal(CHQNO, value);
+    }
+
+    /**
+     * Gets the attribute value for ClrDate, using the alias name ClrDate.
+     * @return the value of ClrDate
+     */
+    public Timestamp getClrDate() {
+        return (Timestamp) getAttributeInternal(CLRDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ClrDate.
+     * @param value value to set the ClrDate
+     */
+    public void setClrDate(Timestamp value) {
+        setAttributeInternal(CLRDATE, value);
     }
 
     /**
