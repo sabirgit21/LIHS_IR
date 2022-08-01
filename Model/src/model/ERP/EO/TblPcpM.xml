@@ -166,6 +166,20 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="TBL_PCP_M"/>
+  <Attribute
+    Name="BcGlAc"
+    ColumnName="BC_GL_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PCP_M"/>
+  <Attribute
+    Name="SuppGlAc"
+    ColumnName="SUPP_GL_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PCP_M"/>
   <AccessorAttribute
     Name="TblPcpD"
     Association="model.ERP.EO.FkPcpDMAssoc"

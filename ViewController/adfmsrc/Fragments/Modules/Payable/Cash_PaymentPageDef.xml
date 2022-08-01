@@ -119,5 +119,15 @@
         <Item Value="ClrDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblPcpMView1Iterator" id="BcGlAc">
+      <AttrNames>
+        <Item Value="BcGlAc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPcpMView1Iterator" id="SuppGlAc">
+      <AttrNames>
+        <Item Value="SuppGlAc"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
