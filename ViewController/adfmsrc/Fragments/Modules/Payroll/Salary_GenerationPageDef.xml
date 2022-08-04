@@ -108,6 +108,7 @@
           <Item Value="LoanAmount"/>
           <Item Value="TaxAmount"/>
           <Item Value="NetDed"/>
+          <Item Value="GrossAmt"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

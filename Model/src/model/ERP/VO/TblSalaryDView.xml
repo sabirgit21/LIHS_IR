@@ -173,7 +173,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblSalaryD"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -185,11 +186,18 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblSalaryD"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblSalaryD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="GrossAmt"
+    PrecisionRule="true"
+    EntityAttrName="GrossAmt"
+    EntityUsage="TblSalaryD"
+    AliasName="GROSS_AMT"/>
 </ViewObject>

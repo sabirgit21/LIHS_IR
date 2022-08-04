@@ -361,6 +361,24 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.LoanAmount.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Gross Amount" id="c20"
+                                       sortable="true" filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrossAmt}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.GrossAmt.inputValue}"
+                                            label="#{bindings.TblSalaryDView2.hints.GrossAmt.label}"
+                                            required="#{bindings.TblSalaryDView2.hints.GrossAmt.mandatory}"
+                                            columns="#{bindings.TblSalaryDView2.hints.GrossAmt.displayWidth}"
+                                            maximumLength="#{bindings.TblSalaryDView2.hints.GrossAmt.precision}"
+                                            shortDesc="#{bindings.TblSalaryDView2.hints.GrossAmt.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.GrossAmt.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.GrossAmt.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.TaxAmount.name}" filterable="true"
                                        sortable="true" headerText="Tax Amount"
                                        id="c18">

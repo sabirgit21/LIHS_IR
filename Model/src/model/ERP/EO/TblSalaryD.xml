@@ -194,6 +194,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SALARY_D"/>
+  <Attribute
+    Name="GrossAmt"
+    ColumnName="GROSS_AMT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_SALARY_D"/>
   <AccessorAttribute
     Name="TblSalaryM"
     Association="model.ERP.EO.FkSalaryDMAssoc"

@@ -46,6 +46,7 @@ public class TblSalaryDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        GrossAmt,
         TblSalaryM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -69,6 +70,7 @@ public class TblSalaryDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int SALARYMID = AttributesEnum.SalaryMId.index();
     public static final int EMPID = AttributesEnum.EmpId.index();
@@ -93,12 +95,20 @@ public class TblSalaryDImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int GROSSAMT = AttributesEnum.GrossAmt.index();
     public static final int TBLSALARYM = AttributesEnum.TblSalaryM.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblSalaryDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblSalaryD");
     }
 
     /**
@@ -470,18 +480,35 @@ public class TblSalaryDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for GrossAmt, using the alias name GrossAmt.
+     * @return the value of GrossAmt
+     */
+    public BigDecimal getGrossAmt() {
+        return (BigDecimal) getAttributeInternal(GROSSAMT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrossAmt.
+     * @param value value to set the GrossAmt
+     */
+    public void setGrossAmt(BigDecimal value) {
+        setAttributeInternal(GROSSAMT, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblSalaryM() {
-        return (EntityImpl) getAttributeInternal(TBLSALARYM);
+    public TblSalaryMImpl getTblSalaryM() {
+        return (TblSalaryMImpl) getAttributeInternal(TBLSALARYM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblSalaryM(EntityImpl value) {
+    public void setTblSalaryM(TblSalaryMImpl value) {
         setAttributeInternal(TBLSALARYM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -490,13 +517,6 @@ public class TblSalaryDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblSalaryD");
     }
 
     /**
