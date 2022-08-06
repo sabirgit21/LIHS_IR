@@ -24,7 +24,8 @@
        TblGrnM.CREATED_DATE, 
        TblGrnM.CREATED_BY, 
        TblGrnM.UPDATED_DATE, 
-       TblGrnM.UPDATED_BY"
+       TblGrnM.UPDATED_BY, 
+       TblGrnM.SUPP_GL_AC"
   FromList="TBL_GRN_M TblGrnM"
   Where="TblGrnM.PROJECT_ID = nvl(:getProId,TblGrnM.PROJECT_ID)">
   <Variable
@@ -336,6 +337,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblGrnM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="SuppGlAc"
+    PrecisionRule="true"
+    EntityAttrName="SuppGlAc"
+    EntityUsage="TblGrnM"
+    AliasName="SUPP_GL_AC"/>
   <ViewLinkAccessor
     Name="TblGrnDView"
     ViewLink="model.ERP.VO.FkGrnDMLink"

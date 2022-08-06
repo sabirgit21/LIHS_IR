@@ -105,6 +105,17 @@
                     <f:validator binding="#{bindings.Carrier.validator}"/>
                   </af:inputText>
                   <af:spacer  id="s12"/>
+                            <af:inputText value="#{bindings.SuppGlAc.inputValue}"
+                                          label="Supp GL AC"
+                                          required="#{bindings.SuppGlAc.hints.mandatory}"
+                                          columns="#{bindings.SuppGlAc.hints.displayWidth}"
+                                          maximumLength="#{bindings.SuppGlAc.hints.precision}"
+                                          shortDesc="#{bindings.SuppGlAc.hints.tooltip}" id="it26"
+                                          contentStyle="width:150px;" readOnly="true">
+                              <f:validator binding="#{bindings.SuppGlAc.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.SuppGlAc.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s15"/>
                             <af:selectOneChoice value="#{bindings.StaticQcMId1.inputValue}"
                                                 label="QC"
                                                 required="#{bindings.StaticQcMId1.hints.mandatory}"

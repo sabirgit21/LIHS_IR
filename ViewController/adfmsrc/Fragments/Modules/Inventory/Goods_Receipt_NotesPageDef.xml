@@ -130,5 +130,10 @@
         <Item Value="TotalNetAmount"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblGrnMView1Iterator" id="SuppGlAc">
+      <AttrNames>
+        <Item Value="SuppGlAc"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

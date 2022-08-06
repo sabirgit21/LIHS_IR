@@ -162,6 +162,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRN_M"/>
+  <Attribute
+    Name="SuppGlAc"
+    ColumnName="SUPP_GL_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRN_M"/>
   <AccessorAttribute
     Name="TblGrnD"
     Association="model.ERP.EO.FkGrnDMAssoc"
