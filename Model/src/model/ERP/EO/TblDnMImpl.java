@@ -37,6 +37,7 @@ public class TblDnMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        SuppGlAc,
         TblDnD,
         TblGrnM;
         private static AttributesEnum[] vals = null;
@@ -76,6 +77,7 @@ public class TblDnMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int SUPPGLAC = AttributesEnum.SuppGlAc.index();
     public static final int TBLDND = AttributesEnum.TblDnD.index();
     public static final int TBLGRNM = AttributesEnum.TblGrnM.index();
 
@@ -283,6 +285,22 @@ public class TblDnMImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for SuppGlAc, using the alias name SuppGlAc.
+     * @return the value of SuppGlAc
+     */
+    public BigDecimal getSuppGlAc() {
+        return (BigDecimal) getAttributeInternal(SUPPGLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SuppGlAc.
+     * @param value value to set the SuppGlAc
+     */
+    public void setSuppGlAc(BigDecimal value) {
+        setAttributeInternal(SUPPGLAC, value);
     }
 
     /**

@@ -93,6 +93,17 @@
                               <f:validator binding="#{bindings.PblSuppId.validator}"/>
                             </af:selectOneChoice>
                              <af:spacer  id="s10"/>
+                            <af:inputText value="#{bindings.SuppGlAc.inputValue}"
+                                          label="Supp GL AC"
+                                          required="#{bindings.SuppGlAc.hints.mandatory}"
+                                          columns="#{bindings.SuppGlAc.hints.displayWidth}"
+                                          maximumLength="#{bindings.SuppGlAc.hints.precision}"
+                                          shortDesc="#{bindings.SuppGlAc.hints.tooltip}" id="it15" readOnly="true"
+                                                contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.SuppGlAc.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.SuppGlAc.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s14"/>
                              <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"
                                           columns="17"
