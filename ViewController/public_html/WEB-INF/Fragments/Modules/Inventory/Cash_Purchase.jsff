@@ -85,7 +85,14 @@
                               <f:validator binding="#{bindings.DepartmentId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s10"/>
-                            <af:spacer  id="s11"/>
+                            <af:inputText value="#{bindings.CbGlAc.inputValue}" label="Supp GL AC"
+                                          required="#{bindings.CbGlAc.hints.mandatory}"
+                                          columns="#{bindings.CbGlAc.hints.displayWidth}"
+                                          maximumLength="#{bindings.CbGlAc.hints.precision}"
+                                          shortDesc="#{bindings.CbGlAc.hints.tooltip}" id="it13" contentStyle="width:150px;">
+                              <f:validator binding="#{bindings.CbGlAc.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.CbGlAc.format}"/>
+                            </af:inputText>
                             <af:spacer  id="s12"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"

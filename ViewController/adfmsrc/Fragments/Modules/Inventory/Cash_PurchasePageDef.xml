@@ -104,5 +104,10 @@
         <Item Value="TotalAmount"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblCashPurchMView1Iterator" id="CbGlAc">
+      <AttrNames>
+        <Item Value="CbGlAc"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

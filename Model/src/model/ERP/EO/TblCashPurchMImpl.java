@@ -36,6 +36,7 @@ public class TblCashPurchMImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        CbGlAc,
         TblCashPurchD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -73,6 +74,7 @@ public class TblCashPurchMImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int CBGLAC = AttributesEnum.CbGlAc.index();
     public static final int TBLCASHPURCHD = AttributesEnum.TblCashPurchD.index();
 
     /**
@@ -263,6 +265,22 @@ public class TblCashPurchMImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for CbGlAc, using the alias name CbGlAc.
+     * @return the value of CbGlAc
+     */
+    public BigDecimal getCbGlAc() {
+        return (BigDecimal) getAttributeInternal(CBGLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CbGlAc.
+     * @param value value to set the CbGlAc
+     */
+    public void setCbGlAc(BigDecimal value) {
+        setAttributeInternal(CBGLAC, value);
     }
 
     /**

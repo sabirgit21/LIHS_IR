@@ -20,7 +20,8 @@
        TblCashPurchM.CREATED_DATE, 
        TblCashPurchM.CREATED_BY, 
        TblCashPurchM.UPDATED_DATE, 
-       TblCashPurchM.UPDATED_BY"
+       TblCashPurchM.UPDATED_BY, 
+       TblCashPurchM.CB_GL_AC"
   FromList="TBL_CASH_PURCH_M TblCashPurchM"
   Where="TblCashPurchM.PROJECT_ID = nvl(:getProId,TblCashPurchM.PROJECT_ID)">
   <Variable
@@ -229,6 +230,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCashPurchM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CbGlAc"
+    PrecisionRule="true"
+    EntityAttrName="CbGlAc"
+    EntityUsage="TblCashPurchM"
+    AliasName="CB_GL_AC"/>
   <ViewLinkAccessor
     Name="TblCashPurchDView"
     ViewLink="model.ERP.VO.FkCpDMLink"
