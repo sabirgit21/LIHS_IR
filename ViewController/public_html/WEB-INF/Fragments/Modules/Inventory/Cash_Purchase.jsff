@@ -88,7 +88,7 @@
                             <af:inputText value="#{bindings.CbGlAc.inputValue}" label="Supp GL AC"
                                           required="#{bindings.CbGlAc.hints.mandatory}"
                                           columns="#{bindings.CbGlAc.hints.displayWidth}"
-                                          maximumLength="#{bindings.CbGlAc.hints.precision}"
+                                          maximumLength="#{bindings.CbGlAc.hints.precision}" readOnly="true"
                                           shortDesc="#{bindings.CbGlAc.hints.tooltip}" id="it13" contentStyle="width:150px;">
                               <f:validator binding="#{bindings.CbGlAc.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.CbGlAc.format}"/>
