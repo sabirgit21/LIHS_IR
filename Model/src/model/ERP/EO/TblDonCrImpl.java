@@ -39,6 +39,8 @@ public class TblDonCrImpl extends EntityImpl {
         UpdatedBy,
         Category,
         Exp,
+        GlCa,
+        DonGlCa,
         TblDonSetup,
         TblDonType;
         private static AttributesEnum[] vals = null;
@@ -82,6 +84,8 @@ public class TblDonCrImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int CATEGORY = AttributesEnum.Category.index();
     public static final int EXP = AttributesEnum.Exp.index();
+    public static final int GLCA = AttributesEnum.GlCa.index();
+    public static final int DONGLCA = AttributesEnum.DonGlCa.index();
     public static final int TBLDONSETUP = AttributesEnum.TblDonSetup.index();
     public static final int TBLDONTYPE = AttributesEnum.TblDonType.index();
 
@@ -353,6 +357,38 @@ public class TblDonCrImpl extends EntityImpl {
      */
     public void setExp(BigDecimal value) {
         setAttributeInternal(EXP, value);
+    }
+
+    /**
+     * Gets the attribute value for GlCa, using the alias name GlCa.
+     * @return the value of GlCa
+     */
+    public BigDecimal getGlCa() {
+        return (BigDecimal) getAttributeInternal(GLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlCa.
+     * @param value value to set the GlCa
+     */
+    public void setGlCa(BigDecimal value) {
+        setAttributeInternal(GLCA, value);
+    }
+
+    /**
+     * Gets the attribute value for DonGlCa, using the alias name DonGlCa.
+     * @return the value of DonGlCa
+     */
+    public BigDecimal getDonGlCa() {
+        return (BigDecimal) getAttributeInternal(DONGLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DonGlCa.
+     * @param value value to set the DonGlCa
+     */
+    public void setDonGlCa(BigDecimal value) {
+        setAttributeInternal(DONGLCA, value);
     }
 
     /**

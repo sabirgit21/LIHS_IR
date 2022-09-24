@@ -96,5 +96,15 @@
         <Item Value="Exp"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblDonCrView1Iterator" id="GlCa">
+      <AttrNames>
+        <Item Value="GlCa"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblDonCrView1Iterator" id="DonGlCa">
+      <AttrNames>
+        <Item Value="DonGlCa"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

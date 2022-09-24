@@ -44,6 +44,7 @@ public class TblDonSetupImpl extends EntityImpl {
         MonthlyComit,
         DonorType,
         DonCat,
+        GlL4Id,
         TblDonCr,
         TblDonKindM;
         private static AttributesEnum[] vals = null;
@@ -91,6 +92,7 @@ public class TblDonSetupImpl extends EntityImpl {
     public static final int MONTHLYCOMIT = AttributesEnum.MonthlyComit.index();
     public static final int DONORTYPE = AttributesEnum.DonorType.index();
     public static final int DONCAT = AttributesEnum.DonCat.index();
+    public static final int GLL4ID = AttributesEnum.GlL4Id.index();
     public static final int TBLDONCR = AttributesEnum.TblDonCr.index();
     public static final int TBLDONKINDM = AttributesEnum.TblDonKindM.index();
 
@@ -426,6 +428,22 @@ public class TblDonSetupImpl extends EntityImpl {
      */
     public void setDonCat(String value) {
         setAttributeInternal(DONCAT, value);
+    }
+
+    /**
+     * Gets the attribute value for GlL4Id, using the alias name GlL4Id.
+     * @return the value of GlL4Id
+     */
+    public BigDecimal getGlL4Id() {
+        return (BigDecimal) getAttributeInternal(GLL4ID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlL4Id.
+     * @param value value to set the GlL4Id
+     */
+    public void setGlL4Id(BigDecimal value) {
+        setAttributeInternal(GLL4ID, value);
     }
 
     /**

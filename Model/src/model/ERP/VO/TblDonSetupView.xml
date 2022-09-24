@@ -29,7 +29,8 @@
        TblDonSetup.UPDATED_BY, 
        TblDonSetup.DONOR_TYPE, 
        TblDonSetup.MONTHLY_COMIT, 
-       TblDonSetup.DON_CAT"
+       TblDonSetup.DON_CAT, 
+       TblDonSetup.GL_L4_ID"
   FromList="TBL_DON_SETUP TblDonSetup"
   Where="TblDonSetup.PROJECT_ID = nvl(:getProId,TblDonSetup.PROJECT_ID)">
   <Variable
@@ -51,6 +52,10 @@
   <ViewAccessor
     Name="Don_Category_LOV1"
     ViewObjectName="model.LOV.Don_Category_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ProjectId"
@@ -103,6 +108,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlL4Id"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -255,6 +278,20 @@
     EntityUsage="TblDonSetup"
     AliasName="DON_CAT"
     LOVName="LOV_DonCat">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlL4Id"
+    PrecisionRule="true"
+    EntityAttrName="GlL4Id"
+    EntityUsage="TblDonSetup"
+    AliasName="GL_L4_ID"
+    LOVName="LOV_GlL4Id">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

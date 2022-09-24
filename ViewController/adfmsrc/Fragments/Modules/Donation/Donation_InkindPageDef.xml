@@ -113,5 +113,10 @@
         <Item Value="TotalAmount"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblDonKindMView1Iterator" id="DonGlCa">
+      <AttrNames>
+        <Item Value="DonGlCa"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

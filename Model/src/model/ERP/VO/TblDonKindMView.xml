@@ -23,7 +23,8 @@
        TblDonKindM.CREATED_BY, 
        TblDonKindM.UPDATED_DATE, 
        TblDonKindM.UPDATED_BY, 
-       TblDonKindM.CATEGORY"
+       TblDonKindM.CATEGORY, 
+       TblDonKindM.DON_GL_CA"
   FromList="TBL_DON_KIND_M TblDonKindM"
   Where="TblDonKindM.PROJECT_ID = nvl(:getProId,TblDonKindM.PROJECT_ID)">
   <Variable
@@ -311,6 +312,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="DonGlCa"
+    PrecisionRule="true"
+    EntityAttrName="DonGlCa"
+    EntityUsage="TblDonKindM"
+    AliasName="DON_GL_CA"/>
   <ViewLinkAccessor
     Name="TblDonKindDView"
     ViewLink="model.ERP.VO.FkDonKindDMLink"

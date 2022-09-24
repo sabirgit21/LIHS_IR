@@ -25,7 +25,9 @@
        TblDonCr.CREATED_BY, 
        TblDonCr.UPDATED_DATE, 
        TblDonCr.UPDATED_BY, 
-       TblDonCr.CATEGORY"
+       TblDonCr.CATEGORY, 
+       TblDonCr.GL_CA, 
+       TblDonCr.DON_GL_CA"
   FromList="TBL_DON_CR TblDonCr"
   Where="TblDonCr.PROJECT_ID =  nvl(:getProId,TblDonCr.PROJECT_ID)">
   <Variable
@@ -333,4 +335,16 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="GlCa"
+    PrecisionRule="true"
+    EntityAttrName="GlCa"
+    EntityUsage="TblDonCr"
+    AliasName="GL_CA"/>
+  <ViewAttribute
+    Name="DonGlCa"
+    PrecisionRule="true"
+    EntityAttrName="DonGlCa"
+    EntityUsage="TblDonCr"
+    AliasName="DON_GL_CA"/>
 </ViewObject>

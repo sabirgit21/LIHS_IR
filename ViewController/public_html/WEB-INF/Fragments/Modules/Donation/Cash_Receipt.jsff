@@ -86,7 +86,7 @@
                             <af:selectOneChoice value="#{bindings.Category.inputValue}"
                                                 label="Category"
                                                 required="#{bindings.Category.hints.mandatory}"
-                                                shortDesc="#{bindings.Category.hints.tooltip}" id="soc9">
+                                                shortDesc="#{bindings.Category.hints.tooltip}" id="soc9" contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.Category.items}" id="si9"/>
                               <f:validator binding="#{bindings.Category.validator}"/>
                             </af:selectOneChoice>
@@ -126,7 +126,25 @@
                               <f:validator binding="#{bindings.ChqDate.validator}"/>
                               <af:convertDateTime pattern="#{bindings.ChqDate.format}"/>
                             </af:inputDate>
-                            <af:spacer  id="s12"/>
+                             <af:spacer  id="s12"/>
+                            <af:inputText value="#{bindings.GlCa.inputValue}" label="GL CA"
+                                          required="#{bindings.GlCa.hints.mandatory}"
+                                          columns="#{bindings.GlCa.hints.displayWidth}"
+                                          maximumLength="#{bindings.GlCa.hints.precision}"
+                                          shortDesc="#{bindings.GlCa.hints.tooltip}" id="it6" contentStyle="width:150px;" readOnly="true">
+                              <f:validator binding="#{bindings.GlCa.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.GlCa.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s15"/>
+                            <af:inputText value="#{bindings.DonGlCa.inputValue}" label="Don GL CA"
+                                          required="#{bindings.DonGlCa.hints.mandatory}"
+                                          columns="#{bindings.DonGlCa.hints.displayWidth}"
+                                          maximumLength="#{bindings.DonGlCa.hints.precision}"
+                                          shortDesc="#{bindings.DonGlCa.hints.tooltip}" id="it19" contentStyle="width:150px;" readOnly="true">
+                              <f:validator binding="#{bindings.DonGlCa.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.DonGlCa.format}"/>
+                            </af:inputText>
+                            <af:spacer  id="s16"/>
                             <af:inputText value="#{bindings.Amount.inputValue}" label="Amount"
                                           required="#{bindings.Amount.hints.mandatory}"
                                           columns="#{bindings.Amount.hints.displayWidth}"

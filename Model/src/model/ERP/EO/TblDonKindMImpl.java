@@ -39,6 +39,7 @@ public class TblDonKindMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         Category,
+        DonGlCa,
         TblDonKindD,
         TblDonSetup,
         TblDonType;
@@ -81,6 +82,7 @@ public class TblDonKindMImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int CATEGORY = AttributesEnum.Category.index();
+    public static final int DONGLCA = AttributesEnum.DonGlCa.index();
     public static final int TBLDONKINDD = AttributesEnum.TblDonKindD.index();
     public static final int TBLDONSETUP = AttributesEnum.TblDonSetup.index();
     public static final int TBLDONTYPE = AttributesEnum.TblDonType.index();
@@ -321,6 +323,22 @@ public class TblDonKindMImpl extends EntityImpl {
      */
     public void setCategory(String value) {
         setAttributeInternal(CATEGORY, value);
+    }
+
+    /**
+     * Gets the attribute value for DonGlCa, using the alias name DonGlCa.
+     * @return the value of DonGlCa
+     */
+    public BigDecimal getDonGlCa() {
+        return (BigDecimal) getAttributeInternal(DONGLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DonGlCa.
+     * @param value value to set the DonGlCa
+     */
+    public void setDonGlCa(BigDecimal value) {
+        setAttributeInternal(DONGLCA, value);
     }
 
     /**

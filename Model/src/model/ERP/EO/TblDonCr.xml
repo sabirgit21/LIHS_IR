@@ -186,6 +186,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_DON_CR"/>
+  <Attribute
+    Name="GlCa"
+    ColumnName="GL_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_CR"/>
+  <Attribute
+    Name="DonGlCa"
+    ColumnName="DON_GL_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_CR"/>
   <AccessorAttribute
     Name="TblDonSetup"
     Association="model.ERP.EO.FkDonCrDonSetupAssoc"

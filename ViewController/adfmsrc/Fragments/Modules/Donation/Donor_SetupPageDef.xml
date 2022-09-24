@@ -35,6 +35,7 @@
           <Item Value="DonorType"/>
           <Item Value="MonthlyComit"/>
           <Item Value="DonCat"/>
+          <Item Value="GlL4Id"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

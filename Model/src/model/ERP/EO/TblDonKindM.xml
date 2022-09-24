@@ -168,6 +168,13 @@
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="DonGlCa"
+    ColumnName="DON_GL_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_KIND_M"/>
   <AccessorAttribute
     Name="TblDonKindD"
     Association="model.ERP.EO.FkDonKindDMAssoc"
