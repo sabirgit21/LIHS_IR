@@ -107,6 +107,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"/>
+  <Attribute
+    Name="ConsC"
+    ColumnName="CONS_C"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4"/>
   <AccessorAttribute
     Name="TblOpenBlncInv"
     Association="model.ERP.EO.FkOpenBlncInvItemL4IdAssoc"

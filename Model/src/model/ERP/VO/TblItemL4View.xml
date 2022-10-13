@@ -101,6 +101,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ConsC"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ConsC"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblItemL4"
     Entity="model.ERP.EO.TblItemL4"/>
@@ -156,6 +174,20 @@
     EntityUsage="TblItemL4"
     AliasName="AST"
     LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ConsC"
+    PrecisionRule="true"
+    EntityAttrName="ConsC"
+    EntityUsage="TblItemL4"
+    AliasName="CONS_C"
+    LOVName="LOV_ConsC">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

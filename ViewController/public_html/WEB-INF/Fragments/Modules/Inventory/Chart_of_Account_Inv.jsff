@@ -327,6 +327,20 @@
                           <f:validator binding="#{row.bindings.GlCa.validator}"/>
                         </af:selectOneChoice>
                       </af:column>
+                      <af:column headerText="CONS_C" id="c20" sortable="true"
+                                 filterable="true" width="300">
+                                  <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.ConsC}"
+                                   id="it28" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                        <af:selectOneChoice value="#{row.bindings.ConsC.inputValue}" label="#{row.bindings.ConsC.label}"
+                                            required="#{bindings.TblItemL4View3.hints.ConsC.mandatory}"
+                                            shortDesc="#{bindings.TblItemL4View3.hints.ConsC.tooltip}" id="soc11">
+                          <f:selectItems value="#{row.bindings.ConsC.items}" id="si11"/>
+                          <f:validator binding="#{row.bindings.ConsC.validator}"/>
+                        </af:selectOneChoice>
+                      </af:column>
                       <af:column headerText="UOM" id="c17" sortable="true" filterable="true">
                           <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.UomId}"
@@ -424,7 +438,7 @@
                     </af:inputText>
                   </af:column>
                             <af:column headerText="GL CA" id="c19"
-                                       sortable="true" filterable="true">
+                                       sortable="true" filterable="true" width="250">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.GlCa}"
        id="it27" placeholder="Search ">
@@ -436,6 +450,21 @@
                                                   shortDesc="#{bindings.TblItemL4View1.hints.GlCa.tooltip}" id="soc10" readOnly="true">
                                 <f:selectItems value="#{row.bindings.GlCa.items}" id="si10"/>
                                 <f:validator binding="#{row.bindings.GlCa.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="CONS_C" id="c21"
+                                       sortable="true" filterable="true" width="250">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ConsC}"
+       id="it29" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ConsC.inputValue}"
+                                                  label="#{row.bindings.ConsC.label}"
+                                                  required="#{bindings.TblItemL4View1.hints.ConsC.mandatory}"
+                                                  shortDesc="#{bindings.TblItemL4View1.hints.ConsC.tooltip}" id="soc12" readOnly="true">
+                                <f:selectItems value="#{row.bindings.ConsC.items}" id="si12"/>
+                                <f:validator binding="#{row.bindings.ConsC.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="UOM" id="c14" sortable="true" filterable="true">
