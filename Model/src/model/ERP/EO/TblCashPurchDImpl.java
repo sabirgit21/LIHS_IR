@@ -34,6 +34,7 @@ public class TblCashPurchDImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        GlCa,
         TblCashPurchM;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -57,6 +58,7 @@ public class TblCashPurchDImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int CASHPURCHMID = AttributesEnum.CashPurchMId.index();
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
@@ -69,12 +71,20 @@ public class TblCashPurchDImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int GLCA = AttributesEnum.GlCa.index();
     public static final int TBLCASHPURCHM = AttributesEnum.TblCashPurchM.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblCashPurchDImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblCashPurchD");
     }
 
     /**
@@ -254,18 +264,35 @@ public class TblCashPurchDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for GlCa, using the alias name GlCa.
+     * @return the value of GlCa
+     */
+    public BigDecimal getGlCa() {
+        return (BigDecimal) getAttributeInternal(GLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlCa.
+     * @param value value to set the GlCa
+     */
+    public void setGlCa(BigDecimal value) {
+        setAttributeInternal(GLCA, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblCashPurchM() {
-        return (EntityImpl) getAttributeInternal(TBLCASHPURCHM);
+    public TblCashPurchMImpl getTblCashPurchM() {
+        return (TblCashPurchMImpl) getAttributeInternal(TBLCASHPURCHM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblCashPurchM(EntityImpl value) {
+    public void setTblCashPurchM(TblCashPurchMImpl value) {
         setAttributeInternal(TBLCASHPURCHM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -274,13 +301,6 @@ public class TblCashPurchDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblCashPurchD");
     }
 
     /**

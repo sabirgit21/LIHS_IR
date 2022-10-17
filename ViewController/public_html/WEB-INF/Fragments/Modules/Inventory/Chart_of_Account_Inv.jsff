@@ -327,7 +327,7 @@
                           <f:validator binding="#{row.bindings.GlCa.validator}"/>
                         </af:selectOneChoice>
                       </af:column>
-                      <af:column headerText="CONS_C" id="c20" sortable="true"
+                      <af:column headerText="CONS_CA" id="c20" sortable="true"
                                  filterable="true" width="300">
                                   <f:facet name="filter">
                                   <af:inputText value="#{vs.filterCriteria.ConsC}"
@@ -452,7 +452,7 @@
                                 <f:validator binding="#{row.bindings.GlCa.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="CONS_C" id="c21"
+                            <af:column headerText="CONS_CA" id="c21"
                                        sortable="true" filterable="true" width="250">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ConsC}"

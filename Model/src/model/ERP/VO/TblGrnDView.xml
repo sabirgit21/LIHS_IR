@@ -28,9 +28,10 @@
        TblGrnD.TAX_PARC, 
        TblGrnD.TAX_AMOUNT, 
        TblGrnD.NET_AMOUNT, 
-       Sum(TblGrnD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
-       Sum(TblGrnD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR, 
-       Sum(TblGrnD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
+       Sum(TblGrnD.AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalAmount, 
+       Sum(TblGrnD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalTaxAmount, 
+       Sum(TblGrnD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalNetAmount, 
+       TblGrnD.GL_CA"
   FromList="TBL_GRN_D TblGrnD, TBL_ITEM_L4 TblItemL4, TBL_UOM TblUom"
   Where="TblGrnD.ITEM_L4_ID = TblItemL4.ITEM_L4_ID      
 and TblItemL4.UOM_ID = TblUom.ID">
@@ -41,6 +42,10 @@ and TblItemL4.UOM_ID = TblUom.ID">
   <ViewAccessor
     Name="Unit_of_Measurements_LOV1"
     ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ItemL4Id"
@@ -75,6 +80,24 @@ and TblItemL4.UOM_ID = TblUom.ID">
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlCa"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -265,4 +288,18 @@ and TblItemL4.UOM_ID = TblUom.ID">
     SQLType="NUMERIC"
     Expression="Sum(TblGrnD.NET_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"
     IsQueriable="false"/>
+  <ViewAttribute
+    Name="GlCa"
+    PrecisionRule="true"
+    EntityAttrName="GlCa"
+    EntityUsage="TblGrnD"
+    AliasName="GL_CA"
+    LOVName="LOV_GlCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

@@ -221,7 +221,22 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column sortProperty="#{bindings.TblGrnDView2.hints.UomId.name}" filterable="true"
+                            <af:column headerText="GL CA" id="c22" sortable="true"
+                                       filterable="true" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GlCa}"
+       id="it27" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GlCa.inputValue}"
+                                                  label="#{row.bindings.GlCa.label}"
+                                                  required="#{bindings.TblGrnDView2.hints.GlCa.mandatory}"
+                                                  shortDesc="#{bindings.TblGrnDView2.hints.GlCa.tooltip}" id="soc14" readOnly="true">
+                                <f:selectItems value="#{row.bindings.GlCa.items}" id="si14"/>
+                                <f:validator binding="#{row.bindings.GlCa.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <!--<af:column sortProperty="#{bindings.TblGrnDView2.hints.UomId.name}" filterable="true"
                              sortable="true" headerText="UOM"
                              id="c4" width="70">
                               <f:facet name="filter">

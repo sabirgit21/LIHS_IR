@@ -111,6 +111,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CASH_PURCH_D"/>
+  <Attribute
+    Name="GlCa"
+    ColumnName="GL_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_CASH_PURCH_D"/>
   <AccessorAttribute
     Name="TblCashPurchM"
     Association="model.ERP.EO.FkCpDMAssoc"
