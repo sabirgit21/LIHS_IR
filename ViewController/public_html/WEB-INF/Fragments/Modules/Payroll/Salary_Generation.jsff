@@ -223,8 +223,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.BasicSal.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.BasicSal.tooltip}" id="it14">
                                 <f:validator binding="#{row.bindings.BasicSal.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.BasicSal.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.BasicSal.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.WorkDays.name}" filterable="true"
@@ -242,8 +243,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.WorkDays.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.WorkDays.tooltip}" id="it8">
                                 <f:validator binding="#{row.bindings.WorkDays.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.WorkDays.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.WorkDays.format}"/>-->
+                                                  <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.PresentDays.name}"
@@ -318,8 +320,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.NetSal.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.NetSal.tooltip}" id="it15">
                                 <f:validator binding="#{row.bindings.NetSal.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.NetSal.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.NetSal.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                              <af:column sortProperty="#{bindings.TblSalaryDView2.hints.AdvanceAmount.name}"
@@ -338,8 +341,9 @@
                                             shortDesc="#{bindings.TblSalaryDView2.hints.AdvanceAmount.tooltip}"
                                             id="it20">
                                 <f:validator binding="#{row.bindings.AdvanceAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.AdvanceAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.AdvanceAmount.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.LoanAmount.name}"
@@ -357,8 +361,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.LoanAmount.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.LoanAmount.tooltip}" id="it21">
                                 <f:validator binding="#{row.bindings.LoanAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.LoanAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.LoanAmount.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Gross Amount" id="c20"
@@ -375,8 +380,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.GrossAmt.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.GrossAmt.tooltip}" id="it4" readOnly="true">
                                 <f:validator binding="#{row.bindings.GrossAmt.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.GrossAmt.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.GrossAmt.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.TaxAmount.name}" filterable="true"
@@ -394,8 +400,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.TaxAmount.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.TaxAmount.tooltip}" id="it22">
                                 <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.TaxAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.TaxAmount.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                              <af:column sortProperty="#{bindings.TblSalaryDView2.hints.OtherAll.name}" filterable="true"
@@ -413,8 +420,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.OtherAll.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.OtherAll.tooltip}" id="it19">
                                 <f:validator binding="#{row.bindings.OtherAll.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.OtherAll.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.OtherAll.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.OtHours.name}" filterable="true"
@@ -451,8 +459,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.OtAmount.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.OtAmount.tooltip}" id="it17">
                                 <f:validator binding="#{row.bindings.OtAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.OtAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.OtAmount.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.ShortHours.name}"
@@ -489,8 +498,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.ShortAmount.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.ShortAmount.tooltip}" id="it18">
                                 <f:validator binding="#{row.bindings.ShortAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.ShortAmount.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.ShortAmount.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                            
@@ -513,8 +523,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.NetDed.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.NetDed.tooltip}" id="it23">
                                 <f:validator binding="#{row.bindings.NetDed.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.NetDed.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.NetDed.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                              <af:column sortProperty="#{bindings.TblSalaryDView2.hints.NetPayable.name}"
@@ -532,8 +543,9 @@
                                             maximumLength="#{bindings.TblSalaryDView2.hints.NetPayable.precision}"
                                             shortDesc="#{bindings.TblSalaryDView2.hints.NetPayable.tooltip}" id="it16">
                                 <f:validator binding="#{row.bindings.NetPayable.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblSalaryDView2.hints.NetPayable.format}"/>
+                                <!--<af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblSalaryDView2.hints.NetPayable.format}"/>-->
+                                                   <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
                             </af:column>
                            
