@@ -6,13 +6,46 @@
   Name="TblSalaryDView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblSalaryD.ID, 
+       TblSalaryD.SALARY_M_ID, 
+       TblSalaryD.EMP_ID, 
+       TblSalaryD.DESCRIPTION, 
+       TblSalaryD.BASIC_SAL, 
+       TblSalaryD.WORK_DAYS, 
+       TblSalaryD.PRESENT_DAYS, 
+       TblSalaryD.ABSENT_DAYS, 
+       TblSalaryD.LEAVE_DAYS, 
+       TblSalaryD.NET_SAL, 
+       TblSalaryD.NET_PAYABLE, 
+       TblSalaryD.OT_HOURS, 
+       TblSalaryD.OT_AMOUNT, 
+       TblSalaryD.SHORT_HOURS, 
+       TblSalaryD.SHORT_AMOUNT, 
+       TblSalaryD.OTHER_ALL, 
+       TblSalaryD.ADVANCE_AMOUNT, 
+       TblSalaryD.LOAN_AMOUNT, 
+       TblSalaryD.TAX_AMOUNT, 
+       TblSalaryD.NET_DED, 
+       TblSalaryD.CREATED_DATE, 
+       TblSalaryD.CREATED_BY, 
+       TblSalaryD.UPDATED_DATE, 
+       TblSalaryD.UPDATED_BY, 
+       TblSalaryD.GROSS_AMT, 
+       Sum(TblSalaryD.BASIC_SAL) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalBasicSal, 
+       Sum(TblSalaryD.NET_SAL) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalNetSal, 
+       Sum(TblSalaryD.ADVANCE_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalAdvAmount, 
+       Sum(TblSalaryD.LOAN_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalLoanAmount, 
+       Sum(TblSalaryD.GROSS_AMT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalGrossAmount, 
+       Sum(TblSalaryD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalTaxAmount, 
+       Sum(TblSalaryD.OTHER_ALL) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalOtherAllw, 
+       Sum(TblSalaryD.OT_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalOtAmount, 
+       Sum(TblSalaryD.SHORT_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalShortAmount, 
+       Sum(TblSalaryD.NET_DED) OVER (PARTITION BY NULL ORDER BY NULL ) AS TotalNetDed, 
+       Sum(TblSalaryD.NET_PAYABLE) OVER (PARTITION BY NULL ORDER BY NULL ) AS VIEW_ATTR"
+  FromList="TBL_SALARY_D TblSalaryD">
   <ViewAccessor
     Name="Employee_Name_LOV1"
     ViewObjectName="model.LOV.Employee_Name_LOV"
@@ -200,4 +233,115 @@
     EntityAttrName="GrossAmt"
     EntityUsage="TblSalaryD"
     AliasName="GROSS_AMT"/>
+  <ViewAttribute
+    Name="TotalBasicSal"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalBasicSal"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.BASIC_SAL) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalNetSal"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalNetSal"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.NET_SAL) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalAdvAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalAdvAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.ADVANCE_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalLoanAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalLoanAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.LOAN_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalGrossAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalGrossAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.GROSS_AMT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalTaxAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalTaxAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.TAX_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalOtherAllw"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalOtherAllw"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.OTHER_ALL) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalOtAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalOtAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.OT_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalShortAmount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalShortAmount"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.SHORT_AMOUNT) OVER (PARTITION BY NULL ORDER BY NULL )"/>
+  <ViewAttribute
+    Name="TotalNetDed"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalNetDed"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.NET_DED) OVER (PARTITION BY NULL ORDER BY NULL )"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="TotalNetPay"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TotalNetPay"
+    SQLType="NUMERIC"
+    Expression="Sum(TblSalaryD.NET_PAYABLE) OVER (PARTITION BY NULL ORDER BY NULL )"/>
 </ViewObject>

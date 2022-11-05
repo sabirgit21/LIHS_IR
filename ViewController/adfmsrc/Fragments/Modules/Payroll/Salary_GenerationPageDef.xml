@@ -125,5 +125,60 @@
         <Item Value="MonthDays"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalBasicSal">
+      <AttrNames>
+        <Item Value="TotalBasicSal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalNetSal">
+      <AttrNames>
+        <Item Value="TotalNetSal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalAdvAmount">
+      <AttrNames>
+        <Item Value="TotalAdvAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalLoanAmount">
+      <AttrNames>
+        <Item Value="TotalLoanAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalGrossAmount">
+      <AttrNames>
+        <Item Value="TotalGrossAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalTaxAmount">
+      <AttrNames>
+        <Item Value="TotalTaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalOtherAllw">
+      <AttrNames>
+        <Item Value="TotalOtherAllw"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalOtAmount">
+      <AttrNames>
+        <Item Value="TotalOtAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalShortAmount">
+      <AttrNames>
+        <Item Value="TotalShortAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalNetDed">
+      <AttrNames>
+        <Item Value="TotalNetDed"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblSalaryDView2Iterator" id="TotalNetPay">
+      <AttrNames>
+        <Item Value="TotalNetPay"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

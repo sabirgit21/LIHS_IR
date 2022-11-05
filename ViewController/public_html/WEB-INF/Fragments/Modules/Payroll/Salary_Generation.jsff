@@ -227,6 +227,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.BasicSal.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalBasicSal.inputValue}" id="ot2" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.WorkDays.name}" filterable="true"
                                        sortable="true" headerText="Work Days"
@@ -324,6 +329,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.NetSal.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                              <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalNetSal.inputValue}" id="ot1" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                              <af:column sortProperty="#{bindings.TblSalaryDView2.hints.AdvanceAmount.name}"
                                        filterable="true" sortable="true"
@@ -345,6 +355,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.AdvanceAmount.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalAdvAmount.inputValue}" id="ot3" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.LoanAmount.name}"
                                        filterable="true" sortable="true"
@@ -365,6 +380,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.LoanAmount.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalLoanAmount.inputValue}" id="ot4" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                             <af:column headerText="Gross Amount" id="c20"
                                        sortable="true" filterable="true">
@@ -384,6 +404,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.GrossAmt.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalGrossAmount.inputValue}" id="ot5" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.TaxAmount.name}" filterable="true"
                                        sortable="true" headerText="Tax Amount"
@@ -404,6 +429,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.TaxAmount.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalTaxAmount.inputValue}" id="ot6" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                              <af:column sortProperty="#{bindings.TblSalaryDView2.hints.OtherAll.name}" filterable="true"
                                        sortable="true" headerText="Other Allowance"
@@ -424,6 +454,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.OtherAll.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalOtherAllw.inputValue}" id="ot7" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.OtHours.name}" filterable="true"
                                        sortable="true" headerText="Ot Hours"
@@ -463,6 +498,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.OtAmount.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalOtAmount.inputValue}" id="ot8" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblSalaryDView2.hints.ShortHours.name}"
                                        filterable="true" sortable="true"
@@ -502,6 +542,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.ShortAmount.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalShortAmount.inputValue}" id="ot9" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                            
                            
@@ -527,6 +572,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.NetDed.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalNetDed.inputValue}" id="ot10" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                              <af:column sortProperty="#{bindings.TblSalaryDView2.hints.NetPayable.name}"
                                        filterable="true" sortable="true"
@@ -547,6 +597,11 @@
                                                   pattern="#{bindings.TblSalaryDView2.hints.NetPayable.format}"/>-->
                                                    <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
                               </af:inputText>
+                               <f:facet name="footer"   >
+                                <af:outputText  value="#{bindings.TotalNetPay.inputValue}" id="ot11" >
+                                <f:convertNumber groupingUsed="true" minFractionDigits="0" maxFractionDigits="0"/>
+                                </af:outputText>
+                              </f:facet>
                             </af:column>
                            
                           </af:table>
