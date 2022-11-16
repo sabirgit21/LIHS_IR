@@ -30,7 +30,8 @@
        TblDonSetup.DONOR_TYPE, 
        TblDonSetup.MONTHLY_COMIT, 
        TblDonSetup.DON_CAT, 
-       TblDonSetup.GL_L4_ID"
+       TblDonSetup.GL_L4_ID, 
+       TblDonSetup.DIK_CA"
   FromList="TBL_DON_SETUP TblDonSetup"
   Where="TblDonSetup.PROJECT_ID = nvl(:getProId,TblDonSetup.PROJECT_ID)">
   <Variable
@@ -119,6 +120,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DikCa"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DikCa"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -292,6 +311,20 @@
     EntityUsage="TblDonSetup"
     AliasName="GL_L4_ID"
     LOVName="LOV_GlL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DikCa"
+    PrecisionRule="true"
+    EntityAttrName="DikCa"
+    EntityUsage="TblDonSetup"
+    AliasName="DIK_CA"
+    LOVName="LOV_DikCa">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

@@ -96,6 +96,22 @@
                                 <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="In Kind Account" id="c11"
+                                       sortable="true" filterable="true" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.DikCa}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.DikCa.inputValue}"
+                                                  label="#{row.bindings.DikCa.label}"
+                                                  required="#{bindings.TblDonSetupView1.hints.DikCa.mandatory}"
+                                                  shortDesc="#{bindings.TblDonSetupView1.hints.DikCa.tooltip}"
+                                                  id="soc5">
+                                <f:selectItems value="#{row.bindings.DikCa.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.DikCa.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblDonSetupView1.hints.ProjectId.name}"
                                        filterable="true" sortable="true"
                                        headerText="Project" id="c3" width="150">

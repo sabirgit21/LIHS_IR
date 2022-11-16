@@ -257,6 +257,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_DON_SETUP"/>
+  <Attribute
+    Name="DikCa"
+    ColumnName="DIK_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_DON_SETUP"/>
   <AccessorAttribute
     Name="TblDonCr"
     Association="model.ERP.EO.FkDonCrDonSetupAssoc"

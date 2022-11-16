@@ -111,16 +111,21 @@
                               <f:validator binding="#{bindings.DonTypeId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s13"/>
-                            <af:inputText value="#{bindings.DonGlCa.inputValue}" label="Don GL CA"
-                                          required="#{bindings.DonGlCa.hints.mandatory}"
-                                          columns="#{bindings.DonGlCa.hints.displayWidth}"
-                                          maximumLength="#{bindings.DonGlCa.hints.precision}"
-                                          shortDesc="#{bindings.DonGlCa.hints.tooltip}" id="it10" readOnly="true"
-                                          contentStyle="width:150px;">
+                            <af:selectOneChoice value="#{bindings.DonGlCa.inputValue}" label="Don GL CA"
+                                                required="#{bindings.DonGlCa.hints.mandatory}"
+                                                shortDesc="#{bindings.DonGlCa.hints.tooltip}" id="soc14" readOnly="true"
+                                                contentStyle="width:150px;">
+                              <f:selectItems value="#{bindings.DonGlCa.items}" id="si14"/>
                               <f:validator binding="#{bindings.DonGlCa.validator}"/>
-                              <af:convertNumber groupingUsed="false" pattern="#{bindings.DonGlCa.format}"/>
-                            </af:inputText>
+                            </af:selectOneChoice>
                             <af:spacer  id="s16"/>
+                            <af:selectOneChoice value="#{bindings.DikCa.inputValue}" label="In kind Account"
+                                                required="#{bindings.DikCa.hints.mandatory}"
+                                                shortDesc="#{bindings.DikCa.hints.tooltip}" id="soc15"
+                                                contentStyle="width:150px;" readOnly="true">
+                              <f:selectItems value="#{bindings.DikCa.items}" id="si15"/>
+                              <f:validator binding="#{bindings.DikCa.validator}"/>
+                            </af:selectOneChoice>
                             <af:spacer  id="s17"/>
                             <af:inputText value="#{bindings.Vno.inputValue}" label="Voucher No."
                                           required="#{bindings.Vno.hints.mandatory}"

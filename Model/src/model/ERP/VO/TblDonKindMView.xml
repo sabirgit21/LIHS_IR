@@ -24,7 +24,8 @@
        TblDonKindM.UPDATED_DATE, 
        TblDonKindM.UPDATED_BY, 
        TblDonKindM.CATEGORY, 
-       TblDonKindM.DON_GL_CA"
+       TblDonKindM.DON_GL_CA, 
+       TblDonKindM.DIK_CA"
   FromList="TBL_DON_KIND_M TblDonKindM"
   Where="TblDonKindM.PROJECT_ID = nvl(:getProId,TblDonKindM.PROJECT_ID)">
   <Variable
@@ -58,6 +59,10 @@
   <ViewAccessor
     Name="Category_LOV1"
     ViewObjectName="model.LOV.Category_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -165,6 +170,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DikCa"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DikCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonGlCa"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonGlCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -317,7 +358,29 @@
     PrecisionRule="true"
     EntityAttrName="DonGlCa"
     EntityUsage="TblDonKindM"
-    AliasName="DON_GL_CA"/>
+    AliasName="DON_GL_CA"
+    LOVName="LOV_DonGlCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DikCa"
+    PrecisionRule="true"
+    EntityAttrName="DikCa"
+    EntityUsage="TblDonKindM"
+    AliasName="DIK_CA"
+    LOVName="LOV_DikCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblDonKindDView"
     ViewLink="model.ERP.VO.FkDonKindDMLink"

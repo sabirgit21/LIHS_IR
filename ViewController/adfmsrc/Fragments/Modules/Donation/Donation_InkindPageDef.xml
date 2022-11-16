@@ -113,10 +113,9 @@
         <Item Value="TotalAmount"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblDonKindMView1Iterator" id="DonGlCa">
-      <AttrNames>
-        <Item Value="DonGlCa"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="TblDonKindMView1Iterator" StaticList="false" Uses="LOV_DonGlCa" id="DonGlCa"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblDonKindMView1Iterator" StaticList="false" Uses="LOV_DikCa" id="DikCa" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

@@ -45,6 +45,7 @@ public class TblDonSetupImpl extends EntityImpl {
         DonorType,
         DonCat,
         GlL4Id,
+        DikCa,
         TblDonCr,
         TblDonKindM;
         private static AttributesEnum[] vals = null;
@@ -93,6 +94,7 @@ public class TblDonSetupImpl extends EntityImpl {
     public static final int DONORTYPE = AttributesEnum.DonorType.index();
     public static final int DONCAT = AttributesEnum.DonCat.index();
     public static final int GLL4ID = AttributesEnum.GlL4Id.index();
+    public static final int DIKCA = AttributesEnum.DikCa.index();
     public static final int TBLDONCR = AttributesEnum.TblDonCr.index();
     public static final int TBLDONKINDM = AttributesEnum.TblDonKindM.index();
 
@@ -444,6 +446,22 @@ public class TblDonSetupImpl extends EntityImpl {
      */
     public void setGlL4Id(BigDecimal value) {
         setAttributeInternal(GLL4ID, value);
+    }
+
+    /**
+     * Gets the attribute value for DikCa, using the alias name DikCa.
+     * @return the value of DikCa
+     */
+    public BigDecimal getDikCa() {
+        return (BigDecimal) getAttributeInternal(DIKCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DikCa.
+     * @param value value to set the DikCa
+     */
+    public void setDikCa(BigDecimal value) {
+        setAttributeInternal(DIKCA, value);
     }
 
     /**
