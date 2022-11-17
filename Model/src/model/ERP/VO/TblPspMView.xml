@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblPspMView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblPspM.ID, 
+       TblPspM.VNO, 
+       TblPspM.VTP, 
+       TblPspM.DATED, 
+       TblPspM.CHQ_NO, 
+       TblPspM.CHQ_DATE, 
+       TblPspM.CLR_DATE, 
+       TblPspM.NARRATION, 
+       TblPspM.PBL_SUPP_ID, 
+       TblPspM.CREATED_DATE, 
+       TblPspM.CREATED_BY, 
+       TblPspM.UPDATED_DATE, 
+       TblPspM.UPDATED_BY, 
+       TblPspM.BANK_CASH_ID, 
+       TblPspM.PROJECT_ID, 
+       TblPspM.COA_WHT, 
+       TblPspM.SUPP_GL_AC, 
+       TblPspM.BC_GL_AC, 
+       TblPspM.AMOUNT, 
+       TblPspM.TAX_AMOUNT, 
+       TblPspM.NET_AMOUNT"
+  FromList="TBL_PSP_M TblPspM"
+  Where="TblPspM.PROJECT_ID = nvl(:getProID,TblPspM.PROJECT_ID)">
+  <Variable
+    Name="getProID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblPspMView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Pbl_Supplier_Name_LOV1"
+    ViewObjectName="model.LOV.Pbl_Supplier_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bank_Cash_Bank_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_Bank_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="WH_CA_L4_LOV1"
+    ViewObjectName="model.LOV.WH_CA_L4_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PblSuppId"
+    ListVOName="Pbl_Supplier_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PblSuppId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BankCashId"
+    ListVOName="Bank_Cash_Bank_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BankCashId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CoaWht"
+    ListVOName="WH_CA_L4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CoaWht"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblPspM"
+    Entity="model.ERP.EO.TblPspM"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblPspM"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblPspM"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TblPspM"
+    AliasName="VTP"/>
+  <ViewAttribute
+    Name="Dated"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblPspM"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="ChqNo"
+    PrecisionRule="true"
+    EntityAttrName="ChqNo"
+    EntityUsage="TblPspM"
+    AliasName="CHQ_NO"/>
+  <ViewAttribute
+    Name="ChqDate"
+    PrecisionRule="true"
+    EntityAttrName="ChqDate"
+    EntityUsage="TblPspM"
+    AliasName="CHQ_DATE"/>
+  <ViewAttribute
+    Name="ClrDate"
+    PrecisionRule="true"
+    EntityAttrName="ClrDate"
+    EntityUsage="TblPspM"
+    AliasName="CLR_DATE"/>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="TblPspM"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblPspM"
+    AliasName="PBL_SUPP_ID"
+    LOVName="LOV_PblSuppId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblPspM"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblPspM"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblPspM"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblPspM"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="BankCashId"
+    PrecisionRule="true"
+    EntityAttrName="BankCashId"
+    EntityUsage="TblPspM"
+    AliasName="BANK_CASH_ID"
+    LOVName="LOV_BankCashId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblPspM"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CoaWht"
+    PrecisionRule="true"
+    EntityAttrName="CoaWht"
+    EntityUsage="TblPspM"
+    AliasName="COA_WHT"
+    LOVName="LOV_CoaWht">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SuppGlAc"
+    PrecisionRule="true"
+    EntityAttrName="SuppGlAc"
+    EntityUsage="TblPspM"
+    AliasName="SUPP_GL_AC"/>
+  <ViewAttribute
+    Name="BcGlAc"
+    PrecisionRule="true"
+    EntityAttrName="BcGlAc"
+    EntityUsage="TblPspM"
+    AliasName="BC_GL_AC"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="TblPspM"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblPspM"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblPspM"
+    AliasName="NET_AMOUNT"/>
+</ViewObject>

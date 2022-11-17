@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Services_PaymentPageDef"
+                Package="Fragments.Modules.Payable">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblPspMView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblPspMView1Iterator"/>
+    <searchRegion Binds="TblPspMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPspMView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="Vtp">
+      <AttrNames>
+        <Item Value="Vtp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="ChqNo">
+      <AttrNames>
+        <Item Value="ChqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="ChqDate">
+      <AttrNames>
+        <Item Value="ChqDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="ClrDate">
+      <AttrNames>
+        <Item Value="ClrDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_BankCashId" id="BankCashId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_CoaWht" id="CoaWht" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="SuppGlAc">
+      <AttrNames>
+        <Item Value="SuppGlAc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="BcGlAc">
+      <AttrNames>
+        <Item Value="BcGlAc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="TaxAmount">
+      <AttrNames>
+        <Item Value="TaxAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPspMView1Iterator" id="NetAmount">
+      <AttrNames>
+        <Item Value="NetAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblPspMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblPspMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblPspMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblPspMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblPspMView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPspMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPspMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblPspMView1Iterator" id="TblPspMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblPspMView" Name="TblPspMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ChqDate"/>
+          <Item Value="ClrDate"/>
+          <Item Value="Narration"/>
+          <Item Value="PblSuppId"/>
+          <Item Value="BankCashId"/>
+          <Item Value="ProjectId"/>
+          <Item Value="CoaWht"/>
+          <Item Value="SuppGlAc"/>
+          <Item Value="BcGlAc"/>
+          <Item Value="Amount"/>
+          <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

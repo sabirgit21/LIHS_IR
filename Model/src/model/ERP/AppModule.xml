@@ -670,6 +670,9 @@
   <ViewUsage
     Name="TblOpenBlncAssetView1"
     ViewObjectName="model.ERP.VO.TblOpenBlncAssetView"/>
+  <ViewUsage
+    Name="TblPspMView1"
+    ViewObjectName="model.ERP.VO.TblPspMView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
