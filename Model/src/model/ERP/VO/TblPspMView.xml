@@ -38,7 +38,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblPspMView"/>
   </Variable>
   <ViewAccessor
@@ -46,16 +45,16 @@
     ViewObjectName="model.LOV.Pbl_Supplier_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Bank_Cash_Bank_LOV1"
-    ViewObjectName="model.LOV.Bank_Cash_Bank_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="WH_CA_L4_LOV1"
-    ViewObjectName="model.LOV.WH_CA_L4_LOV"
+    Name="Bank_Cash_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="WH_Pro_L4_1"
+    ViewObjectName="model.LOV.WH_Pro_L4"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PblSuppId"
@@ -65,24 +64,6 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="PblSuppId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_BankCashId"
-    ListVOName="Bank_Cash_Bank_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="BankCashId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -112,8 +93,26 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
+    Name="LOV_BankCashId"
+    ListVOName="Bank_Cash_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BankCashId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
     Name="LOV_CoaWht"
-    ListVOName="WH_CA_L4_LOV1"
+    ListVOName="WH_Pro_L4_1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -157,7 +156,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblPspM"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPspMView.Dated_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPspMView.Dated_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ChqNo"
     PrecisionRule="true"
@@ -292,4 +300,8 @@
     EntityAttrName="NetAmount"
     EntityUsage="TblPspM"
     AliasName="NET_AMOUNT"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

@@ -66,7 +66,7 @@
                             </af:selectOneChoice>
                             <af:spacer  id="s5"/>
                             <af:selectOneChoice value="#{bindings.BankCashId.inputValue}"
-                                                label="Bank"
+                                                label="Bank\\Cash"
                                                 required="#{bindings.BankCashId.hints.mandatory}"
                                                 shortDesc="#{bindings.BankCashId.hints.tooltip}" id="soc2"
                                                 contentStyle="width:200px;">
