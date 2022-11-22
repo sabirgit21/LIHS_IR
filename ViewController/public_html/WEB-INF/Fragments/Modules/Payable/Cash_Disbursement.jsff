@@ -3,7 +3,7 @@
                 xmlns:f="http://java.sun.com/jsf/core">
  
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Bank Payment">
+    <af:showDetailItem id="pane1" text="Cash Disbursement">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
@@ -23,12 +23,12 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Bank Payment">
+              <af:showDetailItem id="tab1" text="Cash Disbursement">
                 <af:panelGridLayout id="pgl2">
                   <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                       <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab2" text="Bank Payment Master">
+                        <af:showDetailItem id="tab2" text="Cash Disbursement Master">
                           <af:panelFormLayout id="pfl1" maxColumns="3" rows="10">
                             <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}" visible="false"
                                           required="#{bindings.Id.hints.mandatory}"
@@ -189,7 +189,7 @@
                   <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                       <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                        <af:showDetailItem id="tab3" text="Bank Payment Detail">
+                        <af:showDetailItem id="tab3" text="Cash Disbursement Detail">
                           <af:table value="#{bindings.TblCashDispDView2.collectionModel}" var="row"
                                     rows="#{bindings.TblCashDispDView2.rangeSize}"
                                     emptyText="#{bindings.TblCashDispDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
