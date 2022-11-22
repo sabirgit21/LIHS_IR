@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblCashDispMView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblCashDispM.ID, 
+       TblCashDispM.VNO, 
+       TblCashDispM.VTP, 
+       TblCashDispM.DATED, 
+       TblCashDispM.CHQ_NO, 
+       TblCashDispM.CHQ_DATE, 
+       TblCashDispM.CLR_DATE, 
+       TblCashDispM.NARRATION, 
+       TblCashDispM.PBL_SUPP_ID, 
+       TblCashDispM.CREATED_DATE, 
+       TblCashDispM.CREATED_BY, 
+       TblCashDispM.UPDATED_DATE, 
+       TblCashDispM.UPDATED_BY, 
+       TblCashDispM.BANK_CASH_ID, 
+       TblCashDispM.PROJECT_ID, 
+       TblCashDispM.FRDATE, 
+       TblCashDispM.TODATE, 
+       TblCashDispM.SUPP_GL_AC, 
+       TblCashDispM.BC_GL_AC"
+  FromList="TBL_CASH_DISP_M TblCashDispM"
+  Where="TblCashDispM.PROJECT_ID = nvl(:getProId,TblCashDispM.PROJECT_ID)">
+  <Variable
+    Name="getProId"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="TblCashDispMView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Voucher_Type1"
+    ViewObjectName="model.LOV.Voucher_Type"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bank_Cash_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Project_Name_LOV1"
+    ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BankCashId"
+    ListVOName="Bank_Cash_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BankCashId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProjectId"
+    ListVOName="Project_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblCashDispM"
+    Entity="model.ERP.EO.TblCashDispM"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TblCashDispM"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vno"
+    PrecisionRule="true"
+    EntityAttrName="Vno"
+    EntityUsage="TblCashDispM"
+    AliasName="VNO"/>
+  <ViewAttribute
+    Name="Vtp"
+    PrecisionRule="true"
+    EntityAttrName="Vtp"
+    EntityUsage="TblCashDispM"
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Dated"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblCashDispM"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="ChqNo"
+    PrecisionRule="true"
+    EntityAttrName="ChqNo"
+    EntityUsage="TblCashDispM"
+    AliasName="CHQ_NO"/>
+  <ViewAttribute
+    Name="ChqDate"
+    PrecisionRule="true"
+    EntityAttrName="ChqDate"
+    EntityUsage="TblCashDispM"
+    AliasName="CHQ_DATE"/>
+  <ViewAttribute
+    Name="ClrDate"
+    PrecisionRule="true"
+    EntityAttrName="ClrDate"
+    EntityUsage="TblCashDispM"
+    AliasName="CLR_DATE"/>
+  <ViewAttribute
+    Name="Narration"
+    PrecisionRule="true"
+    EntityAttrName="Narration"
+    EntityUsage="TblCashDispM"
+    AliasName="NARRATION"/>
+  <ViewAttribute
+    Name="PblSuppId"
+    PrecisionRule="true"
+    EntityAttrName="PblSuppId"
+    EntityUsage="TblCashDispM"
+    AliasName="PBL_SUPP_ID"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblCashDispM"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblCashDispM"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblCashDispM"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblCashDispM"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="BankCashId"
+    PrecisionRule="true"
+    EntityAttrName="BankCashId"
+    EntityUsage="TblCashDispM"
+    AliasName="BANK_CASH_ID"
+    LOVName="LOV_BankCashId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProjectId"
+    PrecisionRule="true"
+    EntityAttrName="ProjectId"
+    EntityUsage="TblCashDispM"
+    AliasName="PROJECT_ID"
+    LOVName="LOV_ProjectId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Frdate"
+    PrecisionRule="true"
+    EntityAttrName="Frdate"
+    EntityUsage="TblCashDispM"
+    AliasName="FRDATE"/>
+  <ViewAttribute
+    Name="Todate"
+    PrecisionRule="true"
+    EntityAttrName="Todate"
+    EntityUsage="TblCashDispM"
+    AliasName="TODATE"/>
+  <ViewAttribute
+    Name="SuppGlAc"
+    PrecisionRule="true"
+    EntityAttrName="SuppGlAc"
+    EntityUsage="TblCashDispM"
+    AliasName="SUPP_GL_AC"/>
+  <ViewAttribute
+    Name="BcGlAc"
+    PrecisionRule="true"
+    EntityAttrName="BcGlAc"
+    EntityUsage="TblCashDispM"
+    AliasName="BC_GL_AC"/>
+  <ViewLinkAccessor
+    Name="TblCashDispDView"
+    ViewLink="model.ERP.VO.FkCashDispDMLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

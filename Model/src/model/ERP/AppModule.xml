@@ -673,6 +673,15 @@
   <ViewUsage
     Name="TblPspMView1"
     ViewObjectName="model.ERP.VO.TblPspMView"/>
+  <ViewUsage
+    Name="TblCashDispDView1"
+    ViewObjectName="model.ERP.VO.TblCashDispDView"/>
+  <ViewUsage
+    Name="TblCashDispMView1"
+    ViewObjectName="model.ERP.VO.TblCashDispMView"/>
+  <ViewUsage
+    Name="TblCashDispDView2"
+    ViewObjectName="model.ERP.VO.TblCashDispDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1242,5 +1251,11 @@
     ViewLinkObjectName="model.ERP.VO.FkFgTrnDetailPDetailDPLink"
     SrcViewUsageName="model.ERP.AppModule.TblFgTrnDetailPView2"
     DstViewUsageName="model.ERP.AppModule.TblFgTrnDetailDPView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkCashDispDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkCashDispDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblCashDispMView1"
+    DstViewUsageName="model.ERP.AppModule.TblCashDispDView2"
     Reversed="false"/>
 </AppModule>

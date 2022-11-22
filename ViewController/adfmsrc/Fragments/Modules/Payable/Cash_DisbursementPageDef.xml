@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cash_DisbursementPageDef"
+                Package="Fragments.Modules.Payable">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblCashDispMView1" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblCashDispMView1Iterator"/>
+    <searchRegion Binds="TblCashDispMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCashDispMView1Query"/>
+    <iterator Binds="TblCashDispDView2" RangeSize="10" DataControl="AppModuleDataControl1"
+              id="TblCashDispDView2Iterator"/>
+    <searchRegion Binds="TblCashDispDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCashDispDView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.UserRole.VO.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="Vno">
+      <AttrNames>
+        <Item Value="Vno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblCashDispMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="ChqNo">
+      <AttrNames>
+        <Item Value="ChqNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="ChqDate">
+      <AttrNames>
+        <Item Value="ChqDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="ClrDate">
+      <AttrNames>
+        <Item Value="ClrDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="Narration">
+      <AttrNames>
+        <Item Value="Narration"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblCashDispMView1Iterator" StaticList="false" Uses="LOV_BankCashId" id="BankCashId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblCashDispMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="Frdate">
+      <AttrNames>
+        <Item Value="Frdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="Todate">
+      <AttrNames>
+        <Item Value="Todate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblCashDispMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblCashDispMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblCashDispMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblCashDispMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TblCashDispMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCashDispMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCashDispMView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
+    <tree IterBinding="TblCashDispMView1Iterator" id="TblCashDispMView1">
+      <nodeDefinition DefName="model.ERP.VO.TblCashDispMView" Name="TblCashDispMView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Vno"/>
+          <Item Value="Vtp"/>
+          <Item Value="Dated"/>
+          <Item Value="ChqNo"/>
+          <Item Value="ChqDate"/>
+          <Item Value="ClrDate"/>
+          <Item Value="Narration"/>
+          <Item Value="BankCashId"/>
+          <Item Value="ProjectId"/>
+          <Item Value="Frdate"/>
+          <Item Value="Todate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblCashDispDView2Iterator" id="TblCashDispDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblCashDispDView" Name="TblCashDispDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Description"/>
+          <Item Value="Amount"/>
+          <Item Value="CashPurchMId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblCashDispMView1Iterator" id="BcGlAc">
+      <AttrNames>
+        <Item Value="BcGlAc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblCashDispDView2Iterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
