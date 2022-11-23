@@ -116,15 +116,16 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <attributeValues IterBinding="TblCashDispMView1Iterator" id="BcGlAc">
-      <AttrNames>
-        <Item Value="BcGlAc"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblCashDispDView2Iterator" id="TotalAmount">
       <AttrNames>
         <Item Value="TotalAmount"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblCashDispMView1Iterator" StaticList="false" Uses="LOV_BcGlAc" id="BcGlAc"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblCashDispMView1Iterator" StaticList="false" Uses="LOV_CashId" id="CashId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblCashDispMView1Iterator" StaticList="false" Uses="LOV_CGlAc" id="CGlAc" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

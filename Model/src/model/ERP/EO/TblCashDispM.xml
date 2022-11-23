@@ -138,7 +138,6 @@
     TableName="TBL_CASH_DISP_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblCashDispMRow"/>
   </Attribute>
   <Attribute
@@ -165,6 +164,20 @@
   <Attribute
     Name="BcGlAc"
     ColumnName="BC_GL_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_CASH_DISP_M"/>
+  <Attribute
+    Name="CashId"
+    ColumnName="CASH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_CASH_DISP_M"/>
+  <Attribute
+    Name="CGlAc"
+    ColumnName="C_GL_AC"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"

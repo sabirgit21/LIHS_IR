@@ -27,7 +27,9 @@
        TblCashDispM.FRDATE, 
        TblCashDispM.TODATE, 
        TblCashDispM.SUPP_GL_AC, 
-       TblCashDispM.BC_GL_AC"
+       TblCashDispM.BC_GL_AC, 
+       TblCashDispM.C_GL_AC, 
+       TblCashDispM.CASH_ID"
   FromList="TBL_CASH_DISP_M TblCashDispM"
   Where="TblCashDispM.PROJECT_ID = nvl(:getProId,TblCashDispM.PROJECT_ID)">
   <Variable
@@ -36,7 +38,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblCashDispMView"/>
   </Variable>
   <ViewAccessor
@@ -50,6 +51,14 @@
   <ViewAccessor
     Name="Project_Name_LOV1"
     ViewObjectName="model.LOV.Project_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Bank_Cash_Cash_LOV1"
+    ViewObjectName="model.LOV.Bank_Cash_Cash_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -95,6 +104,60 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ProjectId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BcGlAc"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BcGlAc"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CGlAc"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CGlAc"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CashId"
+    ListVOName="Bank_Cash_Cash_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CashId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -247,7 +310,43 @@
     PrecisionRule="true"
     EntityAttrName="BcGlAc"
     EntityUsage="TblCashDispM"
-    AliasName="BC_GL_AC"/>
+    AliasName="BC_GL_AC"
+    LOVName="LOV_BcGlAc">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CGlAc"
+    PrecisionRule="true"
+    EntityAttrName="CGlAc"
+    EntityUsage="TblCashDispM"
+    AliasName="C_GL_AC"
+    LOVName="LOV_CGlAc">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CashId"
+    PrecisionRule="true"
+    EntityAttrName="CashId"
+    EntityUsage="TblCashDispM"
+    AliasName="CASH_ID"
+    LOVName="LOV_CashId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblCashDispDView"
     ViewLink="model.ERP.VO.FkCashDispDMLink"
