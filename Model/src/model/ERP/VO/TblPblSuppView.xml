@@ -25,6 +25,10 @@
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV2"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Type"
     ListVOName="Supplier_Type1"
@@ -77,6 +81,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ScrvCa"
+    ListVOName="GL_Level4_LOV2"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ScrvCa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -227,6 +249,20 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ScrvCa"
+    PrecisionRule="true"
+    EntityAttrName="ScrvCa"
+    EntityUsage="TblPblSupp"
+    AliasName="SCRV_CA"
+    LOVName="LOV_ScrvCa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

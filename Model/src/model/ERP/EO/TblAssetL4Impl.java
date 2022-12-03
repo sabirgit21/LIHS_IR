@@ -59,6 +59,7 @@ public class TblAssetL4Impl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ASSETL4ID = AttributesEnum.AssetL4Id.index();
     public static final int ASSETL3ID = AttributesEnum.AssetL3Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -78,6 +79,13 @@ public class TblAssetL4Impl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblAssetL4Impl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL4");
     }
 
     /**
@@ -250,6 +258,7 @@ public class TblAssetL4Impl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLASSETRETURND);
     }
 
+
     /**
      * @param assetL4Id key constituent
 
@@ -257,13 +266,6 @@ public class TblAssetL4Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal assetL4Id) {
         return new Key(new Object[] { assetL4Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL4");
     }
 
     /**

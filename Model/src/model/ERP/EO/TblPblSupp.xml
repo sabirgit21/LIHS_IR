@@ -235,6 +235,13 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ScrvCa"
+    ColumnName="SCRV_CA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_PBL_SUPP"/>
   <AccessorAttribute
     Name="TblPblSuppItems"
     Association="model.ERP.EO.FkPblSuppItemsSuppIdAssoc"

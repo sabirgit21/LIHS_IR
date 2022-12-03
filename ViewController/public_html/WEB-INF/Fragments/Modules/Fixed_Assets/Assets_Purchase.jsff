@@ -56,7 +56,8 @@
                             <af:selectOneChoice value="#{bindings.AssetWrntyClaimMId.inputValue}"
                                                 label="Asset Warranty Claim"
                                                 required="#{bindings.AssetWrntyClaimMId.hints.mandatory}"
-                                                shortDesc="#{bindings.AssetWrntyClaimMId.hints.tooltip}" id="soc14">
+                                                shortDesc="#{bindings.AssetWrntyClaimMId.hints.tooltip}" id="soc14"
+                                                contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.AssetWrntyClaimMId.items}" id="si14"/>
                               <f:validator binding="#{bindings.AssetWrntyClaimMId.validator}"/>
                             </af:selectOneChoice>
@@ -107,9 +108,10 @@
                   
                             <af:spacer  id="s14"/>
                             <af:selectOneChoice value="#{bindings.AssetType.inputValue}"
-                                                label="#{bindings.AssetType.label}"
+                                                label="Asset Type"
                                                 required="#{bindings.AssetType.hints.mandatory}"
-                                                shortDesc="#{bindings.AssetType.hints.tooltip}" id="soc5">
+                                                shortDesc="#{bindings.AssetType.hints.tooltip}" id="soc5"
+                                                contentStyle="width:150px;">
                               <f:selectItems value="#{bindings.AssetType.items}" id="si5"/>
                               <f:validator binding="#{bindings.AssetType.validator}"/>
                             </af:selectOneChoice>
@@ -124,10 +126,11 @@
                               <af:convertDateTime pattern="#{bindings.WarrantyUpto.format}"/>
                             </af:inputText>-->
                             <af:inputDate value="#{bindings.WarrantyUpto.inputValue}"
-                                          label="#{bindings.WarrantyUpto.hints.label}"
+                                          label="Warranty Upto"
                                           required="#{bindings.WarrantyUpto.hints.mandatory}"
                                           columns="#{bindings.WarrantyUpto.hints.displayWidth}"
-                                          shortDesc="#{bindings.WarrantyUpto.hints.tooltip}" id="id4">
+                                          shortDesc="#{bindings.WarrantyUpto.hints.tooltip}" id="id4"
+                                          contentStyle="width:150px;">
                               <f:validator binding="#{bindings.WarrantyUpto.validator}"/>
                               <af:convertDateTime pattern="#{bindings.WarrantyUpto.format}"/>
                             </af:inputDate>

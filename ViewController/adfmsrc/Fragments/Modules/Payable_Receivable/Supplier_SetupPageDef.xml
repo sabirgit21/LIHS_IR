@@ -143,5 +143,7 @@
             Action="removeCurrentRow"/>
     <list IterBinding="TblPblSuppView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPblSuppView1Iterator" StaticList="false" Uses="LOV_ScrvCa" id="ScrvCa" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

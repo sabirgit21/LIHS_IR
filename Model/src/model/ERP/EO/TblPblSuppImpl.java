@@ -43,6 +43,7 @@ public class TblPblSuppImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         Ast,
+        ScrvCa,
         TblPblSuppItems,
         TblGlL4;
         private static AttributesEnum[] vals = null;
@@ -68,6 +69,7 @@ public class TblPblSuppImpl extends EntityImpl {
         }
     }
 
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int TYPE = AttributesEnum.Type.index();
@@ -88,6 +90,7 @@ public class TblPblSuppImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int AST = AttributesEnum.Ast.index();
+    public static final int SCRVCA = AttributesEnum.ScrvCa.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLGLL4 = AttributesEnum.TblGlL4.index();
 
@@ -103,6 +106,7 @@ public class TblPblSuppImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblPblSupp");
     }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -406,6 +410,22 @@ public class TblPblSuppImpl extends EntityImpl {
      */
     public void setAst(String value) {
         setAttributeInternal(AST, value);
+    }
+
+    /**
+     * Gets the attribute value for ScrvCa, using the alias name ScrvCa.
+     * @return the value of ScrvCa
+     */
+    public BigDecimal getScrvCa() {
+        return (BigDecimal) getAttributeInternal(SCRVCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ScrvCa.
+     * @param value value to set the ScrvCa
+     */
+    public void setScrvCa(BigDecimal value) {
+        setAttributeInternal(SCRVCA, value);
     }
 
     /**
