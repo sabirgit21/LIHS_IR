@@ -32,11 +32,6 @@
         <Item Value="Vno"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="TblPspMView1Iterator" id="Vtp">
-      <AttrNames>
-        <Item Value="Vtp"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblPspMView1Iterator" id="Dated">
       <AttrNames>
         <Item Value="Dated"/>
@@ -127,5 +122,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

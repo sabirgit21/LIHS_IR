@@ -56,6 +56,10 @@
     Name="WH_Pro_L4_1"
     ViewObjectName="model.LOV.WH_Pro_L4"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Voucher_Type1"
+    ViewObjectName="model.LOV.Voucher_Type"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PblSuppId"
     ListVOName="Pbl_Supplier_Name_LOV1"
@@ -128,6 +132,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_Vtp"
+    ListVOName="Voucher_Type1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Vtp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblPspM"
     Entity="model.ERP.EO.TblPspM"/>
@@ -149,7 +171,15 @@
     PrecisionRule="true"
     EntityAttrName="Vtp"
     EntityUsage="TblPspM"
-    AliasName="VTP"/>
+    AliasName="VTP"
+    LOVName="LOV_Vtp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     IsNotNull="true"
@@ -177,13 +207,31 @@
     PrecisionRule="true"
     EntityAttrName="ChqDate"
     EntityUsage="TblPspM"
-    AliasName="CHQ_DATE"/>
+    AliasName="CHQ_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPspMView.ChqDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPspMView.ChqDate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ClrDate"
     PrecisionRule="true"
     EntityAttrName="ClrDate"
     EntityUsage="TblPspM"
-    AliasName="CLR_DATE"/>
+    AliasName="CLR_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPspMView.ClrDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPspMView.ClrDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
