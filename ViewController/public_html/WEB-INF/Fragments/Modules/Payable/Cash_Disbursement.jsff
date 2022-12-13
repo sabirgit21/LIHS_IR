@@ -213,7 +213,7 @@
                                     rowSelection="single" fetchSize="#{bindings.TblCashDispDView2.rangeSize}"
                                     filterModel="#{bindings.TblCashDispDView2Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblCashDispDView2Query.processQuery}" varStatus="vs" id="t2"
-                                    scrollPolicy="page" autoHeightRows="0">
+                                    scrollPolicy="page" autoHeightRows="0" >
                             <af:column sortProperty="#{bindings.TblCashDispDView2.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="ID" id="c11" visible="false">
                                        <f:facet name="filter">
@@ -289,7 +289,7 @@
                             
                           </af:table>
                          
-                           <af:spacer width="5" height="10" id="s14"/>
+                          <af:spacer width="5" height="10" id="s14"/>
                       <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
                             
                             <af:iterator id="i1" var="index" varStatus="status"
