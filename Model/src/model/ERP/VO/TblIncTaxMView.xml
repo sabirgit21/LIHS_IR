@@ -93,7 +93,16 @@
     PrecisionRule="true"
     EntityAttrName="Vdate"
     EntityUsage="TblIncTaxM"
-    AliasName="VDATE"/>
+    AliasName="VDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblIncTaxMView.Vdate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblIncTaxMView.Vdate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
@@ -119,13 +128,31 @@
     PrecisionRule="true"
     EntityAttrName="Fdate"
     EntityUsage="TblIncTaxM"
-    AliasName="FDATE"/>
+    AliasName="FDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblIncTaxMView.Fdate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblIncTaxMView.Fdate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Tdate"
     PrecisionRule="true"
     EntityAttrName="Tdate"
     EntityUsage="TblIncTaxM"
-    AliasName="TDATE"/>
+    AliasName="TDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblIncTaxMView.Tdate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblIncTaxMView.Tdate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
@@ -155,4 +182,8 @@
     ViewLink="model.ERP.VO.FkIncTaxDMLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

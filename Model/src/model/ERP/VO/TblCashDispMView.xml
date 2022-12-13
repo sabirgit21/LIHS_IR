@@ -204,7 +204,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblCashDispM"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblCashDispMView.Dated_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblCashDispMView.Dated_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ChqNo"
     PrecisionRule="true"
@@ -216,13 +225,31 @@
     PrecisionRule="true"
     EntityAttrName="ChqDate"
     EntityUsage="TblCashDispM"
-    AliasName="CHQ_DATE"/>
+    AliasName="CHQ_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblCashDispMView.ChqDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblCashDispMView.ChqDate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ClrDate"
     PrecisionRule="true"
     EntityAttrName="ClrDate"
     EntityUsage="TblCashDispM"
-    AliasName="CLR_DATE"/>
+    AliasName="CLR_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblCashDispMView.ClrDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblCashDispMView.ClrDate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"
@@ -292,13 +319,31 @@
     PrecisionRule="true"
     EntityAttrName="Frdate"
     EntityUsage="TblCashDispM"
-    AliasName="FRDATE"/>
+    AliasName="FRDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblCashDispMView.Frdate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblCashDispMView.Frdate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Todate"
     PrecisionRule="true"
     EntityAttrName="Todate"
     EntityUsage="TblCashDispM"
-    AliasName="TODATE"/>
+    AliasName="TODATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblCashDispMView.Todate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblCashDispMView.Todate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SuppGlAc"
     PrecisionRule="true"
@@ -352,4 +397,8 @@
     ViewLink="model.ERP.VO.FkCashDispDMLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

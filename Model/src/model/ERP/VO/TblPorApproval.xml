@@ -39,7 +39,6 @@ AND TblPorMaster.PROJECT_ID = nvl(:getProId,TblPorMaster.PROJECT_ID)">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblPorApproval"/>
   </Variable>
   <ViewAccessor
@@ -196,7 +195,16 @@ AND TblPorMaster.PROJECT_ID = nvl(:getProId,TblPorMaster.PROJECT_ID)">
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblPorMaster"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPorApproval.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPorApproval.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
