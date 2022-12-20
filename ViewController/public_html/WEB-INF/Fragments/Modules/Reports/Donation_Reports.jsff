@@ -86,7 +86,9 @@
                                 <af:selectItem label="Summary Donation Category Day" value="summarydonationcategoryday" id="si10"/>
                                 <af:selectItem label="Summary Donation Category Month" value="summarydonationcategorymonth" id="si12"/>
                                 <af:selectItem label="Summary Donation Category donor" value="summarydonationcategorydonor" id="si13"/>
-                                
+                                <af:selectItem label="Donor Project Wise Report" value="donorProjectwise" id="si2"/>
+                                <af:selectItem label="Donor Project Category Wise Report" value="donorProjectcategoryWise" id="si3"/>
+                                <af:selectItem label="Donor Wise Report" value="donorWise" id="si5"/>
                                 
                             </af:selectOneChoice>
                              <af:spacer width="30" height="30" id="s3"/>

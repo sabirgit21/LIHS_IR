@@ -112,6 +112,19 @@ public class DonationReports {
                     case "summarydonationcategorydonor":
                             reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Summary_Donation_Category_Donor_Wise_Report&");
                             break;
+                
+                    case "donorProjectwise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Project_Wise_Report&");
+                            break;
+                
+                    case "donorProjectcategoryWise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Project_Category_Wise_Report&");
+                            break;
+                
+                    case "donorWise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Wise_Report&");
+                            break;
+                
 
                 default:
                     showMessage("Please Select Report Type");
