@@ -209,7 +209,138 @@
                       </af:panelTabbed>
                     </af:gridCell>
                   </af:gridRow>
-                 
+                  <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                      <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                        <af:showDetailItem id="tab3" text="Detail">
+                          <af:table value="#{bindings.TblPspDView2.collectionModel}" var="row"
+                                    rows="#{bindings.TblPspDView2.rangeSize}"
+                                    emptyText="#{bindings.TblPspDView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblPspDView2.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblPspDView2.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblPspDView2.rangeSize}"
+                                    filterModel="#{bindings.TblPspDView2Query.queryDescriptor}" filterVisible="true"
+                                    queryListener="#{bindings.TblPspDView2Query.processQuery}" varStatus="vs" id="t2"
+                                    scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblPspDView2.hints.Id.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblPspDView2.hints.Id.label}" id="c1" visible="false">
+                              <af:inputText value="#{row.bindings.Id.inputValue}"
+                                            label="#{bindings.TblPspDView2.hints.Id.label}"
+                                            required="#{bindings.TblPspDView2.hints.Id.mandatory}"
+                                            columns="#{bindings.TblPspDView2.hints.Id.displayWidth}"
+                                            maximumLength="#{bindings.TblPspDView2.hints.Id.precision}"
+                                            shortDesc="#{bindings.TblPspDView2.hints.Id.tooltip}" id="it4" readOnly="true">
+                                <f:validator binding="#{row.bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblPspDView2.hints.Id.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblPspDView2.hints.PblSuppId.name}" filterable="true"
+                                       sortable="true" headerText="Supplier"
+                                       id="c11">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PblSuppId}"
+       id="it9" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.PblSuppId.inputValue}"
+                                                  label="#{row.bindings.PblSuppId.label}"
+                                                  required="#{bindings.TblPspDView2.hints.PblSuppId.mandatory}"
+                                                  shortDesc="#{bindings.TblPspDView2.hints.PblSuppId.tooltip}"
+                                                  id="soc12" readOnly="true">
+                                <f:selectItems value="#{row.bindings.PblSuppId.items}" id="si12"/>
+                                <f:validator binding="#{row.bindings.PblSuppId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblPspDView2.hints.SuppGlAc.name}" filterable="true"
+                                       sortable="true" headerText="Supp GL AC"
+                                       id="c12">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SuppGlAc}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.SuppGlAc.inputValue}"
+                                                  label="#{row.bindings.SuppGlAc.label}"
+                                                  required="#{bindings.TblPspDView2.hints.SuppGlAc.mandatory}"
+                                                  shortDesc="#{bindings.TblPspDView2.hints.SuppGlAc.tooltip}"
+                                                  id="soc13" readOnly="true">
+                                <f:selectItems value="#{row.bindings.SuppGlAc.items}" id="si13"/>
+                                <f:validator binding="#{row.bindings.SuppGlAc.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblPspDView2.hints.GlL4Id.name}" filterable="true"
+                                       sortable="true" headerText="GL L4 Name"
+                                       id="c13">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GlL4Id}"
+       id="it19" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GlL4Id.inputValue}"
+                                                  label="#{row.bindings.GlL4Id.label}"
+                                                  required="#{bindings.TblPspDView2.hints.GlL4Id.mandatory}"
+                                                  shortDesc="#{bindings.TblPspDView2.hints.GlL4Id.tooltip}" id="soc14">
+                                <f:selectItems value="#{row.bindings.GlL4Id.items}" id="si14"/>
+                                <f:validator binding="#{row.bindings.GlL4Id.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblPspDView2.hints.Decr.name}" filterable="true"
+                                       sortable="true" headerText="Description" id="c14">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Decr}"
+       id="it20" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Decr.inputValue}"
+                                            label="#{bindings.TblPspDView2.hints.Decr.label}"
+                                            required="#{bindings.TblPspDView2.hints.Decr.mandatory}"
+                                            columns="#{bindings.TblPspDView2.hints.Decr.displayWidth}"
+                                            maximumLength="#{bindings.TblPspDView2.hints.Decr.precision}"
+                                            shortDesc="#{bindings.TblPspDView2.hints.Decr.tooltip}" id="it16">
+                                <f:validator binding="#{row.bindings.Decr.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblPspDView2.hints.Amount.name}" filterable="true"
+                                       sortable="true" headerText="Amount"
+                                       id="c15">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it25" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                            label="#{bindings.TblPspDView2.hints.Amount.label}"
+                                            required="#{bindings.TblPspDView2.hints.Amount.mandatory}"
+                                            columns="#{bindings.TblPspDView2.hints.Amount.displayWidth}"
+                                            maximumLength="#{bindings.TblPspDView2.hints.Amount.precision}"
+                                            shortDesc="#{bindings.TblPspDView2.hints.Amount.tooltip}" id="it17">
+                                <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblPspDView2.hints.Amount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                          <af:spacer width="5" height="10" id="s14"/>
+                      <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
+                            
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s11"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
                  
                 </af:panelGridLayout>
               </af:showDetailItem>
@@ -229,7 +360,7 @@
                              headerText="Voucher No." id="c2">
                               <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Vno}"
-       id="it9" placeholder="Search ">
+       id="it26" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Vno.inputValue}"

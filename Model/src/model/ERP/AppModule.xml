@@ -685,6 +685,12 @@
   <ViewUsage
     Name="Report_Parameter_View1"
     ViewObjectName="model.ERP.VO.Report_Parameter_View"/>
+  <ViewUsage
+    Name="TblPspDView1"
+    ViewObjectName="model.ERP.VO.TblPspDView"/>
+  <ViewUsage
+    Name="TblPspDView2"
+    ViewObjectName="model.ERP.VO.TblPspDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1260,5 +1266,11 @@
     ViewLinkObjectName="model.ERP.VO.FkCashDispDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblCashDispMView1"
     DstViewUsageName="model.ERP.AppModule.TblCashDispDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPSPDMLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPSPDMLink"
+    SrcViewUsageName="model.ERP.AppModule.TblPspMView1"
+    DstViewUsageName="model.ERP.AppModule.TblPspDView2"
     Reversed="false"/>
 </AppModule>

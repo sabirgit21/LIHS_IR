@@ -404,6 +404,11 @@
     EntityAttrName="NetAmount"
     EntityUsage="TblPspM"
     AliasName="NET_AMOUNT"/>
+  <ViewLinkAccessor
+    Name="TblPspDView"
+    ViewLink="model.ERP.VO.FkPSPDMLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

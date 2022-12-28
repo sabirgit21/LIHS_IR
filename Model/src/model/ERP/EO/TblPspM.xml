@@ -138,7 +138,6 @@
     TableName="TBL_PSP_M">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="TblPspMRow"/>
   </Attribute>
   <Attribute
@@ -183,6 +182,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_PSP_M"/>
+  <AccessorAttribute
+    Name="TblPspD"
+    Association="model.ERP.EO.FkPSPDMAssoc"
+    AssociationEnd="model.ERP.EO.FkPSPDMAssoc.TblPspD"
+    AssociationOtherEnd="model.ERP.EO.FkPSPDMAssoc.TblPspM"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkPspId"
     PrimaryKey="true">

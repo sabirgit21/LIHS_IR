@@ -9,6 +9,9 @@
     <iterator Binds="TblPspMView1" RangeSize="10" DataControl="AppModuleDataControl1" id="TblPspMView1Iterator"/>
     <searchRegion Binds="TblPspMView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPspMView1Query"/>
+    <iterator Binds="TblPspDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblPspDView2Iterator"/>
+    <searchRegion Binds="TblPspDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPspDView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -118,5 +121,20 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_SuppGlAc" id="SuppGlAc" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TblPspDView2Iterator" id="TblPspDView2">
+      <nodeDefinition DefName="model.ERP.VO.TblPspDView" Name="TblPspDView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="PblSuppId"/>
+          <Item Value="SuppGlAc"/>
+          <Item Value="GlL4Id"/>
+          <Item Value="Decr"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblPspDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPspDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPspDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
