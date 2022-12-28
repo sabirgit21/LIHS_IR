@@ -124,6 +124,33 @@ public class DonationReports {
                     case "donorWise":
                             reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Wise_Report&");
                             break;
+                    case "donorIndidateWise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Individual_Date_Wise_Report&");
+                            break;
+                    case "donorIndimonthWise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Individual_Month_Wise_Report&");
+                            break;
+                    case "donorIndiYearWise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Individual_Year_Wise_Report&");
+                            break;
+                    case "donorProjcategDatewise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Project_Category_Date_Wise_Report&");
+                            break;
+                    case "donorProjcategMonthwise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Project_Category_Month_Wise_Report&");
+                            break;
+                    case "donorProjcategYearwise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Project_Category_Year_Wise_Report&");
+                            break;
+                    case "donorDatewise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Date_Wise_Report&");
+                            break;
+                    case "donorMonthwise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Month_Wise_Report&");
+                            break;
+                    case "donorYearwise":
+                            reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Donor_Year_Wise_Report&");
+                            break;
                 
 
                 default:

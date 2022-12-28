@@ -682,6 +682,9 @@
   <ViewUsage
     Name="TblCashDispDView2"
     ViewObjectName="model.ERP.VO.TblCashDispDView"/>
+  <ViewUsage
+    Name="Report_Parameter_View1"
+    ViewObjectName="model.ERP.VO.Report_Parameter_View"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"

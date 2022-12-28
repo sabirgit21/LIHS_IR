@@ -58,23 +58,13 @@
       </AttrNames>
     </attributeValues>
     <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_PblSuppId" id="PblSuppId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_BankCashId" id="BankCashId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_CoaWht" id="CoaWht" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblPspMView1Iterator" id="SuppGlAc">
-      <AttrNames>
-        <Item Value="SuppGlAc"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="TblPspMView1Iterator" id="BcGlAc">
-      <AttrNames>
-        <Item Value="BcGlAc"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="TblPspMView1Iterator" id="Amount">
       <AttrNames>
         <Item Value="Amount"/>
@@ -123,6 +113,10 @@
       </nodeDefinition>
     </tree>
     <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_Vtp" id="Vtp" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_BcGlAc" id="BcGlAc" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPspMView1Iterator" StaticList="false" Uses="LOV_SuppGlAc" id="SuppGlAc" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

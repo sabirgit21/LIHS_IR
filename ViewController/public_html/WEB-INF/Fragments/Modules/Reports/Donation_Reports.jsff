@@ -86,10 +86,27 @@
                                 <af:selectItem label="Summary Donation Category Day" value="summarydonationcategoryday" id="si10"/>
                                 <af:selectItem label="Summary Donation Category Month" value="summarydonationcategorymonth" id="si12"/>
                                 <af:selectItem label="Summary Donation Category donor" value="summarydonationcategorydonor" id="si13"/>
+                                
                                 <af:selectItem label="Donor Project Wise Report" value="donorProjectwise" id="si2"/>
                                 <af:selectItem label="Donor Project Category Wise Report" value="donorProjectcategoryWise" id="si3"/>
                                 <af:selectItem label="Donor Wise Report" value="donorWise" id="si5"/>
                                 
+                                <af:selectItem label="Donor Individual Date Wise Report" value="donorIndidateWise" id="si6"/>
+                                <af:selectItem label="Donor Individual Month Wise Report" value="donorIndimonthWise" id="si7"/>
+                                <af:selectItem label="Donor Individual Year Wise Report" value="donorIndiYearWise" id="si11"/>
+                                
+                                <af:selectItem label="Donor Project Category Date Wise Report" value="donorProjcategDatewise"
+                                               id="si14"/>
+                                <af:selectItem label="Donor Project Category Month Wise Report" value="donorProjcategMonthwise"
+                                               id="si15"/>
+                                 <af:selectItem label="Donor Project Category Year Wise Report" value="donorProjcategYearwise"
+                                                id="si16"/>
+                                <af:selectItem label="Donor Date Wise Report" value="donorDatewise"
+                                               id="si17"/>
+                                <af:selectItem label="Donor Month Wise Report" value="donorMonthwise"
+                                               id="si18"/>
+                                <af:selectItem label="Donor Year Wise Report" value="donorYearwise"
+                                               id="si19"/>
                             </af:selectOneChoice>
                              <af:spacer width="30" height="30" id="s3"/>
                         </af:panelGroupLayout>

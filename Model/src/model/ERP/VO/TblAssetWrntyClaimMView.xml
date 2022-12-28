@@ -143,7 +143,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblAssetWrntyClaimM"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblAssetWrntyClaimMView.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblAssetWrntyClaimMView.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AssetReturnMId"
     PrecisionRule="true"
@@ -227,4 +236,8 @@
     ViewLink="model.ERP.VO.FkAssetWrntyClaimDMLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

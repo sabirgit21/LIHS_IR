@@ -30,7 +30,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="TblAssetReturnMView"/>
   </Variable>
   <ViewAccessor
@@ -186,7 +185,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblAssetReturnM"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblAssetReturnMView.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblAssetReturnMView.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AssetPurchMId"
     PrecisionRule="true"
@@ -280,4 +288,8 @@
     ViewLink="model.ERP.VO.FkAssetReturnDMLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

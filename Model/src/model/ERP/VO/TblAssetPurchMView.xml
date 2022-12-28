@@ -260,7 +260,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblAssetPurchM"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblAssetPurchMView.Dated_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblAssetPurchMView.Dated_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="QcMId"
     PrecisionRule="true"
@@ -374,7 +383,16 @@
     PrecisionRule="true"
     EntityAttrName="WarrantyUpto"
     EntityUsage="TblAssetPurchM"
-    AliasName="WARRANTY_UPTO"/>
+    AliasName="WARRANTY_UPTO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblAssetPurchMView.WarrantyUpto_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblAssetPurchMView.WarrantyUpto_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AssetType"
     PrecisionRule="true"
@@ -413,4 +431,8 @@
     ViewLink="model.ERP.VO.FkAssetReturnMGrnLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
