@@ -86,6 +86,12 @@
     EntityUsage="TblPspD"
     AliasName="ID"/>
   <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblPspD"
+    AliasName="DATED"/>
+  <ViewAttribute
     Name="PspMId"
     PrecisionRule="true"
     EntityAttrName="PspMId"

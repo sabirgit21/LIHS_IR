@@ -130,6 +130,7 @@
           <Item Value="GlL4Id"/>
           <Item Value="Decr"/>
           <Item Value="Amount"/>
+          <Item Value="Dated"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

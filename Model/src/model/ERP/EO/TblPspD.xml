@@ -99,6 +99,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_PSP_D"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_PSP_D"/>
   <AccessorAttribute
     Name="TblPspM"
     Association="model.ERP.EO.FkPSPDMAssoc"

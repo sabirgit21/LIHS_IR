@@ -270,8 +270,24 @@
                                 <f:validator binding="#{row.bindings.SuppGlAc.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="Date" id="c17" sortable="true"
+                                       filterable="true">
+                                       <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Dated}"
+       id="it28" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                            label="#{bindings.TblPspDView2.hints.Dated.label}"
+                                            required="#{bindings.TblPspDView2.hints.Dated.mandatory}"
+                                            columns="#{bindings.TblPspDView2.hints.Dated.displayWidth}"
+                                            shortDesc="#{bindings.TblPspDView2.hints.Dated.tooltip}" id="id4">
+                                <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblPspDView2.hints.Dated.format}"/>
+                              </af:inputDate>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblPspDView2.hints.GlL4Id.name}" filterable="true"
-                                       sortable="true" headerText="GL L4 Name"
+                                       sortable="true" headerText="Expense AC"
                                        id="c13" width="250">
                                        <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.GlL4Id}"
