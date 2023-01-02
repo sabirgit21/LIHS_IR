@@ -691,6 +691,15 @@
   <ViewUsage
     Name="TblPspDView2"
     ViewObjectName="model.ERP.VO.TblPspDView"/>
+  <ViewUsage
+    Name="TblPapDView1"
+    ViewObjectName="model.ERP.VO.TblPapDView"/>
+  <ViewUsage
+    Name="TblPapMView1"
+    ViewObjectName="model.ERP.VO.TblPapMView"/>
+  <ViewUsage
+    Name="TblPapDView2"
+    ViewObjectName="model.ERP.VO.TblPapDView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1272,5 +1281,11 @@
     ViewLinkObjectName="model.ERP.VO.FkPSPDMLink"
     SrcViewUsageName="model.ERP.AppModule.TblPspMView1"
     DstViewUsageName="model.ERP.AppModule.TblPspDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPapDLink1"
+    ViewLinkObjectName="model.ERP.VO.FkPapDLink"
+    SrcViewUsageName="model.ERP.AppModule.TblPapMView1"
+    DstViewUsageName="model.ERP.AppModule.TblPapDView2"
     Reversed="false"/>
 </AppModule>

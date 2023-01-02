@@ -44,6 +44,7 @@ public class TblPblSuppImpl extends EntityImpl {
         UpdatedBy,
         Ast,
         ScrvCa,
+        AssetGlCa,
         TblPblSuppItems,
         TblGlL4;
         private static AttributesEnum[] vals = null;
@@ -91,6 +92,7 @@ public class TblPblSuppImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int AST = AttributesEnum.Ast.index();
     public static final int SCRVCA = AttributesEnum.ScrvCa.index();
+    public static final int ASSETGLCA = AttributesEnum.AssetGlCa.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLGLL4 = AttributesEnum.TblGlL4.index();
 
@@ -426,6 +428,22 @@ public class TblPblSuppImpl extends EntityImpl {
      */
     public void setScrvCa(BigDecimal value) {
         setAttributeInternal(SCRVCA, value);
+    }
+
+    /**
+     * Gets the attribute value for AssetGlCa, using the alias name AssetGlCa.
+     * @return the value of AssetGlCa
+     */
+    public BigDecimal getAssetGlCa() {
+        return (BigDecimal) getAttributeInternal(ASSETGLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetGlCa.
+     * @param value value to set the AssetGlCa
+     */
+    public void setAssetGlCa(BigDecimal value) {
+        setAttributeInternal(ASSETGLCA, value);
     }
 
     /**

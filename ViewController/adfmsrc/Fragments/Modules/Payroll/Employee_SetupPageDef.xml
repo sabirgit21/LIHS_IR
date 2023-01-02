@@ -48,6 +48,8 @@
           <Item Value="FatName"/>
           <Item Value="Cnic"/>
           <Item Value="Ast"/>
+          <Item Value="BankName"/>
+          <Item Value="AccNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

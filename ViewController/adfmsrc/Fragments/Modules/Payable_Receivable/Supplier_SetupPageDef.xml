@@ -145,5 +145,7 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblPblSuppView1Iterator" StaticList="false" Uses="LOV_ScrvCa" id="ScrvCa" DTSupportsMRU="true"
           SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblPblSuppView1Iterator" StaticList="false" Uses="LOV_AssetGlCa" id="AssetGlCa"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

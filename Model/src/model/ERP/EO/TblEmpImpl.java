@@ -54,6 +54,8 @@ public class TblEmpImpl extends EntityImpl {
         LeavingReason,
         LeavingType,
         EmpTermination,
+        AccNo,
+        BankName,
         TblAdvLoan,
         TblDesignation,
         TblEmpExp,
@@ -115,6 +117,8 @@ public class TblEmpImpl extends EntityImpl {
     public static final int LEAVINGREASON = AttributesEnum.LeavingReason.index();
     public static final int LEAVINGTYPE = AttributesEnum.LeavingType.index();
     public static final int EMPTERMINATION = AttributesEnum.EmpTermination.index();
+    public static final int ACCNO = AttributesEnum.AccNo.index();
+    public static final int BANKNAME = AttributesEnum.BankName.index();
     public static final int TBLADVLOAN = AttributesEnum.TblAdvLoan.index();
     public static final int TBLDESIGNATION = AttributesEnum.TblDesignation.index();
     public static final int TBLEMPEXP = AttributesEnum.TblEmpExp.index();
@@ -599,6 +603,38 @@ public class TblEmpImpl extends EntityImpl {
      */
     public void setEmpTermination(String value) {
         setAttributeInternal(EMPTERMINATION, value);
+    }
+
+    /**
+     * Gets the attribute value for AccNo, using the alias name AccNo.
+     * @return the value of AccNo
+     */
+    public String getAccNo() {
+        return (String) getAttributeInternal(ACCNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AccNo.
+     * @param value value to set the AccNo
+     */
+    public void setAccNo(String value) {
+        setAttributeInternal(ACCNO, value);
+    }
+
+    /**
+     * Gets the attribute value for BankName, using the alias name BankName.
+     * @return the value of BankName
+     */
+    public String getBankName() {
+        return (String) getAttributeInternal(BANKNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BankName.
+     * @param value value to set the BankName
+     */
+    public void setBankName(String value) {
+        setAttributeInternal(BANKNAME, value);
     }
 
     /**

@@ -176,6 +176,38 @@
                                 <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Bank Name" id="c3"
+                                       sortable="true" filterable="true" width="150">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.BankName}"
+       id="it50" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.BankName.inputValue}"
+                                            label="#{bindings.TblEmpView1.hints.BankName.label}"
+                                            required="#{bindings.TblEmpView1.hints.BankName.mandatory}"
+                                            columns="#{bindings.TblEmpView1.hints.BankName.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpView1.hints.BankName.precision}"
+                                            shortDesc="#{bindings.TblEmpView1.hints.BankName.tooltip}" id="it15">
+                                <f:validator binding="#{row.bindings.BankName.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Account No" id="c28" sortable="true"
+                                       filterable="true">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AccNo}"
+       id="it52" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.AccNo.inputValue}"
+                                            label="#{bindings.TblEmpView1.hints.AccNo.label}"
+                                            required="#{bindings.TblEmpView1.hints.AccNo.mandatory}"
+                                            columns="#{bindings.TblEmpView1.hints.AccNo.displayWidth}"
+                                            maximumLength="#{bindings.TblEmpView1.hints.AccNo.precision}"
+                                            shortDesc="#{bindings.TblEmpView1.hints.AccNo.tooltip}" id="it51">
+                                <f:validator binding="#{row.bindings.AccNo.validator}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column headerText="Active" id="c2" sortable="true"
                                        filterable="true">
                              <f:facet name="filter">

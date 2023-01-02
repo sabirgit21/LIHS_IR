@@ -69,11 +69,12 @@
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.PayrollReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
-                                                
-                                <af:selectItem label="Attendance Day Wise" value="attDay" id="si9"/>
-                                <af:selectItem label="Attendance Month Wise" value="attMonth" id="si1"/>
-                                <af:selectItem label="Employee Bio Data" value="EmployeeBioData" id="si3"/>
-                                <af:selectItem label="Attendance Detail" value="AttendanceDetail" id="si6"/>
+                                
+                                <af:selectItem label="Employee Project Wise Report" value="EmpProjWise" id="si7"/>
+                                <af:selectItem label="Employee Salary Sheet Report" value="EmpSal" id="si8"/>
+                                <af:selectItem label="Employee Attendance Report" value="EmpAtt" id="si6"/>
+                                <af:selectItem label="Employee Salary and Allowances Report" value="EmpSalAllow" id="si1"/>
+
                               
                                 
                             </af:selectOneChoice>

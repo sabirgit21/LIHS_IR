@@ -47,7 +47,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_DON_CR">
+    TableName="TBL_DON_CR"
+    IsNotNull="true">
     <TransientExpression
       Name="ExpressionScript"
       CodeSourceName="TblDonCrRow"/>
@@ -222,6 +223,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.ERP.EO.TblDonCr.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TblDonCrProjectIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PROJECT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TBL_DON_CR_PROJECT_ID_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ERP.EO.TblDonCr.ProjectId"/>
     </AttrArray>
   </Key>
   <Key

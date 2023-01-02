@@ -288,6 +288,9 @@
           usageId="view_Cash_Disbursement_TaskFlow_Cash_Disbursement_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Payable/Cash_Disbursement.jsff" usageId="view_Cash_DisbursementPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Reports/Payable_Reports.jsff" usageId="view_Payable_ReportsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Payable/Asset_Payment_TaskFlow.xml#Asset_Payment_TaskFlow@ExecuteWithParams"
+          usageId="view_Asset_Payment_TaskFlow_Asset_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Payable/Asset_Payment.jsff" usageId="view_Asset_PaymentPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -552,6 +555,9 @@
           path="Task_Flows.Modules.Payable.Cash_Disbursement_TaskFlow_Cash_Disbursement_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Cash_DisbursementPageDef" path="Fragments.Modules.Payable.Cash_DisbursementPageDef"/>
     <page id="view_Payable_ReportsPageDef" path="Fragments.Modules.Reports.Payable_ReportsPageDef"/>
+    <page id="view_Asset_Payment_TaskFlow_Asset_Payment_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Payable.Asset_Payment_TaskFlow_Asset_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Asset_PaymentPageDef" path="Fragments.Modules.Payable.Asset_PaymentPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"

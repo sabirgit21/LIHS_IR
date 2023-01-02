@@ -38,7 +38,9 @@
        TblEmp.LEAVING_REASON, 
        TblEmp.LEAVING_TYPE, 
        TblEmp.AST, 
-       TblEmp.EMP_TERMINATION"
+       TblEmp.EMP_TERMINATION, 
+       TblEmp.ACC_NO, 
+       TblEmp.BANK_NAME"
   FromList="TBL_EMP TblEmp"
   Where="TblEmp.PROJECT_ID = nvl(:getProId,TblEmp.PROJECT_ID)">
   <Variable
@@ -505,6 +507,18 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="AccNo"
+    PrecisionRule="true"
+    EntityAttrName="AccNo"
+    EntityUsage="TblEmp"
+    AliasName="ACC_NO"/>
+  <ViewAttribute
+    Name="BankName"
+    PrecisionRule="true"
+    EntityAttrName="BankName"
+    EntityUsage="TblEmp"
+    AliasName="BANK_NAME"/>
   <ViewLinkAccessor
     Name="TblAdvLoanView"
     ViewLink="model.ERP.VO.FkAdvLoanEmpLink"
