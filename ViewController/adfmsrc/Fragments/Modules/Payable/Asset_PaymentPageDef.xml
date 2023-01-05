@@ -12,8 +12,6 @@
     <iterator Binds="TblPapDView2" RangeSize="10" DataControl="AppModuleDataControl1" id="TblPapDView2Iterator"/>
     <searchRegion Binds="TblPapDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPapDView2Query"/>
-    <iterator Binds="TblPblSuppItemsView2" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="TblPblSuppItemsView2Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -129,11 +127,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblPblSuppItemsView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="TblPblSuppItemsView2Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="TblPblSuppItemsView2Iterator" id="Delete1" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
+    <action IterBinding="TblPapDView2Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPapDView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPapDView2Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

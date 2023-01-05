@@ -175,14 +175,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PAP_M"/>
+    TableName="TBL_PAP_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="BcGlAc"
     ColumnName="BC_GL_AC"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_PAP_M"/>
+    TableName="TBL_PAP_M"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <AccessorAttribute
     Name="TblPapD"
     Association="model.ERP.EO.FkPapDAssoc"

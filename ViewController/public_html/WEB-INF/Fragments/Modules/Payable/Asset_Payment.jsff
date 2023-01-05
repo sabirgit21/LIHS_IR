@@ -85,17 +85,17 @@
                             </af:inputText>
                             <af:spacer  id="s7"/>
                             <af:selectOneChoice value="#{bindings.AssetGlAc.inputValue}"
-                                                label="#{bindings.AssetGlAc.label}"
+                                                label="Asset GL AC"
                                                 required="#{bindings.AssetGlAc.hints.mandatory}"
                                                 shortDesc="#{bindings.AssetGlAc.hints.tooltip}" id="soc16"
-                                                contentStyle="width:200px;">
+                                                contentStyle="width:200px;" readOnly="true">
                               <f:selectItems value="#{bindings.AssetGlAc.items}" id="si16"/>
                               <f:validator binding="#{bindings.AssetGlAc.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer  id="s17"/>
-                            <af:selectOneChoice value="#{bindings.BcGlAc.inputValue}" label="#{bindings.BcGlAc.label}"
+                            <af:selectOneChoice value="#{bindings.BcGlAc.inputValue}" label="BC GL AC"
                                                 required="#{bindings.BcGlAc.hints.mandatory}"
-                                                shortDesc="#{bindings.BcGlAc.hints.tooltip}" id="soc17"
+                                                shortDesc="#{bindings.BcGlAc.hints.tooltip}" id="soc17" readOnly="true"
                                                 contentStyle="width:200px;">
                               <f:selectItems value="#{bindings.BcGlAc.items}" id="si17"/>
                               <f:validator binding="#{bindings.BcGlAc.validator}"/>
@@ -106,7 +106,8 @@
                             <af:selectOneChoice value="#{bindings.ProjectId.inputValue}"
                                                 label="Project" readOnly="${sessionScope.sessPrID != ''}"
                                                 required="#{bindings.ProjectId.hints.mandatory}"
-                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc8">
+                                                shortDesc="#{bindings.ProjectId.hints.tooltip}" id="soc8"
+                                                contentStyle="width:200px;">
                               <f:selectItems value="#{bindings.ProjectId.items}" id="si8"/>
                               <f:validator binding="#{bindings.ProjectId.validator}"/>
                             </af:selectOneChoice>
@@ -221,7 +222,7 @@
                                     rowSelection="single" fetchSize="#{bindings.TblPapDView2.rangeSize}"
                                     filterModel="#{bindings.TblPapDView2Query.queryDescriptor}" filterVisible="true"
                                     queryListener="#{bindings.TblPapDView2Query.processQuery}" varStatus="vs" id="t2"
-                                    scrollPolicy="page" autoHeightRows="0">
+                                    scrollPolicy="page" autoHeightRows="0" >
                             <af:column sortProperty="#{bindings.TblPapDView2.hints.Id.name}" filterable="true"
                                        sortable="true" headerText="ID" id="c11" visible="false">
                                        <f:facet name="filter">
@@ -241,7 +242,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Asset Order" id="c13" sortable="true"
-                                       filterable="true">
+                                       filterable="true" width="300">
                                         <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.AssetOrderMId}"
        id="it22" placeholder="Search ">
@@ -290,44 +291,8 @@
                               </af:inputText>
                              
                             </af:column>
-                            <af:column headerText="Tax Amount" id="c1" sortable="true" filterable="true">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
-       id="it20" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
-                                            label="#{bindings.TblPapDView2.hints.TaxAmount.label}"
-                                            required="#{bindings.TblPapDView2.hints.TaxAmount.mandatory}"
-                                            columns="#{bindings.TblPapDView2.hints.TaxAmount.displayWidth}"
-                                            maximumLength="#{bindings.TblPapDView2.hints.TaxAmount.precision}"
-                                            shortDesc="#{bindings.TblPapDView2.hints.TaxAmount.tooltip}" id="it5" >
-                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblPapDView2.hints.TaxAmount.format}"/>
-                              </af:inputText>
-                             
-                            </af:column>
-                            <af:column headerText="Net Amount" id="c12" sortable="true" filterable="true">
-                             <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.NetAmount}"
-       id="it21" placeholder="Search ">
-      </af:inputText>
-</f:facet>
-                              <af:inputText value="#{row.bindings.NetAmount.inputValue}"
-                                            label="#{bindings.TblPapDView2.hints.NetAmount.label}"
-                                            required="#{bindings.TblPapDView2.hints.NetAmount.mandatory}"
-                                            columns="#{bindings.TblPapDView2.hints.NetAmount.displayWidth}"
-                                            maximumLength="#{bindings.TblPapDView2.hints.NetAmount.precision}"
-                                            shortDesc="#{bindings.TblPapDView2.hints.NetAmount.tooltip}" id="it16" readOnly="true">
-                                <f:validator binding="#{row.bindings.NetAmount.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblPapDView2.hints.NetAmount.format}"/>
-                              </af:inputText>
-                              
-                            </af:column>
                           </af:table>
-                         
+                          
                           <af:spacer width="5" height="10" id="s14"/>
                       <af:panelGroupLayout id="pgl5"  halign="center" layout="horizontal">
                             
