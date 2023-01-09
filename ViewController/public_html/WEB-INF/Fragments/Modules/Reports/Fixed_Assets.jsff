@@ -55,9 +55,8 @@
                                                 binding="#{backingBeanScope.FixedAssetsReportBackBean.report_type}"
                                                  contentStyle="width:300px;">
                                                 
-                                <af:selectItem label="Attendance Day Wise" value="attDay" id="si9"/>
-                                <af:selectItem label="Attendance Month Wise" value="attMonth" id="si1"/>
-                                <af:selectItem label="Employee Bio Data" value="EmployeeBioData" id="si3"/>
+                                <af:selectItem label="Asset Project Wise Report" value="AssetProjWise" id="si9"/>
+                                <af:selectItem label="Asset Project Category Wise Report" value="AssetProjCatWise" id="si1"/>
                               
                                 
                             </af:selectOneChoice>

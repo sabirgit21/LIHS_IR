@@ -59,9 +59,12 @@ public class FixedAssetsReport {
             
                 switch (selectedReportType) {
                 
-                case "cashPurchase":
-                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Cash_Purchase_Date_Wise&");
+                case "AssetProjWise":
+                    reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Asset_Project_Wise_Report&");
                     break;
+               case "AssetProjCatWise":
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Asset_Project_Category_Wise_Report&");
+                        break;
                 
                 default:
                     showMessage("Please Select Report Type");
