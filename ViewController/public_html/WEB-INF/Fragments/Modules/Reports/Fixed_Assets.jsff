@@ -57,6 +57,8 @@
                                                 
                                 <af:selectItem label="Asset Project Wise Report" value="AssetProjWise" id="si9"/>
                                 <af:selectItem label="Asset Project Category Wise Report" value="AssetProjCatWise" id="si1"/>
+                                <af:selectItem label="Asset Project Supplier Wise Report" value="AssetProjSuppWise"
+                                               id="si3"/>
                               
                                 
                             </af:selectOneChoice>

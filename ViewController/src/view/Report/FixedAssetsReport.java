@@ -65,6 +65,9 @@ public class FixedAssetsReport {
                case "AssetProjCatWise":
                         reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Asset_Project_Category_Wise_Report&");
                         break;
+               case "AssetProjSuppWise":
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Asset_Project_Supplier_Wise_Report&");
+                        break;
                 
                 default:
                     showMessage("Please Select Report Type");
