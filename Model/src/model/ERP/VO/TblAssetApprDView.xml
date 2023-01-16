@@ -23,7 +23,9 @@
        TblAssetApprD.UPDATED_BY, 
        TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
+       TblUom.ID AS ID1, 
+       TblAssetApprD.TAX_PARC, 
+       TblAssetApprD.TAX_AMOUNT"
   FromList="TBL_ASSET_APPR_D TblAssetApprD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
   Where="TblAssetApprD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)     
 AND TblAssetL4.UOM_ID = TblUom.ID(+)">
@@ -170,4 +172,16 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="TaxParc"
+    PrecisionRule="true"
+    EntityAttrName="TaxParc"
+    EntityUsage="TblAssetApprD"
+    AliasName="TAX_PARC"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblAssetApprD"
+    AliasName="TAX_AMOUNT"/>
 </ViewObject>

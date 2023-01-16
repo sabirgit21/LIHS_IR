@@ -700,6 +700,12 @@
   <ViewUsage
     Name="TblPapDView2"
     ViewObjectName="model.ERP.VO.TblPapDView"/>
+  <ViewUsage
+    Name="TblPblSuppAssetsView1"
+    ViewObjectName="model.ERP.VO.TblPblSuppAssetsView"/>
+  <ViewUsage
+    Name="TblPblSuppAssetsView2"
+    ViewObjectName="model.ERP.VO.TblPblSuppAssetsView"/>
   <ViewLinkUsage
     Name="FkGlL1IdLink1"
     ViewLinkObjectName="model.ERP.VO.FkGlL1IdLink"
@@ -1287,5 +1293,11 @@
     ViewLinkObjectName="model.ERP.VO.FkPapDLink"
     SrcViewUsageName="model.ERP.AppModule.TblPapMView1"
     DstViewUsageName="model.ERP.AppModule.TblPapDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPblSuppAssetL4Link1"
+    ViewLinkObjectName="model.ERP.VO.FkPblSuppAssetL4Link"
+    SrcViewUsageName="model.ERP.AppModule.TblPblSuppView1"
+    DstViewUsageName="model.ERP.AppModule.TblPblSuppAssetsView2"
     Reversed="false"/>
 </AppModule>

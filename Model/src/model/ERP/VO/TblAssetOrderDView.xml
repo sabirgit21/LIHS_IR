@@ -27,7 +27,9 @@
        TblAssetL4.ASSET_L4_ID AS ASSET_L4ID1, 
        TblAssetL4.UOM_ID, 
        TblUom.NAME, 
-       TblUom.ID AS ID1"
+       TblUom.ID AS ID1, 
+       TblAssetOrderD.TAX_AMOUNT, 
+       TblAssetOrderD.TAX_PARC"
   FromList="TBL_ASSET_ORDER_D TblAssetOrderD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
   Where="TblAssetOrderD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)   
 AND TblAssetL4.UOM_ID = TblUom.ID(+)">
@@ -178,7 +180,8 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblAssetOrderD"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -190,7 +193,8 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblAssetOrderD"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -247,6 +251,18 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     EntityAttrName="Id"
     EntityUsage="TblUom"
     AliasName="ID1"/>
+  <ViewAttribute
+    Name="TaxAmount"
+    PrecisionRule="true"
+    EntityAttrName="TaxAmount"
+    EntityUsage="TblAssetOrderD"
+    AliasName="TAX_AMOUNT"/>
+  <ViewAttribute
+    Name="TaxParc"
+    PrecisionRule="true"
+    EntityAttrName="TaxParc"
+    EntityUsage="TblAssetOrderD"
+    AliasName="TAX_PARC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="Id1"/>

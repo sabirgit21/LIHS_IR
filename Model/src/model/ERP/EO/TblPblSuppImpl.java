@@ -46,7 +46,8 @@ public class TblPblSuppImpl extends EntityImpl {
         ScrvCa,
         AssetGlCa,
         TblPblSuppItems,
-        TblGlL4;
+        TblGlL4,
+        TblPblSuppAssets;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -95,6 +96,7 @@ public class TblPblSuppImpl extends EntityImpl {
     public static final int ASSETGLCA = AttributesEnum.AssetGlCa.index();
     public static final int TBLPBLSUPPITEMS = AttributesEnum.TblPblSuppItems.index();
     public static final int TBLGLL4 = AttributesEnum.TblGlL4.index();
+    public static final int TBLPBLSUPPASSETS = AttributesEnum.TblPblSuppAssets.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -465,6 +467,14 @@ public class TblPblSuppImpl extends EntityImpl {
      */
     public void setTblGlL4(EntityImpl value) {
         setAttributeInternal(TBLGLL4, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblPblSuppAssets() {
+        return (RowIterator) getAttributeInternal(TBLPBLSUPPASSETS);
     }
 
 

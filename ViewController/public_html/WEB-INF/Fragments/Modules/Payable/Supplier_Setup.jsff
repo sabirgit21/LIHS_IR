@@ -532,6 +532,85 @@
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
+              <af:showDetailItem text="Supplier Assets" id="sdi2">
+                 
+              <af:table value="#{bindings.TblPblSuppAssetsView2.collectionModel}" var="row"
+                            rows="#{bindings.TblPblSuppAssetsView2.rangeSize}"
+                            emptyText="#{bindings.TblPblSuppAssetsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            rowBandingInterval="0"
+                            selectedRowKeys="#{bindings.TblPblSuppAssetsView2.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.TblPblSuppAssetsView2.collectionModel.makeCurrent}"
+                            rowSelection="single" fetchSize="#{bindings.TblPblSuppAssetsView2.rangeSize}"
+                            filterModel="#{bindings.TblPblSuppAssetsView2Query.queryDescriptor}" filterVisible="true"
+                            queryListener="#{bindings.TblPblSuppAssetsView2Query.processQuery}" varStatus="vs" id="t4"
+                            scrollPolicy="page" autoHeightRows="0">
+                    <af:column sortProperty="#{bindings.TblPblSuppAssetsView2.hints.Id.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.TblPblSuppAssetsView2.hints.Id.label}" id="c21" visible="false">
+                      <af:inputText value="#{row.bindings.Id.inputValue}"
+                                    label="#{bindings.TblPblSuppAssetsView2.hints.Id.label}"
+                                    required="#{bindings.TblPblSuppAssetsView2.hints.Id.mandatory}"
+                                    columns="#{bindings.TblPblSuppAssetsView2.hints.Id.displayWidth}"
+                                    maximumLength="#{bindings.TblPblSuppAssetsView2.hints.Id.precision}"
+                                    shortDesc="#{bindings.TblPblSuppAssetsView2.hints.Id.tooltip}" id="it50" readOnly="true">
+                        <f:validator binding="#{row.bindings.Id.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.TblPblSuppAssetsView2.hints.Id.format}"/>
+                      </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblPblSuppAssetsView2.hints.AssetsL4Id.name}" filterable="true"
+                               sortable="true" headerText="Asset L4"
+                               id="c22" width="400">
+                               <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.AssetsL4Id}"
+                                   id="it45" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                      <af:selectOneChoice value="#{row.bindings.AssetsL4Id.inputValue}"
+                                          label="#{row.bindings.AssetsL4Id.label}"
+                                          required="#{bindings.TblPblSuppAssetsView2.hints.AssetsL4Id.mandatory}"
+                                          shortDesc="#{bindings.TblPblSuppAssetsView2.hints.AssetsL4Id.tooltip}"
+                                          id="soc10">
+                        <f:selectItems value="#{row.bindings.AssetsL4Id.items}" id="si10"/>
+                        <f:validator binding="#{row.bindings.AssetsL4Id.validator}"/>
+                      </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.name}" filterable="true"
+                               sortable="true" headerText="Tax Perc"
+                               id="c23">
+                                <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.TaxParc}"
+                                   id="it46" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                      <af:inputText value="#{row.bindings.TaxParc.inputValue}"
+                                    label="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.label}"
+                                    required="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.mandatory}"
+                                    columns="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.displayWidth}"
+                                    maximumLength="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.precision}"
+                                    shortDesc="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.tooltip}" id="it51">
+                        <f:validator binding="#{row.bindings.TaxParc.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.TblPblSuppAssetsView2.hints.TaxParc.format}"/>
+                      </af:inputText>
+                    </af:column>
+                  </af:table>
+                <af:spacer width="5" height="10" id="s22"/>
+                <af:panelGroupLayout id="pgl6" halign="center" layout="horizontal">
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/LIHS/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+               
+                <af:spacer width="5" height="10" id="s23"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                  
+                 
+                </af:showDetailItem>
+              
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>

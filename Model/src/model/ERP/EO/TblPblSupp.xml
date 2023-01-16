@@ -263,6 +263,13 @@
     AssociationOtherEnd="model.ERP.EO.FkPblSuppGlL4IdAssoc.TblPblSupp"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblPblSuppAssets"
+    Association="model.ERP.EO.FkPblSuppAssetL4Assoc"
+    AssociationEnd="model.ERP.EO.FkPblSuppAssetL4Assoc.TblPblSuppAssets"
+    AssociationOtherEnd="model.ERP.EO.FkPblSuppAssetL4Assoc.TblPblSupp"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkPblSuppId"
     PrimaryKey="true">

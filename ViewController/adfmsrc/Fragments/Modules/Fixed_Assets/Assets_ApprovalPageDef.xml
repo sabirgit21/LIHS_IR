@@ -75,6 +75,7 @@
           <Item Value="Qty"/>
           <Item Value="Rate"/>
           <Item Value="Amount"/>
+          <Item Value="TaxAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

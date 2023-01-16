@@ -35,6 +35,8 @@ public class TblAssetPurchDImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         QcMId,
+        TaxAmount,
+        TaxParc,
         TblAssetL4,
         TblAssetPurchM;
         private static AttributesEnum[] vals = null;
@@ -59,6 +61,8 @@ public class TblAssetPurchDImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int ASSETPURCHMID = AttributesEnum.AssetPurchMId.index();
     public static final int SRNO = AttributesEnum.SrNo.index();
@@ -72,6 +76,8 @@ public class TblAssetPurchDImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int QCMID = AttributesEnum.QcMId.index();
+    public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
+    public static final int TAXPARC = AttributesEnum.TaxParc.index();
     public static final int TBLASSETL4 = AttributesEnum.TblAssetL4.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
 
@@ -80,6 +86,14 @@ public class TblAssetPurchDImpl extends EntityImpl {
      */
     public TblAssetPurchDImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetPurchD");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -274,6 +288,38 @@ public class TblAssetPurchDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for TaxAmount, using the alias name TaxAmount.
+     * @return the value of TaxAmount
+     */
+    public BigDecimal getTaxAmount() {
+        return (BigDecimal) getAttributeInternal(TAXAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxAmount.
+     * @param value value to set the TaxAmount
+     */
+    public void setTaxAmount(BigDecimal value) {
+        setAttributeInternal(TAXAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxParc, using the alias name TaxParc.
+     * @return the value of TaxParc
+     */
+    public BigDecimal getTaxParc() {
+        return (BigDecimal) getAttributeInternal(TAXPARC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxParc.
+     * @param value value to set the TaxParc
+     */
+    public void setTaxParc(BigDecimal value) {
+        setAttributeInternal(TAXPARC, value);
+    }
+
+    /**
      * @return the associated entity TblAssetL4Impl.
      */
     public TblAssetL4Impl getTblAssetL4() {
@@ -290,16 +336,17 @@ public class TblAssetPurchDImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblAssetPurchM() {
-        return (EntityImpl) getAttributeInternal(TBLASSETPURCHM);
+    public TblAssetPurchMImpl getTblAssetPurchM() {
+        return (TblAssetPurchMImpl) getAttributeInternal(TBLASSETPURCHM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblAssetPurchM(EntityImpl value) {
+    public void setTblAssetPurchM(TblAssetPurchMImpl value) {
         setAttributeInternal(TBLASSETPURCHM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -308,13 +355,6 @@ public class TblAssetPurchDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetPurchD");
     }
 
     /**

@@ -37,6 +37,8 @@ public class TblAssetOrderDImpl extends EntityImpl {
         Rate,
         Amount,
         AssetReqMId,
+        TaxAmount,
+        TaxParc,
         TblAssetL4,
         TblAssetOrderM;
         private static AttributesEnum[] vals = null;
@@ -61,6 +63,8 @@ public class TblAssetOrderDImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int ID = AttributesEnum.Id.index();
     public static final int ASSETORDERMID = AttributesEnum.AssetOrderMId.index();
     public static final int SRNO = AttributesEnum.SrNo.index();
@@ -76,6 +80,8 @@ public class TblAssetOrderDImpl extends EntityImpl {
     public static final int RATE = AttributesEnum.Rate.index();
     public static final int AMOUNT = AttributesEnum.Amount.index();
     public static final int ASSETREQMID = AttributesEnum.AssetReqMId.index();
+    public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
+    public static final int TAXPARC = AttributesEnum.TaxParc.index();
     public static final int TBLASSETL4 = AttributesEnum.TblAssetL4.index();
     public static final int TBLASSETORDERM = AttributesEnum.TblAssetOrderM.index();
 
@@ -84,6 +90,14 @@ public class TblAssetOrderDImpl extends EntityImpl {
      */
     public TblAssetOrderDImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetOrderD");
+    }
+
 
     /**
      * Gets the attribute value for Id, using the alias name Id.
@@ -310,6 +324,38 @@ public class TblAssetOrderDImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for TaxAmount, using the alias name TaxAmount.
+     * @return the value of TaxAmount
+     */
+    public BigDecimal getTaxAmount() {
+        return (BigDecimal) getAttributeInternal(TAXAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxAmount.
+     * @param value value to set the TaxAmount
+     */
+    public void setTaxAmount(BigDecimal value) {
+        setAttributeInternal(TAXAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TaxParc, using the alias name TaxParc.
+     * @return the value of TaxParc
+     */
+    public BigDecimal getTaxParc() {
+        return (BigDecimal) getAttributeInternal(TAXPARC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TaxParc.
+     * @param value value to set the TaxParc
+     */
+    public void setTaxParc(BigDecimal value) {
+        setAttributeInternal(TAXPARC, value);
+    }
+
+    /**
      * @return the associated entity TblAssetL4Impl.
      */
     public TblAssetL4Impl getTblAssetL4() {
@@ -326,16 +372,17 @@ public class TblAssetOrderDImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblAssetOrderM() {
-        return (EntityImpl) getAttributeInternal(TBLASSETORDERM);
+    public TblAssetOrderMImpl getTblAssetOrderM() {
+        return (TblAssetOrderMImpl) getAttributeInternal(TBLASSETORDERM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblAssetOrderM(EntityImpl value) {
+    public void setTblAssetOrderM(TblAssetOrderMImpl value) {
         setAttributeInternal(TBLASSETORDERM, value);
     }
+
 
     /**
      * @param id key constituent
@@ -344,13 +391,6 @@ public class TblAssetOrderDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetOrderD");
     }
 
     /**

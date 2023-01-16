@@ -273,6 +273,24 @@
                                                   pattern="#{bindings.TblAssetOrderDView3.hints.Rate.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Tax Amount" id="c7" sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.TaxAmount}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:inputText value="#{row.bindings.TaxAmount.inputValue}"
+                                            label="#{bindings.TblAssetOrderDView3.hints.TaxAmount.label}"
+                                            required="#{bindings.TblAssetOrderDView3.hints.TaxAmount.mandatory}"
+                                            columns="#{bindings.TblAssetOrderDView3.hints.TaxAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblAssetOrderDView3.hints.TaxAmount.precision}"
+                                            shortDesc="#{bindings.TblAssetOrderDView3.hints.TaxAmount.tooltip}"
+                                            id="it12" readOnly="true">
+                                <f:validator binding="#{row.bindings.TaxAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblAssetOrderDView3.hints.TaxAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column headerText="Amount" id="c22" sortable="true"
                                        filterable="true">
                                         <f:facet name="filter">

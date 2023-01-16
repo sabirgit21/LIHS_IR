@@ -83,6 +83,7 @@
           <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="UOMName"/>
+          <Item Value="TaxAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
