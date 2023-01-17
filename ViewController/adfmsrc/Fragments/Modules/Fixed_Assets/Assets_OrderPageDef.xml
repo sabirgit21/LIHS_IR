@@ -84,6 +84,7 @@
           <Item Value="Amount"/>
           <Item Value="UOMName"/>
           <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -109,6 +110,8 @@
       </nodeDefinition>
     </tree>
     <list IterBinding="TblAssetOrderMView1Iterator" StaticList="false" Uses="LOV_AssetApprMId" id="AssetApprMId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblAssetOrderMView1Iterator" StaticList="false" Uses="LOV_SuppGlAc" id="SuppGlAc"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

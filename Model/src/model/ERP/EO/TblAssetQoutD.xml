@@ -121,6 +121,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_QOUT_D"/>
+  <Attribute
+    Name="NetAmount"
+    ColumnName="NET_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSET_QOUT_D"/>
   <AccessorAttribute
     Name="TblAssetQoutM"
     Association="model.ERP.EO.FkAssetQoutDMAssoc"

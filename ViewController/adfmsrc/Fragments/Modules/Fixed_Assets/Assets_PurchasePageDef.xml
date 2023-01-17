@@ -85,6 +85,7 @@
           <Item Value="Amount"/>
           <Item Value="UOMName"/>
           <Item Value="TaxAmount"/>
+          <Item Value="NetAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -120,5 +121,7 @@
     </attributeValues>
     <list IterBinding="TblAssetPurchMView1Iterator" StaticList="false" Uses="LOV_AssetWrntyClaimMId"
           id="AssetWrntyClaimMId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblAssetPurchMView1Iterator" StaticList="false" Uses="LOV_SuppGlAc" id="SuppGlAc"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

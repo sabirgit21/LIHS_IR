@@ -22,7 +22,8 @@
        TblAssetOrderM.UPDATED_DATE, 
        TblAssetOrderM.UPDATED_BY, 
        TblAssetOrderM.PROJECT_ID, 
-       TblAssetOrderM.ASSET_APPR_M_ID"
+       TblAssetOrderM.ASSET_APPR_M_ID, 
+       TblAssetOrderM.SUPP_GL_AC"
   FromList="TBL_ASSET_ORDER_M TblAssetOrderM"
   Where="TblAssetOrderM.PROJECT_ID= nvl(:getProId,TblAssetOrderM.PROJECT_ID)">
   <Variable
@@ -56,6 +57,10 @@
   <ViewAccessor
     Name="Asset_Appr_M_LOV1"
     ViewObjectName="model.LOV.Asset_Appr_M_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -149,6 +154,24 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Dated"/>
       <Item Value="Vno"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SuppGlAc"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SuppGlAc"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -285,6 +308,20 @@
     EntityUsage="TblAssetOrderM"
     AliasName="ASSET_APPR_M_ID"
     LOVName="LOV_AssetApprMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SuppGlAc"
+    PrecisionRule="true"
+    EntityAttrName="SuppGlAc"
+    EntityUsage="TblAssetOrderM"
+    AliasName="SUPP_GL_AC"
+    LOVName="LOV_SuppGlAc">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

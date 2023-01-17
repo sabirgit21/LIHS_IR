@@ -41,6 +41,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
         AssetType,
         WarrantyUpto,
         AssetWrntyClaimMId,
+        SuppGlAc,
         TblAssetPurchD,
         TblAssetOrderM,
         TblAssetReturnM;
@@ -86,6 +87,7 @@ public class TblAssetPurchMImpl extends EntityImpl {
     public static final int ASSETTYPE = AttributesEnum.AssetType.index();
     public static final int WARRANTYUPTO = AttributesEnum.WarrantyUpto.index();
     public static final int ASSETWRNTYCLAIMMID = AttributesEnum.AssetWrntyClaimMId.index();
+    public static final int SUPPGLAC = AttributesEnum.SuppGlAc.index();
     public static final int TBLASSETPURCHD = AttributesEnum.TblAssetPurchD.index();
     public static final int TBLASSETORDERM = AttributesEnum.TblAssetOrderM.index();
     public static final int TBLASSETRETURNM = AttributesEnum.TblAssetReturnM.index();
@@ -374,6 +376,22 @@ public class TblAssetPurchMImpl extends EntityImpl {
      */
     public void setAssetWrntyClaimMId(BigDecimal value) {
         setAttributeInternal(ASSETWRNTYCLAIMMID, value);
+    }
+
+    /**
+     * Gets the attribute value for SuppGlAc, using the alias name SuppGlAc.
+     * @return the value of SuppGlAc
+     */
+    public BigDecimal getSuppGlAc() {
+        return (BigDecimal) getAttributeInternal(SUPPGLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SuppGlAc.
+     * @param value value to set the SuppGlAc
+     */
+    public void setSuppGlAc(BigDecimal value) {
+        setAttributeInternal(SUPPGLAC, value);
     }
 
     /**

@@ -37,10 +37,11 @@ public class TblAssetOrderMImpl extends EntityImpl {
         UpdatedBy,
         ProjectId,
         AssetApprMId,
+        SuppGlAc,
+        AssetGlCa,
         TblAssetOrderD,
         TblAssetPurchM;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -78,6 +79,8 @@ public class TblAssetOrderMImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int PROJECTID = AttributesEnum.ProjectId.index();
     public static final int ASSETAPPRMID = AttributesEnum.AssetApprMId.index();
+    public static final int SUPPGLAC = AttributesEnum.SuppGlAc.index();
+    public static final int ASSETGLCA = AttributesEnum.AssetGlCa.index();
     public static final int TBLASSETORDERD = AttributesEnum.TblAssetOrderD.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
 
@@ -302,6 +305,38 @@ public class TblAssetOrderMImpl extends EntityImpl {
      */
     public void setAssetApprMId(BigDecimal value) {
         setAttributeInternal(ASSETAPPRMID, value);
+    }
+
+    /**
+     * Gets the attribute value for SuppGlAc, using the alias name SuppGlAc.
+     * @return the value of SuppGlAc
+     */
+    public BigDecimal getSuppGlAc() {
+        return (BigDecimal) getAttributeInternal(SUPPGLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SuppGlAc.
+     * @param value value to set the SuppGlAc
+     */
+    public void setSuppGlAc(BigDecimal value) {
+        setAttributeInternal(SUPPGLAC, value);
+    }
+
+    /**
+     * Gets the attribute value for AssetGlCa, using the alias name AssetGlCa.
+     * @return the value of AssetGlCa
+     */
+    public BigDecimal getAssetGlCa() {
+        return (BigDecimal) getAttributeInternal(ASSETGLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AssetGlCa.
+     * @param value value to set the AssetGlCa
+     */
+    public void setAssetGlCa(BigDecimal value) {
+        setAttributeInternal(ASSETGLCA, value);
     }
 
     /**

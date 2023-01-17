@@ -176,6 +176,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_PURCH_M"/>
+  <Attribute
+    Name="SuppGlAc"
+    ColumnName="SUPP_GL_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSET_PURCH_M"/>
   <AccessorAttribute
     Name="TblAssetPurchD"
     Association="model.ERP.EO.FkAssetPurchDMAssoc"

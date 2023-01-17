@@ -39,6 +39,7 @@ public class TblAssetOrderDImpl extends EntityImpl {
         AssetReqMId,
         TaxAmount,
         TaxParc,
+        NetAmount,
         TblAssetL4,
         TblAssetOrderM;
         private static AttributesEnum[] vals = null;
@@ -82,6 +83,7 @@ public class TblAssetOrderDImpl extends EntityImpl {
     public static final int ASSETREQMID = AttributesEnum.AssetReqMId.index();
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int TAXPARC = AttributesEnum.TaxParc.index();
+    public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
     public static final int TBLASSETL4 = AttributesEnum.TblAssetL4.index();
     public static final int TBLASSETORDERM = AttributesEnum.TblAssetOrderM.index();
 
@@ -353,6 +355,22 @@ public class TblAssetOrderDImpl extends EntityImpl {
      */
     public void setTaxParc(BigDecimal value) {
         setAttributeInternal(TAXPARC, value);
+    }
+
+    /**
+     * Gets the attribute value for NetAmount, using the alias name NetAmount.
+     * @return the value of NetAmount
+     */
+    public BigDecimal getNetAmount() {
+        return (BigDecimal) getAttributeInternal(NETAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NetAmount.
+     * @param value value to set the NetAmount
+     */
+    public void setNetAmount(BigDecimal value) {
+        setAttributeInternal(NETAMOUNT, value);
     }
 
     /**

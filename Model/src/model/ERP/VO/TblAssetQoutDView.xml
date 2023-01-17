@@ -25,7 +25,8 @@
        TblUom.NAME, 
        TblUom.ID AS ID1, 
        TblAssetQoutD.TAX_AMOUNT, 
-       TblAssetQoutD.TAX_PARC"
+       TblAssetQoutD.TAX_PARC, 
+       TblAssetQoutD.NET_AMOUNT"
   FromList="TBL_ASSET_QOUT_D TblAssetQoutD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
   Where="TblAssetQoutD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)       
 AND TblAssetL4.UOM_ID = TblUom.ID(+)">
@@ -184,4 +185,10 @@ AND TblAssetL4.UOM_ID = TblUom.ID(+)">
     EntityAttrName="TaxParc"
     EntityUsage="TblAssetQoutD"
     AliasName="TAX_PARC"/>
+  <ViewAttribute
+    Name="NetAmount"
+    PrecisionRule="true"
+    EntityAttrName="NetAmount"
+    EntityUsage="TblAssetQoutD"
+    AliasName="NET_AMOUNT"/>
 </ViewObject>
