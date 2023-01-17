@@ -469,18 +469,18 @@
                     </af:selectOneChoice>
                   </af:column>
                  
-                  <af:column sortProperty="#{bindings.TblAssetOrderMView1.hints.AssetReqMId.name}" filterable="true" sortable="true"
+                  <af:column sortProperty="#{bindings.TblAssetOrderMView1.hints.AssetApprMId.name}" filterable="true" sortable="true"
                headerText="Asset Req" id="c2" width="150">
                 <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.AssetReqMId}"
+      <af:inputText value="#{vs.filterCriteria.AssetApprMId}"
        id="it4" placeholder="Search ">
       </af:inputText>
 </f:facet>
-      <af:selectOneChoice value="#{row.bindings.AssetReqMId.inputValue}" label="#{row.bindings.AssetReqMId.label}"
-                          required="#{bindings.TblAssetOrderMView1.hints.AssetReqMId.mandatory}"
-                          shortDesc="#{bindings.TblAssetOrderMView1.hints.AssetReqMId.tooltip}" id="soc11" readOnly="true">
-        <f:selectItems value="#{row.bindings.AssetReqMId.items}" id="si11"/>
-        <f:validator binding="#{row.bindings.AssetReqMId.validator}"/>
+      <af:selectOneChoice value="#{row.bindings.AssetApprMId.inputValue}" label="#{row.bindings.AssetApprMId.label}"
+                          required="#{bindings.TblAssetOrderMView1.hints.AssetApprMId.mandatory}"
+                          shortDesc="#{bindings.TblAssetOrderMView1.hints.AssetApprMId.tooltip}" id="soc11" readOnly="true">
+        <f:selectItems value="#{row.bindings.AssetApprMId.items}" id="si11"/>
+        <f:validator binding="#{row.bindings.AssetApprMId.validator}"/>
       </af:selectOneChoice>
       </af:column>
                   <af:column headerText="Carrier" id="c21"
