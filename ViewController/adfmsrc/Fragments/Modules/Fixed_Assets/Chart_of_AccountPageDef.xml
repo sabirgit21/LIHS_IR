@@ -85,6 +85,7 @@
           <Item Value="Name"/>
           <Item Value="UomId"/>
           <Item Value="Ast"/>
+          <Item Value="GlCa"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -100,6 +101,7 @@
           <Item Value="Name"/>
           <Item Value="UomId"/>
           <Item Value="Ast"/>
+          <Item Value="GlCa"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

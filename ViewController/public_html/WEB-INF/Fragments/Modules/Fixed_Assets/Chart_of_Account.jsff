@@ -365,6 +365,20 @@
                           <f:validator binding="#{row.bindings.Name.validator}"/>
                         </af:inputText>
                       </af:column>
+                      <af:column headerText="GL CA" id="c22" sortable="true"
+                                 filterable="true" width="200">
+                                 <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GlCa}"
+                                   id="it31" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                        <af:selectOneChoice value="#{row.bindings.GlCa.inputValue}" label="#{row.bindings.GlCa.label}"
+                                            required="#{bindings.TblAssetL4View3.hints.GlCa.mandatory}"
+                                            shortDesc="#{bindings.TblAssetL4View3.hints.GlCa.tooltip}" id="soc12">
+                          <f:selectItems value="#{row.bindings.GlCa.items}" id="si12"/>
+                          <f:validator binding="#{row.bindings.GlCa.validator}"/>
+                        </af:selectOneChoice>
+                      </af:column>
                       <af:column sortProperty="#{bindings.TblAssetL4View3.hints.UomId.name}" filterable="true"
                                  sortable="true" headerText="UOM" id="c17">
                                  <f:facet name="filter">
@@ -482,6 +496,22 @@
                                             shortDesc="#{bindings.TblAssetL4View1.hints.Name.tooltip}" id="it17" readOnly="true">
                                 <f:validator binding="#{row.bindings.Name.validator}"/>
                               </af:inputText>
+                            </af:column>
+                            <af:column headerText="GL CA" id="c23"
+                                       sortable="true" filterable="true" width="200">
+                                        <f:facet name="filter">
+                                  <af:inputText value="#{vs.filterCriteria.GlCa}"
+                                   id="it32" placeholder="Search ">
+                                  </af:inputText>
+                            </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GlCa.inputValue}"
+                                                  label="#{row.bindings.GlCa.label}"
+                                                  required="#{bindings.TblAssetL4View1.hints.GlCa.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetL4View1.hints.GlCa.tooltip}" id="soc13"
+                                                  readOnly="true">
+                                <f:selectItems value="#{row.bindings.GlCa.items}" id="si13"/>
+                                <f:validator binding="#{row.bindings.GlCa.validator}"/>
+                              </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblAssetL4View1.hints.UomId.name}" filterable="true"
                                        sortable="true" headerText="UOM"

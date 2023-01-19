@@ -32,6 +32,7 @@ public class TblAssetL4Impl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         UomId,
+        GlCa,
         TblAssetL3,
         TblAssetOrderD,
         TblAssetPurchD,
@@ -60,6 +61,7 @@ public class TblAssetL4Impl extends EntityImpl {
         }
     }
 
+
     public static final int ASSETL4ID = AttributesEnum.AssetL4Id.index();
     public static final int ASSETL3ID = AttributesEnum.AssetL3Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -69,6 +71,7 @@ public class TblAssetL4Impl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UOMID = AttributesEnum.UomId.index();
+    public static final int GLCA = AttributesEnum.GlCa.index();
     public static final int TBLASSETL3 = AttributesEnum.TblAssetL3.index();
     public static final int TBLASSETORDERD = AttributesEnum.TblAssetOrderD.index();
     public static final int TBLASSETPURCHD = AttributesEnum.TblAssetPurchD.index();
@@ -87,6 +90,7 @@ public class TblAssetL4Impl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.ERP.EO.TblAssetL4");
     }
+
 
     /**
      * Gets the attribute value for AssetL4Id, using the alias name AssetL4Id.
@@ -214,6 +218,22 @@ public class TblAssetL4Impl extends EntityImpl {
      */
     public void setUomId(BigDecimal value) {
         setAttributeInternal(UOMID, value);
+    }
+
+    /**
+     * Gets the attribute value for GlCa, using the alias name GlCa.
+     * @return the value of GlCa
+     */
+    public BigDecimal getGlCa() {
+        return (BigDecimal) getAttributeInternal(GLCA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlCa.
+     * @param value value to set the GlCa
+     */
+    public void setGlCa(BigDecimal value) {
+        setAttributeInternal(GLCA, value);
     }
 
     /**
