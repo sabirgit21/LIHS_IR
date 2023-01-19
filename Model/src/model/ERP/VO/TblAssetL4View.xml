@@ -26,8 +26,8 @@
     ViewObjectName="model.LOV.Unit_of_Measurements_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Asset_Level4_LOV1"
-    ViewObjectName="model.LOV.Asset_Level4_LOV"
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AssetL3Id"
@@ -85,7 +85,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_GlCa"
-    ListVOName="Asset_Level4_LOV1"
+    ListVOName="GL_Level4_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -94,10 +94,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="AssetL4Id"/>
+      <Item Value="GlL4Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
