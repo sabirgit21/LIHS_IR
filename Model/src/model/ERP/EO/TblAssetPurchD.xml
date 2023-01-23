@@ -141,6 +141,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_ASSET_PURCH_D"/>
+  <Attribute
+    Name="GlAc"
+    ColumnName="GL_AC"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ASSET_PURCH_D"/>
   <AccessorAttribute
     Name="TblAssetL4"
     Association="model.ERP.EO.FkAssetPurchDAssetL4IdAssoc"

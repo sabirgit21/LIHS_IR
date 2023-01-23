@@ -38,6 +38,7 @@ public class TblAssetPurchDImpl extends EntityImpl {
         TaxAmount,
         TaxParc,
         NetAmount,
+        GlAc,
         TblAssetL4,
         TblAssetPurchM;
         private static AttributesEnum[] vals = null;
@@ -80,6 +81,7 @@ public class TblAssetPurchDImpl extends EntityImpl {
     public static final int TAXAMOUNT = AttributesEnum.TaxAmount.index();
     public static final int TAXPARC = AttributesEnum.TaxParc.index();
     public static final int NETAMOUNT = AttributesEnum.NetAmount.index();
+    public static final int GLAC = AttributesEnum.GlAc.index();
     public static final int TBLASSETL4 = AttributesEnum.TblAssetL4.index();
     public static final int TBLASSETPURCHM = AttributesEnum.TblAssetPurchM.index();
 
@@ -335,6 +337,22 @@ public class TblAssetPurchDImpl extends EntityImpl {
      */
     public void setNetAmount(BigDecimal value) {
         setAttributeInternal(NETAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for GlAc, using the alias name GlAc.
+     * @return the value of GlAc
+     */
+    public BigDecimal getGlAc() {
+        return (BigDecimal) getAttributeInternal(GLAC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GlAc.
+     * @param value value to set the GlAc
+     */
+    public void setGlAc(BigDecimal value) {
+        setAttributeInternal(GLAC, value);
     }
 
     /**

@@ -272,6 +272,22 @@
                       <f:validator binding="#{row.bindings.Description.validator}"/>
                     </af:inputText>
                   </af:column>
+                            <af:column headerText="GL AC" id="c17"
+                                       sortable="true" filterable="true" width="200">
+                                        <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GlAc}"
+       id="it24" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                              <af:selectOneChoice value="#{row.bindings.GlAc.inputValue}"
+                                                  label="#{row.bindings.GlAc.label}"
+                                                  required="#{bindings.TblAssetPurchDView3.hints.GlAc.mandatory}"
+                                                  shortDesc="#{bindings.TblAssetPurchDView3.hints.GlAc.tooltip}"
+                                                  id="soc16" readOnly="true">
+                                <f:selectItems value="#{row.bindings.GlAc.items}" id="si16"/>
+                                <f:validator binding="#{row.bindings.GlAc.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblAssetPurchDView3.hints.Qty.name}" filterable="true"
                                        sortable="true" headerText="Qty" id="c6">
                                        <f:facet name="filter">

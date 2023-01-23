@@ -28,7 +28,8 @@
        TblUom.ID AS ID1, 
        TblAssetPurchD.TAX_AMOUNT, 
        TblAssetPurchD.TAX_PARC, 
-       TblAssetPurchD.NET_AMOUNT"
+       TblAssetPurchD.NET_AMOUNT, 
+       TblAssetPurchD.GL_AC"
   FromList="TBL_ASSET_PURCH_D TblAssetPurchD, TBL_ASSET_L4 TblAssetL4, TBL_UOM TblUom"
   Where="TblAssetPurchD.ASSET_L4_ID = TblAssetL4.ASSET_L4_ID(+)    
 And TblAssetL4.UOM_ID = TblUom.ID(+)">
@@ -39,6 +40,10 @@ And TblAssetL4.UOM_ID = TblUom.ID(+)">
   <ViewAccessor
     Name="QC_M_LOV1"
     ViewObjectName="model.LOV.QC_M_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GL_Level4_LOV1"
+    ViewObjectName="model.LOV.GL_Level4_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AssetL4Id"
@@ -74,6 +79,24 @@ And TblAssetL4.UOM_ID = TblUom.ID(+)">
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
       <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlAc"
+    ListVOName="GL_Level4_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlAc"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GlL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GlL4Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -248,6 +271,20 @@ And TblAssetL4.UOM_ID = TblUom.ID(+)">
     EntityAttrName="NetAmount"
     EntityUsage="TblAssetPurchD"
     AliasName="NET_AMOUNT"/>
+  <ViewAttribute
+    Name="GlAc"
+    PrecisionRule="true"
+    EntityAttrName="GlAc"
+    EntityUsage="TblAssetPurchD"
+    AliasName="GL_AC"
+    LOVName="LOV_GlAc">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Id"/>
     <Item Value="Id1"/>
