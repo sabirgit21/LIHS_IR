@@ -37,7 +37,7 @@ public class IncomeReport {
         // Add event code here...
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
-//        gotProjectid = (BigDecimal) this.getProjectId_Param().getValue();
+        gotProjectid = (BigDecimal) this.getProjectId_Param().getValue();
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -50,9 +50,9 @@ public class IncomeReport {
         if(getToDate() != ""){
             reportBean.setReportParameter("P_Tdated", getToDate());
         }
-//        if (gotProjectid != null) {
-//            reportBean.setReportParameter("P_Project_ID", gotProjectid.toString());
-//        }
+        if (gotProjectid != null) {
+            reportBean.setReportParameter("P_Project_ID", gotProjectid.toString());
+        }
 
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
@@ -63,6 +63,10 @@ public class IncomeReport {
                 case "Incomestatement":
                     reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Income_Statement&");
                     break;
+                
+                    case "IncomestatementProj":
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Income_Statement_Project&");
+                        break;
                
                 
                 default:

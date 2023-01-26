@@ -291,6 +291,7 @@
     <page path="/WEB-INF/Task_Flows/Modules/Payable/Asset_Payment_TaskFlow.xml#Asset_Payment_TaskFlow@ExecuteWithParams"
           usageId="view_Asset_Payment_TaskFlow_Asset_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Payable/Asset_Payment.jsff" usageId="view_Asset_PaymentPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Reports/Income_Reports.jsff" usageId="view_Income_ReportsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_General_LedgerPageDef" path="Main_Pages.Modules.General_Ledger.General_LedgerPageDef"/>
@@ -558,6 +559,7 @@
     <page id="view_Asset_Payment_TaskFlow_Asset_Payment_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Payable.Asset_Payment_TaskFlow_Asset_Payment_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Asset_PaymentPageDef" path="Fragments.Modules.Payable.Asset_PaymentPageDef"/>
+    <page id="view_Income_ReportsPageDef" path="Fragments.Modules.Reports.Income_ReportsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.UserRole"
