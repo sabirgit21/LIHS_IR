@@ -90,7 +90,16 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="TblPspD"
-    AliasName="DATED"/>
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblPspDView.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblPspDView.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PspMId"
     PrecisionRule="true"
@@ -175,4 +184,8 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblPspD"
     AliasName="UPDATED_BY"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

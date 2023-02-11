@@ -10,9 +10,9 @@
   CustomQuery="false"
   PageIterMode="Full"
   SelectList="TblCashPurchM.ID, 
+       TblCashPurchM.DATED, 
        TblCashPurchM.VNO, 
        TblCashPurchM.VTP, 
-       TblCashPurchM.DATED, 
        TblCashPurchM.NARRATION, 
        TblCashPurchM.DEPARTMENT_ID, 
        TblCashPurchM.PROJECT_ID, 
@@ -131,6 +131,22 @@
     EntityUsage="TblCashPurchM"
     AliasName="ID"/>
   <ViewAttribute
+    Name="Dated"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblCashPurchM"
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.ERP.VO.TblCashPurchMView.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.ERP.VO.TblCashPurchMView.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="Vno"
     PrecisionRule="true"
     EntityAttrName="Vno"
@@ -150,12 +166,6 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="Dated"
-    PrecisionRule="true"
-    EntityAttrName="Dated"
-    EntityUsage="TblCashPurchM"
-    AliasName="DATED"/>
   <ViewAttribute
     Name="Narration"
     PrecisionRule="true"

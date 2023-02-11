@@ -56,8 +56,8 @@
                                                 binding="#{backingBeanScope.IncomeReportBackBean.report_type}"
                                                  contentStyle="width:300px;">
                                                 
-                                <af:selectItem label="Income Statement Report" value="Incomestatement" id="si9"/>
-                                 <af:selectItem label="Income Statement Project Wise Report" value="IncomestatementProj"
+                                <af:selectItem label="Income Statement" value="Incomestatement" id="si9"/>
+                                 <af:selectItem label="Income Statement with Project" value="IncomestatementProj"
                                                 id="si1"/>
                               
                                 
