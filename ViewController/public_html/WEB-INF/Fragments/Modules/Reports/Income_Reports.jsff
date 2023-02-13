@@ -59,6 +59,7 @@
                                 <af:selectItem label="Income Statement" value="Incomestatement" id="si9"/>
                                  <af:selectItem label="Income Statement with Project" value="IncomestatementProj"
                                                 id="si1"/>
+                                <af:selectItem label="Financial Position" value="Financialposition" id="si3"/>
                               
                                 
                             </af:selectOneChoice>

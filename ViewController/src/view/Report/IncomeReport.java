@@ -67,6 +67,9 @@ public class IncomeReport {
                     case "IncomestatementProj":
                         reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Income_Statement_Project&");
                         break;
+                    case "Financialposition":
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/Fin_Position&");
+                        break;
                
                 
                 default:
