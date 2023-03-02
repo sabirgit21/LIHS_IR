@@ -123,6 +123,63 @@ public class GLReports {
             
             break;
             //calling procedure end//
+        
+            case "generalLedgerproject":
+
+                //working for procedure call//
+                
+                if (getFromDate() != "" & getToDate() != "" & gotGlL4id != null & gotProjectid != null ) {
+                        
+                       
+                        BigDecimal P_AccID = gotGlL4id;
+                        String P_Fdate = getFromDate();
+                        String P_Tdate = getToDate();
+                        BigDecimal P_Project_ID = gotProjectid;
+                       
+                        //calling procedure start//
+                        Connection conn;
+                        ResultSet rs;
+                        try {
+                            conn = DatabaseConnection.getConnection();
+
+            //first procedure
+                            CallableStatement cstmt = null;
+                            String SQL = "{call P_GL_Proj(?,?,?)}";
+                            cstmt = conn.prepareCall(SQL);
+                           
+                            cstmt.setBigDecimal(1, P_AccID );
+                            cstmt.setString(2, P_Fdate );
+                            cstmt.setBigDecimal(3, P_Project_ID );
+                            
+                            rs = cstmt.executeQuery();
+                            
+            //second procedure
+                            CallableStatement cstmt2 = null;
+                            String SQL2 = "{call P_GL_DP(?,?,?)}";
+                            cstmt2 = conn.prepareCall(SQL2);
+                            
+                            cstmt2.setBigDecimal(1, P_AccID );
+                            cstmt2.setString(2, P_Fdate );
+                            cstmt2.setString(3, P_Tdate );
+                            rs = cstmt2.executeQuery();
+                            
+                            
+                            
+                        
+                        
+                        } catch (SQLException e) {
+                            System.out.println(e);
+                        }
+                        
+                        reportBean.setReportURLName("userid=lihs/lihsir@orcl&domain=classicdomain&report=C:/LIHS_Reports/General_Ledger&");
+
+                    }
+                else{
+                    showMessage("Please Select From Date, To Date & GL L4 & Project");
+                }
+                
+                break;
+                //calling procedure end//
         default:
             showMessage("Please Select Report Type");
             break;

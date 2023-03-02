@@ -68,7 +68,8 @@
                                                 binding="#{backingBeanScope.GLReportsBackBean.report_type}"
                                                 contentStyle="width:300px;">
                                                 
-                                <af:selectItem label="General ledger" value="generalLedger" id="si9"/>
+                                <af:selectItem label="General ledger Without Project" value="generalLedger" id="si9"/>
+                                <af:selectItem label="General ledger With Project" value="generalLedgerproject" id="si1"/>
                                 
                                 
                                 
