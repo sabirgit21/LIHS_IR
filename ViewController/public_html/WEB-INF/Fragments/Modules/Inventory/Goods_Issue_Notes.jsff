@@ -274,7 +274,7 @@
        id="it26" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                              <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
+                              <af:inputText value="#{row.bindings.Rate.inputValue}" 
                                             label="#{bindings.TblGinDView2.hints.Rate.label}"
                                             required="#{bindings.TblGinDView2.hints.Rate.mandatory}"
                                             columns="#{bindings.TblGinDView2.hints.Rate.displayWidth}"
