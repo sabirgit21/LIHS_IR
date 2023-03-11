@@ -675,21 +675,21 @@
                       <af:convertDateTime pattern="#{bindings.TblFgTrnMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterId.name}" filterable="true"
-                             sortable="true" headerText="Production FG"
-                             id="c13" width="200">
-                              <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.ProFgMasterId}"
+                 
+                  <af:column headerText="Production FG" id="c27"
+                             sortable="true" filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProFgMasterIdStatic}"
        id="it22" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.ProFgMasterId.inputValue}"
-                                        label="#{row.bindings.ProFgMasterId.label}"
-                                        required="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterId.mandatory}"
-                                        shortDesc="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterId.tooltip}"
-                                        id="soc6" readOnly="true">
-                      <f:selectItems value="#{row.bindings.ProFgMasterId.items}" id="si6"/>
-                      <f:validator binding="#{row.bindings.ProFgMasterId.validator}"/>
+                    <af:selectOneChoice value="#{row.bindings.ProFgMasterIdStatic.inputValue}"
+                                        label="#{row.bindings.ProFgMasterIdStatic.label}"
+                                        required="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdStatic.mandatory}"
+                                        shortDesc="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdStatic.tooltip}"
+                                        id="soc15" readOnly="true">
+                      <f:selectItems value="#{row.bindings.ProFgMasterIdStatic.items}" id="si15"/>
+                      <f:validator binding="#{row.bindings.ProFgMasterIdStatic.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFgTrnMasterView1.hints.Narration.name}" filterable="true"
