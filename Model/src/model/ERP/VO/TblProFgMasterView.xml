@@ -165,7 +165,6 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Vno"/>
       <Item Value="Dated"/>
-      <Item Value="Vtp"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

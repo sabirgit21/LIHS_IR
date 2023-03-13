@@ -8,14 +8,14 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <searchRegion Binds="TblFgTrnMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnMasterView1Query"/>
+    <iterator Binds="TblFgTrnMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
+              id="TblFgTrnMasterView1Iterator"/>
     <iterator Binds="TblFgTrnDetailView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="TblFgTrnDetailView2Iterator"/>
     <searchRegion Binds="TblFgTrnDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnDetailView2Query"/>
     <iterator Binds="TblFgTrnDetailDView2" RangeSize="25" DataControl="AppModuleDataControl1"
               id="TblFgTrnDetailDView2Iterator"/>
-    <iterator Binds="TblFgTrnMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
-              id="TblFgTrnMasterView1Iterator"/>
     <searchRegion Binds="TblFgTrnDetailDView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFgTrnDetailDView2Query"/>
     <iterator Binds="TblFgTrnDetailPView2" RangeSize="25" DataControl="AppModuleDataControl1"
@@ -58,6 +58,14 @@
     </attributeValues>
     <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProFgMasterId" id="ProFgMasterId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProFgMasterIdStatic"
+          id="ProFgMasterIdStatic" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProjectDId" id="ProjectDId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblFgTrnMasterView1Iterator" id="Narration">
       <AttrNames>
         <Item Value="Narration"/>
@@ -108,12 +116,6 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblFgTrnDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProjectId" id="ProjectId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProjectDId" id="ProjectDId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblFgTrnDetailDView2Iterator" id="TblFgTrnDetailDView2">
       <nodeDefinition DefName="model.ERP.VO.TblFgTrnDetailDView" Name="TblFgTrnDetailDView20">
         <AttrNames>
@@ -129,8 +131,6 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblFgTrnDetailDView2Iterator" id="Delete2" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <list IterBinding="TblFgTrnMasterView1Iterator" StaticList="false" Uses="LOV_ProFgMasterIdStatic"
-          id="ProFgMasterIdStatic" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <tree IterBinding="TblFgTrnDetailPView2Iterator" id="TblFgTrnDetailPView2">
       <nodeDefinition DefName="model.ERP.VO.TblFgTrnDetailPView" Name="TblFgTrnDetailPView20">
         <AttrNames>

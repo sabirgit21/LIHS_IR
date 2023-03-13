@@ -18,8 +18,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  Where="ID in (Select POR_MASTER_ID from TBL_PRO_ISS_MASTER where POR_MASTER_ID is not Null)       
-and TblPorMaster.PROJECT_ID = :getProID">
+  Where="TblPorMaster.PROJECT_ID = :getProID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
