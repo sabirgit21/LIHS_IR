@@ -328,11 +328,28 @@
                           filterModel="#{bindings.TblProFgMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblProFgMasterView1Query.processQuery}" varStatus="vs" id="t2"
                           scrollPolicy="page" autoHeightRows="0" partialTriggers="::b6">
+                  <af:column headerText="ID" id="c12" sortable="true"
+                             filterable="true">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Id}"
+       id="it18" placeholder="Search ">
+      </af:inputText>
+</f:facet> 
+                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                  label="#{bindings.TblProFgMasterView1.hints.Id.label}"
+                                  required="#{bindings.TblProFgMasterView1.hints.Id.mandatory}"
+                                  columns="#{bindings.TblProFgMasterView1.hints.Id.displayWidth}"
+                                  maximumLength="#{bindings.TblProFgMasterView1.hints.Id.precision}"
+                                  shortDesc="#{bindings.TblProFgMasterView1.hints.Id.tooltip}" id="it24" readOnly="true">
+                      <f:validator binding="#{row.bindings.Id.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblProFgMasterView1.hints.Id.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblProFgMasterView1.hints.Vno.name}" filterable="true"
                              sortable="true" headerText="Voucher No." id="c9">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.Vno}"
-       id="it18" placeholder="Search ">
+       id="it25" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:inputText value="#{row.bindings.Vno.inputValue}"
