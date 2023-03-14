@@ -11,7 +11,8 @@
        TblProFgMaster.VNO, 
        TblProFgMaster.PROJECT_ID, 
        TblProFgMaster.PROJECT_D_ID, 
-       TblProFgMaster.DEPARTMENT_ID"
+       TblProFgMaster.DEPARTMENT_ID, 
+       TblProFgMaster.DATED"
   FromList="TBL_PRO_FG_MASTER TblProFgMaster"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -61,6 +62,22 @@
     EntityAttrName="DepartmentId"
     EntityUsage="TblProFgMaster"
     AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="Dated"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblProFgMaster"
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.LOV.Pro_FG_Master_LOV.Dated_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.LOV.Pro_FG_Master_LOV.Dated_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
