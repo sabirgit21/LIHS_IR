@@ -72,6 +72,7 @@
           <Item Value="PorMasterId"/>
           <Item Value="Narration"/>
           <Item Value="PorMasterIdStatic"/>
+          <Item Value="PorMasterIdSimple"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

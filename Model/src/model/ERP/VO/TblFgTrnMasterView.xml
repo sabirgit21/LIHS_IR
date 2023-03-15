@@ -23,7 +23,8 @@
        TblFgTrnMaster.PROJECT_D_D_ID, 
        TblFgTrnMaster.DEPARTMENT_ID, 
        TblFgTrnMaster.PROJECT_ID, 
-       TblFgTrnMaster.PRO_FG_MASTER_ID AS PRO_FG_MASTER_ID1"
+       TblFgTrnMaster.PRO_FG_MASTER_ID AS PRO_FG_MASTER_ID1, 
+       TblFgTrnMaster.PRO_FG_MASTER_ID AS PRO_FG_MASTER_ID2"
   FromList="TBL_FG_TRN_MASTER TblFgTrnMaster"
   Where="TblFgTrnMaster.PROJECT_ID = nvl(:getProId,TblFgTrnMaster.PROJECT_ID)">
   <Variable
@@ -349,6 +350,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ProFgMasterIdSimple"
+    PrecisionRule="true"
+    EntityAttrName="ProFgMasterId"
+    EntityUsage="TblFgTrnMaster"
+    AliasName="PRO_FG_MASTER_ID2"/>
   <ViewLinkAccessor
     Name="TblFgTrnDetailView"
     ViewLink="model.ERP.VO.FkFgTrnDetailMasterLink"

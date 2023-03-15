@@ -512,21 +512,39 @@
                                 <af:convertDateTime pattern="#{bindings.TblProIssMasterView1.hints.Dated.format}"/>
                               </af:inputDate>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblProIssMasterView1.hints.PorMasterId.name}" filterable="true"
-                             sortable="true" headerText="Production Order"
-                             id="c19" width="200">
+                  <af:column headerText="Production Order ID" id="c19"
+                             sortable="true" filterable="true" width="110">
                               <f:facet name="filter">
-      <af:inputText value="#{vs.filterCriteria.PorMasterId}"
+      <af:inputText value="#{vs.filterCriteria.PorMasterIdSimple}"
        id="it32" placeholder="Search ">
       </af:inputText>
 </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.PorMasterId.inputValue}"
-                                        label="#{row.bindings.PorMasterId.label}"
-                                        required="#{bindings.TblProIssMasterView1.hints.PorMasterId.mandatory}"
-                                        shortDesc="#{bindings.TblProIssMasterView1.hints.PorMasterId.tooltip}"
-                                        id="soc8" readOnly="true">
-                      <f:selectItems value="#{row.bindings.PorMasterId.items}" id="si8"/>
-                      <f:validator binding="#{row.bindings.PorMasterId.validator}"/>
+                    <af:inputText value="#{row.bindings.PorMasterIdSimple.inputValue}"
+                                  label="#{bindings.TblProIssMasterView1.hints.PorMasterIdSimple.label}"
+                                  required="#{bindings.TblProIssMasterView1.hints.PorMasterIdSimple.mandatory}"
+                                  columns="#{bindings.TblProIssMasterView1.hints.PorMasterIdSimple.displayWidth}"
+                                  maximumLength="#{bindings.TblProIssMasterView1.hints.PorMasterIdSimple.precision}"
+                                  shortDesc="#{bindings.TblProIssMasterView1.hints.PorMasterIdSimple.tooltip}" id="it9"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.PorMasterIdSimple.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblProIssMasterView1.hints.PorMasterIdSimple.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Production Order" id="c21"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.PorMasterIdstatic}"
+       id="it14" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PorMasterIdstatic.inputValue}"
+                                        label="#{row.bindings.PorMasterIdstatic.label}"
+                                        required="#{bindings.TblProIssMasterView1.hints.PorMasterIdstatic.mandatory}"
+                                        shortDesc="#{bindings.TblProIssMasterView1.hints.PorMasterIdstatic.tooltip}"
+                                        id="soc15" readOnly="true">
+                      <f:selectItems value="#{row.bindings.PorMasterIdstatic.items}" id="si15"/>
+                      <f:validator binding="#{row.bindings.PorMasterIdstatic.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblProIssMasterView1.hints.Narration.name}" filterable="true"

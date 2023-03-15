@@ -23,7 +23,8 @@
        TblProIssMaster.FR_DEPT_ID, 
        TblProIssMaster.TO_DEPT_ID, 
        TblProIssMaster.PROJECT_D_ID, 
-       TblProIssMaster.POR_MASTER_ID AS POR_MASTER_ID1"
+       TblProIssMaster.POR_MASTER_ID AS POR_MASTER_ID1, 
+       TblProIssMaster.POR_MASTER_ID AS POR_MASTER_ID2"
   FromList="TBL_PRO_ISS_MASTER TblProIssMaster"
   Where="TblProIssMaster.PROJECT_ID = nvl(:getProId,TblProIssMaster.PROJECT_ID)">
   <Variable
@@ -65,6 +66,10 @@
   <ViewAccessor
     Name="Por_Master_NotIn_LOV1"
     ViewObjectName="model.LOV.Por_Master_NotIn_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Production_Order_M_LOV1"
+    ViewObjectName="model.LOV.Production_Order_M_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Vtp"
@@ -157,26 +162,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_PorMasterIdstatic"
-    ListVOName="Por_Master_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="PorMasterIdstatic"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Vno"/>
-      <Item Value="Dated"/>
-      <Item Value="Vtp"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_PorMasterId"
     ListVOName="Por_Master_NotIn_LOV1"
     ListRangeSize="-1"
@@ -201,6 +186,26 @@
       <Item Value="Vno"/>
       <Item Value="Dated"/>
       <Item Value="MenuType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PorMasterIdstatic"
+    ListVOName="Production_Order_M_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PorMasterIdstatic"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Dated"/>
+      <Item Value="Vno"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -366,6 +371,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="PorMasterIdSimple"
+    PrecisionRule="true"
+    EntityAttrName="PorMasterId"
+    EntityUsage="TblProIssMaster"
+    AliasName="POR_MASTER_ID2"/>
   <ViewLinkAccessor
     Name="TblProIssDetailView"
     ViewLink="model.ERP.VO.FkProIssDetailMasterLink"

@@ -692,12 +692,30 @@
                       <af:convertDateTime pattern="#{bindings.TblFgTrnMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                 
+                  <af:column headerText="Production FG ID" id="c28"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ProFgMasterIdSimple}"
+       id="it22" placeholder="Search ">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.ProFgMasterIdSimple.inputValue}"
+                                  label="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdSimple.label}"
+                                  required="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdSimple.mandatory}"
+                                  columns="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdSimple.displayWidth}"
+                                  maximumLength="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdSimple.precision}"
+                                  shortDesc="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdSimple.tooltip}"
+                                  id="it44" readOnly="true">
+                      <f:validator binding="#{row.bindings.ProFgMasterIdSimple.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblFgTrnMasterView1.hints.ProFgMasterIdSimple.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column headerText="Production FG" id="c27"
                              sortable="true" filterable="true">
                              <f:facet name="filter">
       <af:inputText value="#{vs.filterCriteria.ProFgMasterIdStatic}"
-       id="it22" placeholder="Search ">
+       id="it45" placeholder="Search ">
       </af:inputText>
 </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ProFgMasterIdStatic.inputValue}"

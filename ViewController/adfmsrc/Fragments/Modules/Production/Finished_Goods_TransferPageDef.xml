@@ -92,6 +92,7 @@
           <Item Value="ProFgMasterId"/>
           <Item Value="Narration"/>
           <Item Value="ProFgMasterIdStatic"/>
+          <Item Value="ProFgMasterIdSimple"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
