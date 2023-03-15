@@ -1,16 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="model.ERP.AppModule">
-      <AppModuleConfig name="AppModuleLocal" jbo.project="model.Model" ApplicationName="model.ERP.AppModule" DeployPlatform="LOCAL">
-         <Database jbo.TypeMapEntries="OracleApps"/>
-         <Security AppModuleJndiName="model.ERP.AppModule"/>
-         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/Connection1DS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
-      </AppModuleConfig>
-      <AppModuleConfig DeployPlatform="LOCAL" name="AppModuleShared" ApplicationName="model.ERP.AppModule" jbo.project="model.Model">
-         <AM-Pooling jbo.ampool.isuseexclusive="false"/>
+      <AppModuleConfig DeployPlatform="LOCAL" name="AppModuleLocal" ApplicationName="model.ERP.AppModule" jbo.project="model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="5000"/>
          <Database jbo.TypeMapEntries="OracleApps"/>
          <Security AppModuleJndiName="model.ERP.AppModule"/>
          <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/Connection1DS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig jbo.project="model.Model" ApplicationName="model.ERP.AppModule" DeployPlatform="LOCAL" name="AppModuleShared">
+         <AM-Pooling jbo.ampool.dynamicjdbccredentials="false" jbo.ampool.resetnontransactionalstate="false" jbo.ampool.maxpoolsize="5000" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="model.ERP.AppModule"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/Connection1DS" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
       </AppModuleConfig>
    </AppModuleConfigBag>
 </BC4JConfig>
